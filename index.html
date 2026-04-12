@@ -15,9 +15,9 @@ body {
     color:white;
 }
 
-/* 🔥 HEADER I RI */
+/* 🔥 HEADER FIX (NO RANDOM IMAGES) */
 header {
-    background: url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a') center/cover no-repeat;
+    background: url('https://source.unsplash.com/1600x900/?smart-city,night') center/cover no-repeat;
     height:45vh;
     position:relative;
     display:flex;
@@ -51,6 +51,7 @@ header::after {
     font-size:22px;
 }
 
+/* LAYOUT */
 .container {
     padding:20px;
 }
@@ -173,13 +174,14 @@ button {
 </div>
 
 <script>
+
 // 📊 GRAFIK
 let chart = new Chart(document.getElementById('chart'), {
 type:'bar',
 data:{
 labels:['Trafik','Siguri','Energji','Mjedis'],
 datasets:[{
-label:"Performanca",
+label:"Performanca (%)",
 data:[80,70,85,75]
 }]
 }
@@ -221,7 +223,7 @@ Notification.requestPermission();
 }
 }
 
-// 📊 UPDATE LIVE
+// 📊 LIVE UPDATE
 setInterval(()=>{
 chart.data.datasets[0].data=[
 Math.random()*100,

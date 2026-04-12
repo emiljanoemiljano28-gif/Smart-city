@@ -15,12 +15,40 @@ body {
     color:white;
 }
 
+/* 🔥 HEADER I RI */
 header {
-    background:#020617;
-    padding:20px;
+    background: url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a') center/cover no-repeat;
+    height:45vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
+}
+
+header::after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    top:0;
+    left:0;
+}
+
+.header-content {
+    position:relative;
+    z-index:2;
+}
+
+.header-content h1 {
+    font-size:55px;
+    margin:0;
+    text-shadow: 0 0 20px #38bdf8;
+}
+
+.header-content p {
     font-size:22px;
-    color:#38bdf8;
 }
 
 .container {
@@ -71,9 +99,10 @@ button {
 <body>
 
 <header>
-🌆 SMART CITY DASHBOARD  
-<br>
-<small>Teknologji Informacioni dhe Komunikimi</small>
+    <div class="header-content">
+        <h1>🌆 SMART CITY DASHBOARD</h1>
+        <p>Teknologji Informacioni dhe Komunikimi</p>
+    </div>
 </header>
 
 <div class="container">
@@ -136,7 +165,7 @@ button {
 <div class="card city">
 <img src="https://images.unsplash.com/photo-1555992336-03a23c6c7e76">
 <h3>Tirana</h3>
-<p>Zhvillim me ndriçim LED, kamera sigurie dhe projekte Smart City.</p>
+<p>Tirana po zhvillohet me ndriçim LED, kamera sigurie dhe sisteme inteligjente urbane.</p>
 </div>
 
 </div>
@@ -144,7 +173,6 @@ button {
 </div>
 
 <script>
-
 // 📊 GRAFIK
 let chart = new Chart(document.getElementById('chart'), {
 type:'bar',

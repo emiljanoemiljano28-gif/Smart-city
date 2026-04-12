@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="sq">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart City - Tea Prifti</title>
+<title>Smart City</title>
 
 <style>
 body {
@@ -22,21 +23,10 @@ header {
 
 video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -2;
-}
-
-header::after {
-    content: "";
-    position: absolute;
     width: 100%;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover;
-    z-index: -3;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .overlay {
@@ -56,6 +46,12 @@ header::after {
     font-size: 55px;
 }
 
+.header-content p {
+    font-size: 22px;
+    color: #38bdf8;
+}
+
+/* SECTIONS */
 section {
     padding: 60px 20px;
     text-align: center;
@@ -65,7 +61,7 @@ h2 {
     color: #38bdf8;
 }
 
-/* cards */
+/* CARDS */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -76,20 +72,46 @@ h2 {
     background: #1e293b;
     margin: 15px;
     padding: 20px;
-    width: 260px;
-    border-radius: 15px;
+    border-radius: 12px;
+    width: 250px;
+    transition: 0.3s;
 }
 
-/* gallery */
-.gallery img {
-    width: 280px;
-    margin: 10px;
+.card:hover {
+    transform: scale(1.08);
+}
+
+/* MAP */
+iframe {
+    width: 90%;
+    height: 400px;
     border-radius: 10px;
 }
 
+/* WEATHER */
+.weather {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* BUTTON */
+button {
+    padding: 12px 25px;
+    border: none;
+    background: #38bdf8;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+/* FOOTER */
 footer {
     background: black;
-    padding: 15px;
+    padding: 20px;
 }
 </style>
 </head>
@@ -105,18 +127,20 @@ footer {
 
     <div class="header-content">
         <h1>🌆 SMART CITY</h1>
-        <p>Projekt nga Tea Prifti</p>
+        <p>Tekonlogji informacioni dhe komunikimi</p>
     </div>
 </header>
 
 <section>
     <h2>Çfarë është Smart City?</h2>
-    <p>Smart City përdor teknologji moderne për të përmirësuar jetën në qytet.</p>
+    <p>
+    Smart City është një koncept modern që përdor teknologjinë për të përmirësuar jetën e qytetarëve,
+    duke menaxhuar trafikun, energjinë dhe shërbimet publike në mënyrë më efikase.
+    </p>
 </section>
 
 <section>
-    <h2>Karakteristikat</h2>
-
+    <h2>Karakteristikat Kryesore</h2>
     <div class="cards">
         <div class="card">🚦 Trafik Inteligjent</div>
         <div class="card">💡 Ndriçim Smart</div>
@@ -125,25 +149,40 @@ footer {
     </div>
 </section>
 
-<section class="gallery">
-    <h2>Shembuj</h2>
-    <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade">
-    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df">
-    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b">
-</section>
-
 <section>
-    <h2>Shqipëria 🇦🇱</h2>
-    <p>Tirana po shkon drejt Smart City me teknologji moderne.</p>
-</section>
-
-<section>
-    <h2>Statistika</h2>
+    <h2>📊 Grafik</h2>
     <canvas id="chart" style="max-width:600px;margin:auto;"></canvas>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<section>
+    <h2>🗺️ Harta (Tirana)</h2>
+    <iframe src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
+</section>
 
+<section>
+    <h2>🌦️ Mot live</h2>
+    <div id="weather" class="weather">Duke ngarkuar...</div>
+</section>
+
+<section>
+    <h2>🔔 Njoftime</h2>
+    <button onclick="showAlert()">Kliko për njoftim</button>
+</section>
+
+<section>
+    <h2>Përfundim</h2>
+    <p>
+    Smart City është e ardhmja e qyteteve moderne dhe do të ndikojë në mënyrën se si jetojmë,
+    duke e bërë jetën më të lehtë dhe më efikase.
+    </p>
+</section>
+
+<footer>
+    <p>Tekonlogji informacioni dhe komunikimi</p>
+</footer>
+
+<!-- CHART -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 new Chart(document.getElementById('chart'), {
     type: 'bar',
@@ -151,15 +190,29 @@ new Chart(document.getElementById('chart'), {
         labels: ['Trafik','Siguri','Energji','Mjedis'],
         datasets: [{
             label: 'Përmirësim %',
-            data: [80,70,85,75]
+            data: [80,70,85,75],
+            backgroundColor: ['#38bdf8','#22c55e','#f59e0b','#ef4444']
         }]
     }
 });
 </script>
 
-<footer>
-    <p>Tea Prifti</p>
-</footer>
+<!-- WEATHER -->
+<script>
+fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
+.then(res => res.json())
+.then(data => {
+    document.getElementById("weather").innerHTML =
+        "Temperatura aktuale: " + data.current_weather.temperature + "°C";
+});
+</script>
+
+<!-- ALERT -->
+<script>
+function showAlert(){
+    alert("Mirësevini në Smart City 🚀");
+}
+</script>
 
 </body>
 </html>

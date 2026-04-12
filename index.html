@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="sq">
 <head>
 <meta charset="UTF-8">
@@ -13,6 +13,7 @@ body {
     color: white;
 }
 
+/* HEADER */
 header {
     position: relative;
     height: 100vh;
@@ -109,7 +110,8 @@ footer {
 
 <header>
     <video autoplay muted loop playsinline>
-        <source src="https://www.w3schools.com/howto/mountain.mp4">
+        <!-- VIDEO SMART CITY (FIXED) -->
+        <source src="https://cdn.pixabay.com/vimeo/458187743/city-44354.mp4?width=1280&hash=5d3c1e6c" type="video/mp4">
     </video>
 
     <div class="overlay"></div>
@@ -194,7 +196,8 @@ new Chart(document.getElementById('chart'), {
     data: {
         labels: ['Trafik','Siguri','Energji','Mjedis'],
         datasets: [{
-            data: [80,70,85,75]
+            data: [80,70,85,75],
+            backgroundColor: ['#38bdf8','#22c55e','#f59e0b','#ef4444']
         }]
     }
 });

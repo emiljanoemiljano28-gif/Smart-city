@@ -3,92 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart City PRO</title>
+<title>Smart City Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #0f172a;
-    color: white;
+    margin:0;
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
 }
 
 header {
-    background: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover no-repeat;
-    height: 100vh;
-    position: relative;
+    background:#020617;
+    padding:20px;
+    text-align:center;
+    font-size:22px;
+    color:#38bdf8;
 }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
+.container {
+    padding:20px;
 }
 
-.header-content {
-    position: relative;
-    text-align: center;
-    top: 40%;
+select {
+    padding:10px;
+    border-radius:8px;
 }
 
-.header-content h1 {
-    font-size: 60px;
-    text-shadow: 0 0 30px #38bdf8;
-}
-
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-h2 {
-    color: #38bdf8;
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
 }
 
 .card {
-    background: #1e293b;
-    margin: 15px;
-    padding: 20px;
-    width: 260px;
-    border-radius: 12px;
-    transition: 0.3s;
+    background:#1e293b;
+    padding:15px;
+    border-radius:12px;
 }
 
-.card:hover {
-    transform: scale(1.1);
-}
-
-.gallery img {
-    width: 280px;
-    margin: 10px;
-    border-radius: 10px;
-}
+h2 {color:#38bdf8;}
 
 iframe {
-    width: 90%;
-    height: 400px;
-    border-radius: 10px;
+    width:100%;
+    height:300px;
+    border-radius:10px;
+}
+
+.city img {
+    width:100%;
+    border-radius:10px;
 }
 
 button {
-    padding: 12px 25px;
-    background: #38bdf8;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-}
-
-footer {
-    background: black;
-    padding: 20px;
+    padding:10px;
+    background:#38bdf8;
+    border:none;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
 }
 </style>
 </head>
@@ -96,153 +71,139 @@ footer {
 <body>
 
 <header>
-<div class="overlay"></div>
-<div class="header-content">
-    <h1>🌆 SMART CITY PRO</h1>
-    <p>Teknologji Informacioni dhe Komunikimi</p>
-</div>
+🌆 SMART CITY DASHBOARD  
+<br>
+<small>Teknologji Informacioni dhe Komunikimi</small>
 </header>
 
-<section>
-<h2>Çfarë është Smart City?</h2>
-<p>
-Smart City përdor teknologji për të menaxhuar trafikun, energjinë dhe sigurinë në mënyrë inteligjente.
-</p>
-</section>
+<div class="container">
 
-<section>
-<h2>Teknologjitë kryesore</h2>
-<div class="cards">
-<div class="card">📡 IoT</div>
-<div class="card">🤖 AI</div>
-<div class="card">☁️ Cloud</div>
-<div class="card">📊 Big Data</div>
+<select onchange="changeCity(this.value)">
+<option value="tirana">Tirana</option>
+<option value="tokyo">Tokyo</option>
+<option value="newyork">New York</option>
+<option value="shanghai">Shanghai</option>
+</select>
+
+<div class="grid">
+
+<div class="card">
+<h2>🗺️ Harta</h2>
+<iframe id="map" src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
 </div>
-</section>
 
-<section>
-<h2>📊 Grafik LIVE</h2>
+<div class="card">
+<h2>🌦️ Moti</h2>
+<p id="weather">Loading...</p>
+</div>
+
+<div class="card">
+<h2>📊 Analizë</h2>
 <canvas id="chart"></canvas>
-</section>
+</div>
 
-<section>
-<h2>🗺️ Harta live (Google Maps)</h2>
-<div id="map" style="width:90%;height:400px;margin:auto;border-radius:10px;"></div>
-</section>
+<div class="card">
+<h2>🔔 Njoftime</h2>
+<button onclick="notify()">Dërgo Njoftim</button>
+</div>
 
-<section>
-<h2>🌦️ Mot live</h2>
-<div id="weather">Duke ngarkuar...</div>
-</section>
+</div>
 
-<section>
-<h2>🚗 Trafiku live</h2>
-<p id="traffic"></p>
-</section>
+<br>
 
-<section>
-<h2>🔊 Audio</h2>
-<button onclick="speak()">Degjo</button>
-</section>
+<h2>🌆 Qytete Smart</h2>
 
-<section>
-<h2>🔔 Njoftime live</h2>
-<button onclick="notifyUser()">Test Notification</button>
-</section>
+<div class="grid">
 
-<footer>
-<p>Smart City Project 🚀</p>
-</footer>
+<div class="card city">
+<img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
+<h3>Shanghai</h3>
+<p>Qytet lider në AI dhe monitorim inteligjent të trafikut me kamera dhe sensorë.</p>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="card city">
+<img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26">
+<h3>Tokyo</h3>
+<p>Sistem transporti ultra i avancuar dhe automatizim i shërbimeve urbane.</p>
+</div>
+
+<div class="card city">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+<h3>New York</h3>
+<p>Përdor Big Data për energji, trafik dhe planifikim urban inteligjent.</p>
+</div>
+
+<div class="card city">
+<img src="https://images.unsplash.com/photo-1555992336-03a23c6c7e76">
+<h3>Tirana</h3>
+<p>Zhvillim me ndriçim LED, kamera sigurie dhe projekte Smart City.</p>
+</div>
+
+</div>
+
+</div>
 
 <script>
-// 📊 GRAFIK LIVE
+
+// 📊 GRAFIK
 let chart = new Chart(document.getElementById('chart'), {
-type: 'bar',
-data: {
-labels: ['Trafik','Siguri','Energji','Mjedis'],
-datasets: [{
-label: "Smart Data",
+type:'bar',
+data:{
+labels:['Trafik','Siguri','Energji','Mjedis'],
+datasets:[{
+label:"Performanca",
 data:[80,70,85,75]
 }]
 }
 });
 
+// 🌍 QYTETET
+let cities = {
+tirana:{lat:41.33,lon:19.82,map:"Tirana"},
+tokyo:{lat:35.68,lon:139.69,map:"Tokyo"},
+newyork:{lat:40.71,lon:-74.00,map:"New York"},
+shanghai:{lat:31.23,lon:121.47,map:"Shanghai"}
+};
+
+function changeCity(city){
+let c = cities[city];
+
+// map
+document.getElementById("map").src =
+`https://maps.google.com/maps?q=${c.map}&output=embed`;
+
+// moti
+fetch(`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current_weather=true`)
+.then(r=>r.json())
+.then(d=>{
+document.getElementById("weather").innerText =
+`🌡️ ${d.current_weather.temperature}°C | 💨 ${d.current_weather.windspeed} km/h`;
+});
+}
+
+// start
+changeCity("tirana");
+
+// 🔔 NJOFTIM
+function notify(){
+if(Notification.permission==="granted"){
+new Notification("Smart City Alert 🚨",{body:"Ndryshim në trafik!"});
+}else{
+Notification.requestPermission();
+}
+}
+
+// 📊 UPDATE LIVE
 setInterval(()=>{
-chart.data.datasets[0].data = [
-Math.floor(Math.random()*100),
-Math.floor(Math.random()*100),
-Math.floor(Math.random()*100),
-Math.floor(Math.random()*100)
+chart.data.datasets[0].data=[
+Math.random()*100,
+Math.random()*100,
+Math.random()*100,
+Math.random()*100
 ];
 chart.update();
 },3000);
 
-
-// 🌦️ MOT LIVE
-fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
-.then(res=>res.json())
-.then(data=>{
-document.getElementById("weather").innerHTML =
-`🌡️ Temp: ${data.current_weather.temperature}°C <br>
-💨 Era: ${data.current_weather.windspeed} km/h`;
-});
-
-
-// 🚗 TRAFIK SIMULIM
-setInterval(()=>{
-let s=["Normal","I rënduar","Shumë i rënduar"];
-document.getElementById("traffic").innerText =
-"🚗 "+s[Math.floor(Math.random()*3)];
-},2000);
-
-
-// 🔊 AUDIO
-function speak(){
-let msg=new SpeechSynthesisUtterance("Smart City është e ardhmja");
-speechSynthesis.speak(msg);
-}
-
-
-// 🔔 NOTIFICATION REAL
-function notifyUser() {
-if (Notification.permission === "granted") {
-    new Notification("🚨 Smart City Alert!", {
-        body: "Trafiku është rënduar në Tiranë!"
-    });
-}
-}
-
-if (Notification.permission !== "granted") {
-Notification.requestPermission();
-}
-
-setInterval(()=>{
-notifyUser();
-},15000);
-
-
-// 🗺️ GOOGLE MAPS
-function initMap() {
-const tirana = { lat: 41.3275, lng: 19.8187 };
-
-const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
-    center: tirana,
-});
-
-new google.maps.Marker({
-    position: tirana,
-    map: map,
-    title: "Tirana Smart City",
-});
-}
-</script>
-
-<!-- ⚠️ VENDOS API KEY KETU -->
-<script async
-src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 </script>
 
 </body>

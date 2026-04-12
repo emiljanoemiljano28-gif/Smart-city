@@ -3,84 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart City</title>
+<title>Smart City Ultimate</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white;}
-header{background:url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover;height:100vh;position:relative;}
-.overlay{position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.6);}
-.header-content{text-align:center;position:relative;top:40%;}
-.header-content h1{font-size:65px;text-shadow:0 0 40px #38bdf8;}
+body{margin:0;font-family:Arial;background:#0f172a;color:white;scroll-behavior:smooth;}
+nav{position:fixed;width:100%;background:#020617;padding:10px;z-index:1000;text-align:center;}
+nav a{color:white;margin:10px;text-decoration:none;}
+nav a:hover{color:#38bdf8;}
 
-section{padding:70px 20px;text-align:center;}
+header{
+background:url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+header h1{font-size:70px;text-shadow:0 0 40px #38bdf8;}
+
+section{padding:80px 20px;text-align:center;}
 h2{color:#38bdf8;}
 
 .cards{display:flex;flex-wrap:wrap;justify-content:center;}
-.card{background:#1e293b;margin:15px;padding:25px;width:280px;border-radius:15px;}
+.card{background:#1e293b;margin:15px;padding:20px;width:260px;border-radius:12px;transition:0.4s;}
+.card:hover{transform:scale(1.1);}
 
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
 .gallery img{width:100%;border-radius:15px;}
 
 iframe{width:90%;height:350px;border-radius:10px;}
 
-footer{background:black;padding:20px;}
 button{padding:10px 20px;background:#38bdf8;border:none;border-radius:10px;color:white;}
+
+footer{background:black;padding:20px;text-align:center;}
 </style>
 </head>
 
 <body>
 
+<nav>
+<a href="#hyrje">Hyrje</a>
+<a href="#qytete">Qytete</a>
+<a href="#krahasim">Krahasim</a>
+<a href="#future">E ardhmja</a>
+</nav>
+
 <header>
-<div class="overlay"></div>
-<div class="header-content">
 <h1>🌆 SMART CITY</h1>
-<p>Tekonlogji informacioni dhe komunikimi</p>
-</div>
 </header>
 
-<section>
+<section id="hyrje">
 <h2>📖 Hyrje</h2>
 <p>
-Smart City është një koncept modern i zhvillimit urban që përdor teknologji të avancuara për të përmirësuar cilësinë e jetës së qytetarëve.
-Në një qytet inteligjent, të dhënat mblidhen dhe analizohen në kohë reale për të optimizuar trafikun, energjinë dhe shërbimet publike.
-Ky koncept është bërë shumë i rëndësishëm në shekullin XXI për shkak të rritjes së popullsisë dhe urbanizimit.
+Smart City është një koncept modern që përdor teknologji të avancuara për të përmirësuar jetën e qytetarëve.
+Ky sistem përfshin përdorimin e sensorëve, inteligjencës artificiale dhe analizës së të dhënave.
 </p>
 </section>
 
 <section>
-<h2>📜 Evolucioni i Qyteteve</h2>
-<p>
-Në të kaluarën, qytetet ishin struktura të thjeshta me pak teknologji dhe me menaxhim manual të shërbimeve.
-Me kalimin e kohës dhe zhvillimin industrial, qytetet u zgjeruan dhe u bënë më komplekse.
-Sot, me avancimin e teknologjisë digjitale, qytetet po transformohen në Smart City ku çdo sistem është i lidhur dhe inteligjent.
-Ky transformim ka ndikuar drejtpërdrejt në përmirësimin e jetës së qytetarëve dhe në zhvillimin ekonomik.
-</p>
-</section>
-
-<section>
-<h2>⚙️ Si funksionon Smart City?</h2>
-<p>
-Një Smart City funksionon përmes përdorimit të sensorëve (IoT), rrjeteve të internetit dhe sistemeve të analizës së të dhënave.
-Sensorët mbledhin informacione nga mjedisi si trafiku, ndotja dhe përdorimi i energjisë.
-Këto të dhëna analizohen nga servera dhe sisteme inteligjente, të cilat më pas marrin vendime automatike për të përmirësuar funksionimin e qytetit.
-</p>
-</section>
-
-<section>
-<h2>📊 Grafik i përmirësimit</h2>
+<h2>📊 Grafik</h2>
 <canvas id="chart"></canvas>
 </section>
 
 <section>
-<h2>🌍 Statistika</h2>
-<p>
-Studimet tregojnë se deri në vitin 2050, mbi 70% e popullsisë botërore do të jetojë në qytete.
-Përdorimi i teknologjisë Smart City mund të ulë ndotjen me deri në 30% dhe të përmirësojë efikasitetin e energjisë.
-</p>
-</section>
-
-<section>
-<h2>🗺️ Harta</h2>
+<h2>🗺️ Harta live</h2>
 <iframe src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
 </section>
 
@@ -90,59 +76,68 @@ Përdorimi i teknologjisë Smart City mund të ulë ndotjen me deri në 30% dhe 
 </section>
 
 <section>
-<h2>🚗 Trafiku</h2>
+<h2>🚗 Trafik</h2>
 <p id="traffic"></p>
 </section>
 
-<section>
-<h2>🤖 Roli i Inteligjencës Artificiale</h2>
-<p>
-Inteligjenca artificiale është një nga komponentët kryesorë të Smart City.
-Ajo përdoret për analizimin e të dhënave, kontrollin e trafikut dhe monitorimin e sigurisë.
-AI ndihmon në marrjen e vendimeve të shpejta dhe efikase.
-</p>
-</section>
+<section id="qytete">
+<h2>🌆 Qytete Smart</h2>
 
-<section>
-<h2>⚖️ Avantazhet dhe Disavantazhet</h2>
-<p>
-Avantazhet përfshijnë përmirësimin e jetës urbane, reduktimin e ndotjes dhe rritjen e sigurisë.
-Megjithatë, ekzistojnë edhe disavantazhe si kosto e lartë dhe shqetësime për privatësinë.
-</p>
-</section>
+<div class="cards">
 
-<section class="gallery">
-<h2>🌆 Qytete Smart në Botë</h2>
+<div class="card">
 <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
+<h3>Shanghai</h3>
+<p>Qytet lider në teknologji dhe AI.</p>
+</div>
+
+<div class="card">
 <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26">
+<h3>Tokyo</h3>
+<p>Transport inteligjent dhe teknologji e avancuar.</p>
+</div>
+
+<div class="card">
 <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+<h3>Dubai</h3>
+<p>Ndërtesa inteligjente dhe plane futuristike.</p>
+</div>
+
+<div class="card">
 <img src="https://images.unsplash.com/photo-1496588152823-86ff7695a68b">
+<h3>New York</h3>
+<p>Menaxhim urban me teknologji.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558980664-10a6f7c7c13d">
+<h3>Tirana</h3>
+<p>Në zhvillim drejt Smart City.</p>
+</div>
+
+</div>
 </section>
 
-<section>
-<h2>🇦🇱 Smart City në Shqipëri</h2>
-<p>
-Në Shqipëri, qytetet po fillojnë të implementojnë teknologji moderne si kamera sigurie dhe ndriçim inteligjent.
-Tirana është një nga qytetet që po bën hapa drejt këtij transformimi.
-</p>
+<section id="krahasim">
+<h2>📊 Krahasim</h2>
+<table style="margin:auto;">
+<tr><th>Qyteti</th><th>Zhvillimi</th></tr>
+<tr><td>Shanghai</td><td>Shumë i avancuar</td></tr>
+<tr><td>Tokyo</td><td>Shumë i avancuar</td></tr>
+<tr><td>Tirana</td><td>Në zhvillim</td></tr>
+</table>
 </section>
 
-<section>
-<h2>🔮 E ardhmja e qyteteve</h2>
+<section id="future">
+<h2>🔮 E ardhmja</h2>
 <p>
-Në të ardhmen, qytetet do të jenë tërësisht të automatizuara me makina autonome dhe sisteme inteligjente.
-Teknologjia do të vazhdojë të zhvillohet dhe do të ndryshojë mënyrën se si jetojmë.
+Qytetet do bëhen plotësisht automatike me makina autonome dhe AI.
 </p>
 </section>
 
 <section>
 <h2>🔊 Audio</h2>
 <button onclick="speak()">Degjo</button>
-</section>
-
-<section>
-<h2>🔔 Njoftime</h2>
-<button onclick="alert('Mirësevini në Smart City')">Kliko</button>
 </section>
 
 <footer>
@@ -160,12 +155,12 @@ data:{labels:['Trafik','Siguri','Energji'],datasets:[{data:[80,70,85]}]}
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
-document.getElementById("weather").innerText="Temperatura: "+d.current_weather.temperature+"°C";
+document.getElementById("weather").innerText="Temp: "+d.current_weather.temperature+"°C";
 });
 
 setInterval(()=>{
 let s=["Normal","I rënduar","Shumë i rënduar"];
-document.getElementById("traffic").innerText="🚗 "+s[Math.random()*3|0];
+document.getElementById("traffic").innerText=s[Math.random()*3|0];
 },2000);
 
 function speak(){

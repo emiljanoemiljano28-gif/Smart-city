@@ -11,11 +11,17 @@ body {
     font-family: Arial;
     background: #0f172a;
     color: white;
+    transition: 0.3s;
+}
+
+.light {
+    background: white;
+    color: black;
 }
 
 /* HEADER */
 header {
-    background: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover;
     height: 100vh;
     position: relative;
 }
@@ -38,198 +44,168 @@ header {
     text-shadow: 0 0 30px #38bdf8;
 }
 
+/* BUTTON MODE */
+.mode-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+/* SECTIONS */
 section {
-    padding: 60px 20px;
+    padding: 60px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
 }
 
-h2 {
-    color: #38bdf8;
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* CARDS */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    background: #1e293b;
-    margin: 15px;
-    padding: 20px;
-    width: 250px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.1);
-}
-
-/* GALERI */
-.gallery img {
-    width: 280px;
-    margin: 15px;
+/* SLIDER */
+.slider img {
+    width: 80%;
     border-radius: 15px;
-    transition: 0.4s;
-}
-
-.gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-}
-
-/* MAP */
-iframe {
-    width: 90%;
-    height: 400px;
-    border-radius: 10px;
 }
 
 /* BUTTON */
 button {
-    padding: 12px 25px;
+    padding: 10px 20px;
     background: #38bdf8;
     border: none;
     border-radius: 10px;
     color: white;
-    cursor: pointer;
 }
 
-button:hover {
-    background: #0ea5e9;
+/* CARD */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-footer {
-    background: black;
+.card {
+    background: #1e293b;
     padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
 }
 </style>
 </head>
 
 <body>
 
+<button class="mode-btn" onclick="toggleMode()">🌗 Mode</button>
+
 <header>
-    <div class="overlay"></div>
-    <div class="header-content">
-        <h1>🌆 SMART CITY</h1>
-        <p>Tekonlogji informacioni dhe komunikimi</p>
-    </div>
+<div class="overlay"></div>
+<div class="header-content">
+<h1>🌆 SMART CITY</h1>
+<p>Tekonlogji informacioni dhe komunikimi</p>
+</div>
 </header>
 
 <section>
-    <h2>Çfarë është Smart City?</h2>
-    <p>Smart City përdor teknologji moderne për të përmirësuar jetën urbane dhe për të menaxhuar burimet në mënyrë efikase.</p>
+<h2>Çfarë është Smart City?</h2>
+<p>Qytetet inteligjente përdorin teknologji moderne për të përmirësuar jetën.</p>
 </section>
 
 <section>
-    <h2>Karakteristikat</h2>
-    <div class="cards">
-        <div class="card">🚦 Trafik Inteligjent</div>
-        <div class="card">💡 Ndriçim Smart</div>
-        <div class="card">🔐 Siguri</div>
-        <div class="card">🌱 Mjedis i Pastër</div>
-    </div>
+<h2>📊 Grafik</h2>
+<canvas id="chart"></canvas>
 </section>
 
 <section>
-    <h2>📊 Grafik</h2>
-    <canvas id="chart" style="max-width:600px;margin:auto;"></canvas>
+<h2>🎞️ Slider (Qytete natën)</h2>
+<div class="slider">
+<img id="slide" src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
+</div>
 </section>
 
 <section>
-    <h2>🗺️ Harta (Tirana)</h2>
-    <iframe src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
+<h2>🗺️ Harta</h2>
+<iframe src="https://maps.google.com/maps?q=Tirana&output=embed" style="width:90%;height:300px;"></iframe>
 </section>
 
 <section>
-    <h2>🌦️ Mot live</h2>
-    <div id="weather">Duke ngarkuar...</div>
+<h2>🌦️ Mot live</h2>
+<p id="weather"></p>
 </section>
 
 <section>
-    <h2>🚗 Trafiku live</h2>
-    <p id="traffic">Duke ngarkuar...</p>
+<h2>🚗 Trafiku</h2>
+<p id="traffic"></p>
 </section>
 
 <section>
-    <h2>🤖 Inteligjenca Artificiale</h2>
-    <p>AI përdoret për analizimin e trafikut dhe automatizimin e qyteteve moderne.</p>
+<h2>🔊 Audio</h2>
+<button onclick="speak()">Degjo</button>
 </section>
 
 <section>
-    <h2>🇦🇱 Smart City në Shqipëri</h2>
-    <p>Tirana po zhvillohet me teknologji moderne dhe projekte smart.</p>
+<h2>🔔 Njoftim</h2>
+<button onclick="alert('Mirësevini në Smart City')">Kliko</button>
 </section>
-
-<section class="gallery">
-    <h2>🌆 Qytete Smart në Botë (Natën)</h2>
-
-    <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
-    <p>🇨🇳 Shanghai, Kina</p>
-
-    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26">
-    <p>🇯🇵 Tokyo, Japoni</p>
-
-    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
-    <p>🇦🇪 Dubai</p>
-
-    <img src="https://images.unsplash.com/photo-1496588152823-86ff7695a68b">
-    <p>🇺🇸 New York</p>
-
-    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
-    <p>🇬🇧 Londër</p>
-
-    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
-    <p>🇫🇷 Paris</p>
-</section>
-
-<section>
-    <h2>🔊 Audio</h2>
-    <button onclick="speak()">Degjo mesazhin</button>
-</section>
-
-<section>
-    <h2>🔔 Njoftim</h2>
-    <button onclick="alert('Mirësevini në Smart City 🚀')">Kliko</button>
-</section>
-
-<footer>
-    <p>Tekonlogji informacioni dhe komunikimi</p>
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+// DARK MODE
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+// CHART
 new Chart(document.getElementById('chart'), {
-    type: 'bar',
-    data: {
-        labels: ['Trafik','Siguri','Energji','Mjedis'],
-        datasets: [{
-            data: [80,70,85,75],
-            backgroundColor: ['#38bdf8','#22c55e','#f59e0b','#ef4444']
-        }]
-    }
+type:'bar',
+data:{
+labels:['Trafik','Siguri','Energji'],
+datasets:[{data:[80,70,85]}]
+}
 });
 
+// WEATHER
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
-.then(res => res.json())
-.then(data => {
-    document.getElementById("weather").innerText =
-    "Temperatura: " + data.current_weather.temperature + "°C";
+.then(r=>r.json())
+.then(d=>{
+document.getElementById("weather").innerText="Temp: "+d.current_weather.temperature+"°C";
 });
 
+// TRAFFIC
 setInterval(()=>{
- let status=["Normal","I rënduar","Shumë i rënduar"];
- document.getElementById("traffic").innerText =
- "🚗 Trafiku: "+status[Math.floor(Math.random()*3)];
+let s=["Normal","I rënduar","Shumë i rënduar"];
+document.getElementById("traffic").innerText=s[Math.random()*3|0];
+},2000);
+
+// AUDIO
+function speak(){
+speechSynthesis.speak(new SpeechSynthesisUtterance("Smart City është e ardhmja"));
+}
+
+// SLIDER
+let imgs=[
+"https://images.unsplash.com/photo-1549692520-acc6669e2f0c",
+"https://images.unsplash.com/photo-1503899036084-c55cdd92da26",
+"https://images.unsplash.com/photo-1494526585095-c41746248156"
+];
+
+let i=0;
+setInterval(()=>{
+i=(i+1)%imgs.length;
+document.getElementById("slide").src=imgs[i];
 },3000);
 
-function speak(){
- let msg=new SpeechSynthesisUtterance("Mirësevini në Smart City");
- speechSynthesis.speak(msg);
+// SCROLL ANIMATION
+window.addEventListener("scroll",()=>{
+document.querySelectorAll("section").forEach(s=>{
+if(window.scrollY > s.offsetTop-400){
+s.classList.add("show");
 }
+});
+});
 </script>
 
 </body>

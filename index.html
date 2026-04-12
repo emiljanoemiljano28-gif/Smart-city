@@ -13,7 +13,7 @@ body {
     color: white;
 }
 
-/* HEADER ME FOTO */
+/* HEADER */
 header {
     background: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover no-repeat;
     height: 100vh;
@@ -38,7 +38,6 @@ header {
     text-shadow: 0 0 30px #38bdf8;
 }
 
-/* SECTIONS */
 section {
     padding: 60px 20px;
     text-align: center;
@@ -70,9 +69,15 @@ h2 {
 
 /* GALERI */
 .gallery img {
-    width: 250px;
-    margin: 10px;
-    border-radius: 10px;
+    width: 280px;
+    margin: 15px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 /* MAP */
@@ -106,21 +111,16 @@ footer {
 <body>
 
 <header>
-
     <div class="overlay"></div>
-
     <div class="header-content">
         <h1>🌆 SMART CITY</h1>
         <p>Tekonlogji informacioni dhe komunikimi</p>
     </div>
-
 </header>
 
 <section>
     <h2>Çfarë është Smart City?</h2>
-    <p>
-    Smart City përdor teknologji moderne për të përmirësuar jetën urbane dhe për të menaxhuar burimet në mënyrë efikase.
-    </p>
+    <p>Smart City përdor teknologji moderne për të përmirësuar jetën urbane dhe për të menaxhuar burimet në mënyrë efikase.</p>
 </section>
 
 <section>
@@ -164,10 +164,25 @@ footer {
 </section>
 
 <section class="gallery">
-    <h2>📸 Galeri</h2>
-    <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade">
-    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df">
-    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b">
+    <h2>🌆 Qytete Smart në Botë (Natën)</h2>
+
+    <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
+    <p>🇨🇳 Shanghai, Kina</p>
+
+    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26">
+    <p>🇯🇵 Tokyo, Japoni</p>
+
+    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+    <p>🇦🇪 Dubai</p>
+
+    <img src="https://images.unsplash.com/photo-1496588152823-86ff7695a68b">
+    <p>🇺🇸 New York</p>
+
+    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
+    <p>🇬🇧 Londër</p>
+
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
+    <p>🇫🇷 Paris</p>
 </section>
 
 <section>

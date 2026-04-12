@@ -6,40 +6,146 @@
 <title>Smart City</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white;}
-header{background:url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;}
-header h1{font-size:60px;text-shadow:0 0 30px #38bdf8;}
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:white;
+scroll-behavior:smooth;
+transition:0.3s;
+}
 
-section{padding:60px 20px;text-align:center;}
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+justify-content:space-between;
+padding:10px 20px;
+z-index:1000;
+}
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+nav a:hover{color:#38bdf8;}
+
+/* DARK MODE */
+.light{background:white;color:black;}
+
+/* HEADER */
+header{
+background:url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+header h1{
+font-size:70px;
+text-shadow:0 0 40px #38bdf8;
+animation:fadeIn 2s;
+}
+
+/* SECTION */
+section{
+padding:80px 20px;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+section.show{opacity:1;transform:translateY(0);}
+
 h2{color:#38bdf8;}
 
+/* CARDS */
 .cards{display:flex;flex-wrap:wrap;justify-content:center;}
-.card{background:#1e293b;margin:15px;padding:20px;width:280px;border-radius:12px;}
+.card{
+background:#1e293b;
+margin:15px;
+padding:20px;
+border-radius:12px;
+width:250px;
+transition:0.4s;
+}
+.card:hover{transform:scale(1.1);}
 
-.card img{width:100%;border-radius:10px;}
+/* SLIDER */
+.slider img{
+width:80%;
+border-radius:15px;
+}
 
-.gallery img{width:250px;margin:10px;border-radius:10px;}
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:0.4s;
+}
+.gallery img:hover{transform:scale(1.1);}
 
-iframe{width:90%;height:350px;border-radius:10px;}
+/* BUTTON */
+button{
+padding:10px 20px;
+background:#38bdf8;
+border:none;
+border-radius:10px;
+color:white;
+cursor:pointer;
+}
 
-table{width:90%;margin:auto;border-collapse:collapse;}
-td,th{border:1px solid white;padding:10px;}
+/* FOOTER */
+footer{background:black;padding:20px;text-align:center;}
 
-footer{background:black;padding:20px;}
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+<div>🌆 Smart City</div>
+<div>
+<a href="#info">Info</a>
+<a href="#tech">Teknologji</a>
+<a href="#gallery">Galeri</a>
+<a href="#future">E ardhmja</a>
+<button onclick="toggleMode()">🌗</button>
+</div>
+</nav>
+
 <header>
-<h1>🌆 SMART CITY</h1>
+<h1>SMART CITY</h1>
 </header>
 
-<section>
-<h2>📖 Hyrje</h2>
+<section id="info">
+<h2>📖 Çfarë është Smart City?</h2>
 <p>
-Smart City përdor teknologji për të përmirësuar jetën urbane dhe për të menaxhuar burimet në mënyrë efikase.
+Smart City është një qytet që përdor teknologji moderne për të përmirësuar jetën e qytetarëve.
+Ai përdor sensorë, AI dhe analiza të dhënash për të optimizuar trafikun, energjinë dhe sigurinë.
 </p>
+</section>
+
+<section id="tech">
+<h2>⚙️ Teknologjitë</h2>
+<div class="cards">
+<div class="card">📡 IoT</div>
+<div class="card">🤖 AI</div>
+<div class="card">☁️ Cloud</div>
+<div class="card">📊 Big Data</div>
+</div>
 </section>
 
 <section>
@@ -48,101 +154,39 @@ Smart City përdor teknologji për të përmirësuar jetën urbane dhe për të 
 </section>
 
 <section>
-<h2>🗺️ Harta live (Tirana)</h2>
-<iframe src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
+<h2>🎞️ Slider</h2>
+<div class="slider">
+<img id="slide" src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
+</div>
 </section>
 
-<section>
-<h2>🌦️ Mot live</h2>
-<p id="weather"></p>
-</section>
-
-<section>
-<h2>🚗 Trafik</h2>
-<p id="traffic"></p>
-</section>
-
-<!-- QYTETET -->
-<section>
-<h2>🌆 Qytete Smart dhe zhvillimi i tyre</h2>
-
-<div class="cards">
-
-<div class="card">
+<section id="gallery">
+<h2>🌆 Galeri</h2>
+<div class="gallery">
 <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
-<h3>Shanghai</h3>
-<p>Shanghai përdor AI dhe sensorë për trafik dhe siguri.</p>
-</div>
-
-<div class="card">
 <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26">
-<h3>Tokyo</h3>
-<p>Tokyo ka transport shumë të avancuar dhe sistem inteligjent.</p>
-</div>
-
-<div class="card">
 <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
-<h3>Dubai</h3>
-<p>Dubai përdor ndërtesa inteligjente dhe teknologji moderne.</p>
-</div>
-
-<div class="card">
 <img src="https://images.unsplash.com/photo-1496588152823-86ff7695a68b">
-<h3>New York</h3>
-<p>New York përdor teknologji për menaxhimin urban.</p>
-</div>
-
-<div class="card">
 <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
-<h3>London</h3>
-<p>Londra ka transport dhe sisteme smart.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1558980664-10a6f7c7c13d">
-<h3>Tirana</h3>
-<p>Tirana po zhvillohet me teknologji moderne dhe kamera sigurie.</p>
-</div>
-
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
 </div>
 </section>
 
-<!-- KRAHASIM -->
+<section id="future">
+<h2>🔮 E ardhmja</h2>
+<p>
+Qytetet do bëhen plotësisht automatike me makina autonome dhe inteligjencë artificiale.
+</p>
+</section>
+
 <section>
-<h2>📊 Krahasim i qyteteve</h2>
+<h2>🔊 Audio</h2>
+<button onclick="speak()">Degjo</button>
+</section>
 
-<table>
-<tr>
-<th>Qyteti</th>
-<th>Teknologji</th>
-<th>Zhvillimi</th>
-</tr>
-
-<tr>
-<td>Shanghai</td>
-<td>AI, IoT</td>
-<td>Shumë i avancuar</td>
-</tr>
-
-<tr>
-<td>Tokyo</td>
-<td>Transport smart</td>
-<td>Shumë i avancuar</td>
-</tr>
-
-<tr>
-<td>Dubai</td>
-<td>Ndërtesa smart</td>
-<td>Modern</td>
-</tr>
-
-<tr>
-<td>Tirana</td>
-<td>Kamera, LED</td>
-<td>Në zhvillim</td>
-</tr>
-
-</table>
+<section>
+<h2>🔔 Njoftime</h2>
+<button onclick="alert('Mirësevini në Smart City')">Kliko</button>
 </section>
 
 <footer>
@@ -152,21 +196,35 @@ Smart City përdor teknologji për të përmirësuar jetën urbane dhe për të 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+function toggleMode(){document.body.classList.toggle("light");}
+
 new Chart(document.getElementById('chart'), {
 type:'bar',
 data:{labels:['Trafik','Siguri','Energji'],datasets:[{data:[80,70,85]}]}
 });
 
-fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
-.then(r=>r.json())
-.then(d=>{
-document.getElementById("weather").innerText="Temperatura: "+d.current_weather.temperature+"°C";
-});
-
+let imgs=[
+"https://images.unsplash.com/photo-1549692520-acc6669e2f0c",
+"https://images.unsplash.com/photo-1503899036084-c55cdd92da26",
+"https://images.unsplash.com/photo-1494526585095-c41746248156"
+];
+let i=0;
 setInterval(()=>{
-let s=["Normal","I rënduar","Shumë i rënduar"];
-document.getElementById("traffic").innerText=s[Math.random()*3|0];
-},2000);
+i=(i+1)%imgs.length;
+document.getElementById("slide").src=imgs[i];
+},3000);
+
+function speak(){
+speechSynthesis.speak(new SpeechSynthesisUtterance("Smart City është e ardhmja"));
+}
+
+window.addEventListener("scroll",()=>{
+document.querySelectorAll("section").forEach(sec=>{
+if(window.scrollY>sec.offsetTop-400){
+sec.classList.add("show");
+}
+});
+});
 </script>
 
 </body>

@@ -18,7 +18,7 @@ body {
 /* HEADER */
 header {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://i.imgur.com/9YQZ6Gv.jpg') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1494526585095-c41746248156') center/cover no-repeat;
     height:45vh;
     display:flex;
     align-items:center;
@@ -57,17 +57,6 @@ iframe {
     border-radius:10px;
 }
 
-.city img {
-    width:100%;
-    border-radius:10px;
-}
-
-/* fallback nëse foto nuk hapet */
-.city img {
-    background:#111;
-    min-height:180px;
-}
-
 button {
     padding:10px;
     background:#38bdf8;
@@ -75,6 +64,18 @@ button {
     border-radius:10px;
     color:white;
     cursor:pointer;
+}
+
+/* QYTETE FIX */
+.city {
+    min-height:200px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:15px;
+    border-radius:12px;
+    background-size:cover;
+    background-position:center;
 }
 </style>
 </head>
@@ -119,31 +120,75 @@ button {
 <h2>🌆 Qytete Smart</h2>
 <div class="grid">
 
-<div class="card city">
-<img src="https://i.imgur.com/5u6KpYF.jpg">
+<div class="card city" style="background:url('https://images.unsplash.com/photo-1532236204992-f5e85c024202') center/cover;">
 <h3>Shanghai</h3>
 <p>AI dhe sensorë për menaxhimin e trafikut.</p>
 </div>
 
-<div class="card city">
-<img src="https://i.imgur.com/2pJgk8T.jpg">
+<div class="card city" style="background:url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c') center/cover;">
 <h3>Tokyo</h3>
 <p>Transport publik inteligjent dhe automatizim.</p>
 </div>
 
-<div class="card city">
-<img src="https://i.imgur.com/3ZQ3Z5K.jpg">
+<div class="card city" style="background:url('https://images.unsplash.com/photo-1494526585095-c41746248156') center/cover;">
 <h3>New York</h3>
 <p>Big Data për energji dhe planifikim urban.</p>
 </div>
 
-<div class="card city">
-<img src="https://i.imgur.com/9YQZ6Gv.jpg">
+<div class="card city" style="background:url('https://images.unsplash.com/photo-1555992336-03a23c6c7e76') center/cover;">
 <h3>Tirana</h3>
 <p>Zhvillim me ndriçim LED dhe sisteme inteligjente.</p>
 </div>
 
 </div>
+
+<!-- TRANSPORT -->
+<h2>🚗 Transporti Inteligjent</h2>
+<div class="grid">
+<div class="card">📡 Trafiku menaxhohet me sensorë inteligjentë.</div>
+<div class="card">📱 Orar transporti në kohë reale.</div>
+<div class="card">🚲⚡ Automjete elektrike.</div>
+<div class="card">🗺️ Navigim dhe trafik live.</div>
+</div>
+
+<!-- ENERGJI -->
+<h2>🌱 Energjia & Mjedisi</h2>
+<div class="grid">
+<div class="card">💡 Ndriçim inteligjent.</div>
+<div class="card">☀️ Energji diellore.</div>
+<div class="card">🌫️ Monitorim i ajrit.</div>
+<div class="card">🌳 Hapësira të gjelbra.</div>
+</div>
+
+<!-- SHENDET -->
+<h2>🏥 Shëndetësia & Siguria</h2>
+<div class="grid">
+<div class="card">💻 Shërbime mjekësore online.</div>
+<div class="card">📹 Kamera sigurie.</div>
+<div class="card">🚨 Njoftime emergjence.</div>
+</div>
+
+<!-- SHERBIME -->
+<h2>📱 Shërbime Digjitale</h2>
+<div class="grid">
+<div class="card">💳 Pagesa online.</div>
+<div class="card">🛠️ Raportim problemesh.</div>
+<div class="card">📶 Wi-Fi publik.</div>
+</div>
+
+<!-- HARTA EXTRA -->
+<h2>🗺️ Shërbime në qytet</h2>
+<iframe src="https://maps.google.com/maps?q=spital tirane&output=embed"></iframe>
+
+<!-- FEEDBACK -->
+<h2>🗣️ Feedback</h2>
+<form onsubmit="sendFeedback(event)">
+<input type="text" id="name" placeholder="Emri" required><br><br>
+<textarea id="msgInput" placeholder="Sugjerimi..." required></textarea><br><br>
+<button type="submit">Dërgo</button>
+</form>
+
+<div id="comments"></div>
 
 </div>
 
@@ -158,7 +203,7 @@ d.current_weather.temperature+"°C";
 });
 
 // GRAFIK
-new Chart(document.getElementById('chart'),{
+let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
 labels:['Trafik','Siguri','Energji','Mjedis'],
@@ -173,6 +218,13 @@ new Notification("Smart City",{body:"Update në qytet!"});
 }else{
 Notification.requestPermission();
 }
+}
+
+// FEEDBACK
+function sendFeedback(e){
+e.preventDefault();
+document.getElementById("comments").innerHTML +=
+`<p><b>${document.getElementById("name").value}</b>: ${document.getElementById("msgInput").value}</p>`;
 }
 
 </script>

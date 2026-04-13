@@ -15,14 +15,15 @@ body {
     color:white;
 }
 
-/* HEADER */
+/* ✅ HEADER ME FOTO TIRANE (FIX) */
 header {
-    background: url('https://source.unsplash.com/1600x900/?smart-city,night') center/cover no-repeat;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Tirana_night.jpg/1280px-Tirana_night.jpg') center/cover no-repeat;
     height:45vh;
     display:flex;
     align-items:center;
     justify-content:center;
     position:relative;
+    text-align:center;
 }
 
 header::after {
@@ -36,12 +37,16 @@ header::after {
 .header-content {
     position:relative;
     z-index:2;
-    text-align:center;
 }
 
 .header-content h1 {
     font-size:55px;
     text-shadow:0 0 20px #38bdf8;
+    margin:0;
+}
+
+.header-content p {
+    font-size:22px;
 }
 
 /* LAYOUT */
@@ -79,6 +84,13 @@ button {
     border-radius:10px;
     color:white;
     cursor:pointer;
+}
+
+input, textarea {
+    width:80%;
+    padding:10px;
+    border-radius:8px;
+    border:none;
 }
 </style>
 </head>
@@ -190,17 +202,18 @@ button {
 <!-- FEEDBACK -->
 <h2>🗣️ Feedback</h2>
 <form onsubmit="sendFeedback(event)">
-<input type="text" placeholder="Emri" required><br><br>
-<textarea placeholder="Sugjerimi..." required></textarea><br><br>
+<input type="text" id="name" placeholder="Emri" required><br><br>
+<textarea id="msgInput" placeholder="Sugjerimi..." required></textarea><br><br>
 <button type="submit">Dërgo</button>
 </form>
-<p id="msg"></p>
+
+<div id="comments"></div>
 
 </div>
 
 <script>
 
-// MOTI
+// 🌦️ MOTI
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
@@ -208,7 +221,7 @@ document.getElementById("weather").innerText =
 d.current_weather.temperature+"°C";
 });
 
-// GRAFIK
+// 📊 GRAFIK
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
@@ -228,7 +241,7 @@ Math.random()*100
 chart.update();
 },3000);
 
-// NJOFTIM
+// 🔔 NJOFTIME
 function notify(){
 if(Notification.permission==="granted"){
 new Notification("Smart City",{body:"Update në qytet!"});
@@ -237,11 +250,34 @@ Notification.requestPermission();
 }
 }
 
-// FEEDBACK
+// 💾 FEEDBACK (DB BACKEND)
 function sendFeedback(e){
 e.preventDefault();
-document.getElementById("msg").innerText="✅ Faleminderit!";
+
+let name=document.getElementById("name").value;
+let msg=document.getElementById("msgInput").value;
+
+fetch("http://localhost:3000/feedback",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({name,msg})
+})
+.then(()=>loadFeedback());
 }
+
+function loadFeedback(){
+fetch("http://localhost:3000/feedback")
+.then(res=>res.json())
+.then(data=>{
+let html="";
+data.forEach(d=>{
+html+=`<p><b>${d.name}</b>: ${d.msg}</p>`;
+});
+document.getElementById("comments").innerHTML=html;
+});
+}
+
+loadFeedback();
 
 </script>
 

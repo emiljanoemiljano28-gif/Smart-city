@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart City Dashboard</title>
+<title>Smart City</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -15,15 +15,14 @@ body {
     color:white;
 }
 
-/* 🔥 HEADER FIX (NO RANDOM IMAGES) */
+/* HEADER */
 header {
     background: url('https://source.unsplash.com/1600x900/?smart-city,night') center/cover no-repeat;
     height:45vh;
-    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
+    position:relative;
 }
 
 header::after {
@@ -32,38 +31,25 @@ header::after {
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.6);
-    top:0;
-    left:0;
 }
 
 .header-content {
     position:relative;
     z-index:2;
+    text-align:center;
 }
 
 .header-content h1 {
     font-size:55px;
-    margin:0;
-    text-shadow: 0 0 20px #38bdf8;
-}
-
-.header-content p {
-    font-size:22px;
+    text-shadow:0 0 20px #38bdf8;
 }
 
 /* LAYOUT */
-.container {
-    padding:20px;
-}
-
-select {
-    padding:10px;
-    border-radius:8px;
-}
+.container {padding:20px;}
 
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
 }
 
@@ -73,7 +59,7 @@ select {
     border-radius:12px;
 }
 
-h2 {color:#38bdf8;}
+h2 {color:#38bdf8; text-align:center;}
 
 iframe {
     width:100%;
@@ -100,26 +86,20 @@ button {
 <body>
 
 <header>
-    <div class="header-content">
-        <h1>🌆 SMART CITY DASHBOARD</h1>
-        <p>Teknologji Informacioni dhe Komunikimi</p>
-    </div>
+<div class="header-content">
+<h1>🌆 SMART CITY</h1>
+<p>Teknologji Informacioni dhe Komunikimi</p>
+</div>
 </header>
 
 <div class="container">
 
-<select onchange="changeCity(this.value)">
-<option value="tirana">Tirana</option>
-<option value="tokyo">Tokyo</option>
-<option value="newyork">New York</option>
-<option value="shanghai">Shanghai</option>
-</select>
-
+<!-- DASHBOARD -->
 <div class="grid">
 
 <div class="card">
 <h2>🗺️ Harta</h2>
-<iframe id="map" src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
+<iframe src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
 </div>
 
 <div class="card">
@@ -128,102 +108,116 @@ button {
 </div>
 
 <div class="card">
-<h2>📊 Analizë</h2>
+<h2>📊 Grafik</h2>
 <canvas id="chart"></canvas>
 </div>
 
 <div class="card">
 <h2>🔔 Njoftime</h2>
-<button onclick="notify()">Dërgo Njoftim</button>
+<button onclick="notify()">Kliko</button>
 </div>
 
 </div>
 
-<br>
-
+<!-- QYTETE -->
 <h2>🌆 Qytete Smart</h2>
-
 <div class="grid">
 
 <div class="card city">
 <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
 <h3>Shanghai</h3>
-<p>Qytet lider në AI dhe monitorim inteligjent të trafikut me kamera dhe sensorë.</p>
+<p>AI dhe sensorë për menaxhimin e trafikut.</p>
 </div>
 
 <div class="card city">
 <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26">
 <h3>Tokyo</h3>
-<p>Sistem transporti ultra i avancuar dhe automatizim i shërbimeve urbane.</p>
+<p>Transport publik inteligjent dhe automatizim.</p>
 </div>
 
 <div class="card city">
 <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
 <h3>New York</h3>
-<p>Përdor Big Data për energji, trafik dhe planifikim urban inteligjent.</p>
+<p>Big Data për energji dhe planifikim urban.</p>
 </div>
 
 <div class="card city">
 <img src="https://images.unsplash.com/photo-1555992336-03a23c6c7e76">
 <h3>Tirana</h3>
-<p>Tirana po zhvillohet me ndriçim LED, kamera sigurie dhe sisteme inteligjente urbane.</p>
+<p>Zhvillim me ndriçim LED dhe sisteme inteligjente.</p>
 </div>
 
 </div>
+
+<!-- TRANSPORT -->
+<h2>🚗 Transporti Inteligjent</h2>
+<div class="grid">
+<div class="card">Sensorë trafiku dhe menaxhim automatik.</div>
+<div class="card">Orar transporti në kohë reale.</div>
+<div class="card">Makina dhe biçikleta elektrike.</div>
+<div class="card">Harta e trafikut live.</div>
+</div>
+
+<!-- ENERGJI -->
+<h2>🌱 Energjia & Mjedisi</h2>
+<div class="grid">
+<div class="card">Ndriçim inteligjent.</div>
+<div class="card">Energjia diellore.</div>
+<div class="card">Monitorim i ajrit.</div>
+<div class="card">Parqe dhe hapësira të gjelbra.</div>
+</div>
+
+<!-- SHENDET -->
+<h2>🏥 Shëndetësia & Siguria</h2>
+<div class="grid">
+<div class="card">Shërbime online mjekësore.</div>
+<div class="card">Kamera sigurie.</div>
+<div class="card">Njoftime emergjence.</div>
+</div>
+
+<!-- SHERBIME -->
+<h2>📱 Shërbime Digjitale</h2>
+<div class="grid">
+<div class="card">Pagesa online.</div>
+<div class="card">Raportim problemesh.</div>
+<div class="card">Wi-Fi publik.</div>
+</div>
+
+<!-- HARTA EXTRA -->
+<h2>🗺️ Shërbime në qytet</h2>
+<iframe src="https://maps.google.com/maps?q=spital tirane&output=embed"></iframe>
+
+<!-- FEEDBACK -->
+<h2>🗣️ Feedback</h2>
+<form onsubmit="sendFeedback(event)">
+<input type="text" placeholder="Emri" required><br><br>
+<textarea placeholder="Sugjerimi..." required></textarea><br><br>
+<button type="submit">Dërgo</button>
+</form>
+<p id="msg"></p>
 
 </div>
 
 <script>
 
-// 📊 GRAFIK
-let chart = new Chart(document.getElementById('chart'), {
-type:'bar',
-data:{
-labels:['Trafik','Siguri','Energji','Mjedis'],
-datasets:[{
-label:"Performanca (%)",
-data:[80,70,85,75]
-}]
-}
-});
-
-// 🌍 QYTETET
-let cities = {
-tirana:{lat:41.33,lon:19.82,map:"Tirana"},
-tokyo:{lat:35.68,lon:139.69,map:"Tokyo"},
-newyork:{lat:40.71,lon:-74.00,map:"New York"},
-shanghai:{lat:31.23,lon:121.47,map:"Shanghai"}
-};
-
-function changeCity(city){
-let c = cities[city];
-
-// map
-document.getElementById("map").src =
-`https://maps.google.com/maps?q=${c.map}&output=embed`;
-
-// moti
-fetch(`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current_weather=true`)
+// MOTI
+fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
 document.getElementById("weather").innerText =
-`🌡️ ${d.current_weather.temperature}°C | 💨 ${d.current_weather.windspeed} km/h`;
+d.current_weather.temperature+"°C";
 });
-}
 
-// start
-changeCity("tirana");
-
-// 🔔 NJOFTIM
-function notify(){
-if(Notification.permission==="granted"){
-new Notification("Smart City Alert 🚨",{body:"Ndryshim në trafik!"});
-}else{
-Notification.requestPermission();
+// GRAFIK
+let chart=new Chart(document.getElementById('chart'),{
+type:'bar',
+data:{
+labels:['Trafik','Siguri','Energji','Mjedis'],
+datasets:[{data:[80,70,85,75]}]
 }
-}
+});
 
-// 📊 LIVE UPDATE
+// UPDATE LIVE
 setInterval(()=>{
 chart.data.datasets[0].data=[
 Math.random()*100,
@@ -233,6 +227,21 @@ Math.random()*100
 ];
 chart.update();
 },3000);
+
+// NJOFTIM
+function notify(){
+if(Notification.permission==="granted"){
+new Notification("Smart City",{body:"Update në qytet!"});
+}else{
+Notification.requestPermission();
+}
+}
+
+// FEEDBACK
+function sendFeedback(e){
+e.preventDefault();
+document.getElementById("msg").innerText="✅ Faleminderit!";
+}
 
 </script>
 

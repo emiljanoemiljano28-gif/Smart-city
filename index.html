@@ -15,9 +15,9 @@ body {
     color:white;
 }
 
-/* ✅ HEADER ME FOTO STABILE */
+/* ✅ HEADER FIX */
 header {
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Tirana_Skyline.jpg/1280px-Tirana_Skyline.jpg') center/cover no-repeat;
+    background: url('https://picsum.photos/1600/900?random=1') center/cover no-repeat;
     height:45vh;
     display:flex;
     align-items:center;
@@ -42,11 +42,6 @@ header::after {
 .header-content h1 {
     font-size:55px;
     text-shadow:0 0 20px #38bdf8;
-    margin:0;
-}
-
-.header-content p {
-    font-size:22px;
 }
 
 /* LAYOUT */
@@ -136,68 +131,30 @@ input, textarea {
 <div class="grid">
 
 <div class="card city">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Shanghai_skyline.jpg/640px-Shanghai_skyline.jpg">
+<img src="https://picsum.photos/400/300?random=2">
 <h3>Shanghai</h3>
 <p>AI dhe sensorë për menaxhimin e trafikut.</p>
 </div>
 
 <div class="card city">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Tokyo_Skyline.jpg/640px-Tokyo_Skyline.jpg">
+<img src="https://picsum.photos/400/300?random=3">
 <h3>Tokyo</h3>
 <p>Transport publik inteligjent dhe automatizim.</p>
 </div>
 
 <div class="card city">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/New_York_City_at_night_HDR.jpg/640px-New_York_City_at_night_HDR.jpg">
+<img src="https://picsum.photos/400/300?random=4">
 <h3>New York</h3>
 <p>Big Data për energji dhe planifikim urban.</p>
 </div>
 
 <div class="card city">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Tirana_Skyline.jpg/640px-Tirana_Skyline.jpg">
+<img src="https://picsum.photos/400/300?random=5">
 <h3>Tirana</h3>
 <p>Zhvillim me ndriçim LED dhe sisteme inteligjente.</p>
 </div>
 
 </div>
-
-<!-- TRANSPORT -->
-<h2>🚗 Transporti Inteligjent</h2>
-<div class="grid">
-<div class="card">Sensorë trafiku dhe menaxhim automatik.</div>
-<div class="card">Orar transporti në kohë reale.</div>
-<div class="card">Makina dhe biçikleta elektrike.</div>
-<div class="card">Harta e trafikut live.</div>
-</div>
-
-<!-- ENERGJI -->
-<h2>🌱 Energjia & Mjedisi</h2>
-<div class="grid">
-<div class="card">Ndriçim inteligjent.</div>
-<div class="card">Energjia diellore.</div>
-<div class="card">Monitorim i ajrit.</div>
-<div class="card">Parqe dhe hapësira të gjelbra.</div>
-</div>
-
-<!-- SHENDET -->
-<h2>🏥 Shëndetësia & Siguria</h2>
-<div class="grid">
-<div class="card">Shërbime online mjekësore.</div>
-<div class="card">Kamera sigurie.</div>
-<div class="card">Njoftime emergjence.</div>
-</div>
-
-<!-- SHERBIME -->
-<h2>📱 Shërbime Digjitale</h2>
-<div class="grid">
-<div class="card">Pagesa online.</div>
-<div class="card">Raportim problemesh.</div>
-<div class="card">Wi-Fi publik.</div>
-</div>
-
-<!-- HARTA EXTRA -->
-<h2>🗺️ Shërbime në qytet</h2>
-<iframe src="https://maps.google.com/maps?q=spital tirane&output=embed"></iframe>
 
 <!-- FEEDBACK -->
 <h2>🗣️ Feedback</h2>
@@ -213,7 +170,7 @@ input, textarea {
 
 <script>
 
-// 🌦️ MOTI
+// MOTI
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
@@ -221,7 +178,7 @@ document.getElementById("weather").innerText =
 d.current_weather.temperature+"°C";
 });
 
-// 📊 GRAFIK
+// GRAFIK
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
@@ -230,18 +187,7 @@ datasets:[{data:[80,70,85,75]}]
 }
 });
 
-// UPDATE LIVE
-setInterval(()=>{
-chart.data.datasets[0].data=[
-Math.random()*100,
-Math.random()*100,
-Math.random()*100,
-Math.random()*100
-];
-chart.update();
-},3000);
-
-// 🔔 NJOFTIME
+// NJOFTIME
 function notify(){
 if(Notification.permission==="granted"){
 new Notification("Smart City",{body:"Update në qytet!"});
@@ -250,34 +196,12 @@ Notification.requestPermission();
 }
 }
 
-// 💾 FEEDBACK
+// FEEDBACK
 function sendFeedback(e){
 e.preventDefault();
-
-let name=document.getElementById("name").value;
-let msg=document.getElementById("msgInput").value;
-
-fetch("http://localhost:3000/feedback",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({name,msg})
-})
-.then(()=>loadFeedback());
+document.getElementById("comments").innerHTML +=
+`<p>${document.getElementById("name").value}: ${document.getElementById("msgInput").value}</p>`;
 }
-
-function loadFeedback(){
-fetch("http://localhost:3000/feedback")
-.then(res=>res.json())
-.then(data=>{
-let html="";
-data.forEach(d=>{
-html+=`<p><b>${d.name}</b>: ${d.msg}</p>`;
-});
-document.getElementById("comments").innerHTML=html;
-});
-}
-
-loadFeedback();
 
 </script>
 

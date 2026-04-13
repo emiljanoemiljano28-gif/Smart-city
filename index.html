@@ -15,33 +15,24 @@ body {
     color:white;
 }
 
-/* ✅ HEADER FIX */
+/* HEADER (STABLE BACKGROUND) */
 header {
-    background: url('https://picsum.photos/1600/900?random=1') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://cdn.britannica.com/15/178915-050-6BDFEB8F/New-York-City.jpg') center/cover no-repeat;
     height:45vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
     text-align:center;
-}
-
-header::after {
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-}
-
-.header-content {
-    position:relative;
-    z-index:2;
 }
 
 .header-content h1 {
     font-size:55px;
     text-shadow:0 0 20px #38bdf8;
+}
+
+.header-content p {
+    font-size:22px;
 }
 
 /* LAYOUT */
@@ -59,7 +50,10 @@ header::after {
     border-radius:12px;
 }
 
-h2 {color:#38bdf8; text-align:center;}
+h2 {
+    color:#38bdf8;
+    text-align:center;
+}
 
 iframe {
     width:100%;
@@ -126,35 +120,73 @@ input, textarea {
 
 </div>
 
-<!-- QYTETE -->
+<!-- QYTETE REAL -->
 <h2>🌆 Qytete Smart</h2>
 <div class="grid">
 
 <div class="card city">
-<img src="https://picsum.photos/400/300?random=2">
+<img src="https://cdn.britannica.com/89/179589-050-3E5E2B6B/Shanghai-skyline.jpg">
 <h3>Shanghai</h3>
 <p>AI dhe sensorë për menaxhimin e trafikut.</p>
 </div>
 
 <div class="card city">
-<img src="https://picsum.photos/400/300?random=3">
+<img src="https://cdn.britannica.com/79/177979-050-2F9B3F3E/Tokyo-Japan.jpg">
 <h3>Tokyo</h3>
 <p>Transport publik inteligjent dhe automatizim.</p>
 </div>
 
 <div class="card city">
-<img src="https://picsum.photos/400/300?random=4">
+<img src="https://cdn.britannica.com/15/178915-050-6BDFEB8F/New-York-City.jpg">
 <h3>New York</h3>
 <p>Big Data për energji dhe planifikim urban.</p>
 </div>
 
 <div class="card city">
-<img src="https://picsum.photos/400/300?random=5">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Tirana_Skyline.jpg/640px-Tirana_Skyline.jpg">
 <h3>Tirana</h3>
 <p>Zhvillim me ndriçim LED dhe sisteme inteligjente.</p>
 </div>
 
 </div>
+
+<!-- TRANSPORT -->
+<h2>🚗 Transporti Inteligjent</h2>
+<div class="grid">
+<div class="card">Sensorë trafiku dhe menaxhim automatik.</div>
+<div class="card">Transport publik në kohë reale.</div>
+<div class="card">Makina dhe biçikleta elektrike.</div>
+<div class="card">Harta interaktive e trafikut.</div>
+</div>
+
+<!-- ENERGJI -->
+<h2>🌱 Energjia & Mjedisi</h2>
+<div class="grid">
+<div class="card">Ndriçim inteligjent.</div>
+<div class="card">Energjia diellore.</div>
+<div class="card">Monitorim i ajrit.</div>
+<div class="card">Parqe dhe hapësira të gjelbra.</div>
+</div>
+
+<!-- SHENDET -->
+<h2>🏥 Shëndetësia & Siguria</h2>
+<div class="grid">
+<div class="card">Shërbime mjekësore online.</div>
+<div class="card">Kamera sigurie inteligjente.</div>
+<div class="card">Njoftime emergjence.</div>
+</div>
+
+<!-- SHERBIME -->
+<h2>📱 Shërbime Digjitale</h2>
+<div class="grid">
+<div class="card">Pagesa online.</div>
+<div class="card">Raportim problemesh.</div>
+<div class="card">Wi-Fi publik.</div>
+</div>
+
+<!-- HARTA EXTRA -->
+<h2>🗺️ Shërbime në qytet</h2>
+<iframe src="https://maps.google.com/maps?q=spital tirane&output=embed"></iframe>
 
 <!-- FEEDBACK -->
 <h2>🗣️ Feedback</h2>
@@ -200,7 +232,7 @@ Notification.requestPermission();
 function sendFeedback(e){
 e.preventDefault();
 document.getElementById("comments").innerHTML +=
-`<p>${document.getElementById("name").value}: ${document.getElementById("msgInput").value}</p>`;
+`<p><b>${document.getElementById("name").value}</b>: ${document.getElementById("msgInput").value}</p>`;
 }
 
 </script>

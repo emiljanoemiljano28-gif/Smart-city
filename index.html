@@ -128,14 +128,14 @@ button {
 </div>
 
 <!-- ✅ TIMES SQUARE FIX -->
-<div class="card city" style="background:url('https://images.unsplash.com/photo-1549924231-f129b911e442') center/cover;">
+<div class="card city" style="background:url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade') center/cover;">
 <h3>New York (Times Square)</h3>
 <p>Big Data dhe teknologji për menaxhimin urban.</p>
 </div>
 
 <!-- ✅ TIRANA FIX -->
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tirana_from_Dajti.jpg/800px-Tirana_from_Dajti.jpg" style="width:100%; border-radius:10px;">
+<img src="https://images.unsplash.com/photo-1590080874088-eec64895b423" style="width:100%; border-radius:10px;">
 <h3>Tirana</h3>
 <p>Zhvillim me ndriçim LED dhe sisteme inteligjente.</p>
 </div>
@@ -194,6 +194,7 @@ button {
 
 <script>
 
+// MOTI
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
@@ -201,6 +202,7 @@ document.getElementById("weather").innerText =
 d.current_weather.temperature+"°C";
 });
 
+// GRAFIK (FIX)
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
@@ -213,6 +215,7 @@ datasets:[{
 }
 });
 
+// NJOFTIME
 function notify(){
 if(Notification.permission==="granted"){
 new Notification("Smart City",{body:"Update në qytet!"});
@@ -221,6 +224,7 @@ Notification.requestPermission();
 }
 }
 
+// FEEDBACK
 function sendFeedback(e){
 e.preventDefault();
 document.getElementById("comments").innerHTML +=

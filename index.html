@@ -74,6 +74,23 @@ button {
     background-size:cover;
     background-position:center;
 }
+
+/* TABLE */
+table {
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+td, th {
+    padding:10px;
+    border:1px solid #334155;
+    text-align:center;
+}
+
+th {
+    background:#38bdf8;
+}
 </style>
 </head>
 
@@ -168,9 +185,14 @@ button {
 <div class="card">📶 Wi-Fi publik.</div>
 </div>
 
-<!-- 🇦🇱 TIRANA (VENDI I RI) -->
+<!-- 🇦🇱 TIRANA -->
 <section style="padding:60px 20px;">
 <h2 style="color:#38bdf8; text-align:center;">🇦🇱 Tirana – Qyteti dhe Kultura</h2>
+
+<!-- 🕒 ORA LIVE -->
+<div style="text-align:center; font-size:20px; margin-bottom:20px;">
+🕒 Ora në Tiranë: <span id="clock"></span>
+</div>
 
 <div style="max-width:1000px; margin:auto;">
 
@@ -199,6 +221,39 @@ button {
 </div>
 </section>
 
+<!-- 🎥 VIDEO -->
+<h2>🎥 Çfarë është Smart City?</h2>
+<iframe src="https://www.youtube.com/embed/5g6b2P9R9LQ" allowfullscreen></iframe>
+
+<!-- 🌍 KRAHASIM -->
+<h2>🌍 Krahasimi i qyteteve</h2>
+<table>
+<tr>
+<th>Qyteti</th>
+<th>Teknologjia</th>
+<th>Transporti</th>
+<th>Energjia</th>
+</tr>
+<tr>
+<td>Tokyo</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Shanghai</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Tirana</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+</tr>
+</table>
+
 <!-- HARTA -->
 <h2>🗺️ Shërbime në qytet</h2>
 <iframe src="https://maps.google.com/maps?q=spital tirane&output=embed"></iframe>
@@ -216,12 +271,22 @@ button {
 </div>
 
 <script>
+
+// ORA LIVE
+setInterval(()=>{
+let now=new Date();
+document.getElementById("clock").innerText=now.toLocaleTimeString();
+},1000);
+
+// MOTI
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
-document.getElementById("weather").innerText = d.current_weather.temperature+"°C";
+document.getElementById("weather").innerText =
+d.current_weather.temperature+"°C";
 });
 
+// GRAFIK
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
@@ -234,6 +299,7 @@ backgroundColor:['#38bdf8','#22c55e','#f59e0b','#ef4444']
 }
 });
 
+// NJOFTIME
 function notify(){
 if(Notification.permission==="granted"){
 new Notification("Smart City",{body:"Update në qytet!"});
@@ -242,11 +308,13 @@ Notification.requestPermission();
 }
 }
 
+// FEEDBACK
 function sendFeedback(e){
 e.preventDefault();
 document.getElementById("comments").innerHTML +=
 `<p><b>${document.getElementById("name").value}</b>: ${document.getElementById("msgInput").value}</p>`;
 }
+
 </script>
 
 </body>

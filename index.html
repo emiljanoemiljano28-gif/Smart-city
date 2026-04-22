@@ -75,7 +75,6 @@ button {
     background-position:center;
 }
 
-/* TABLE */
 table {
     width:100%;
     border-collapse:collapse;
@@ -189,41 +188,36 @@ th {
 <section style="padding:60px 20px;">
 <h2 style="color:#38bdf8; text-align:center;">🇦🇱 Tirana – Qyteti dhe Kultura</h2>
 
-<!-- 🕒 ORA LIVE -->
 <div style="text-align:center; font-size:20px; margin-bottom:20px;">
 🕒 Ora në Tiranë: <span id="clock"></span>
 </div>
 
 <div style="max-width:1000px; margin:auto;">
-
 <div style="background:#1e293b; padding:25px; border-radius:15px; margin:20px 0;">
 <h3 style="color:#facc15;">🏛️ Vendet turistike</h3>
-<p><b>Sheshi Skënderbej</b> është zemra e qytetit.</p>
-<p><b>Kalaja e Tiranës</b> ndërthur traditën me modernen.</p>
-<p><b>Pazari i Ri</b> ofron produkte tradicionale.</p>
-<p><b>Parku i Liqenit</b> është ideal për relaks.</p>
+<p>Sheshi Skënderbej, Kalaja e Tiranës, Pazari i Ri dhe Parku i Liqenit janë pikat kryesore turistike.</p>
 </div>
 
 <div style="background:#1e293b; padding:25px; border-radius:15px; margin:20px 0;">
 <h3 style="color:#22c55e;">🎭 Kultura</h3>
-<p><b>Muzeu Historik</b> paraqet historinë.</p>
-<p><b>Galeria e Arteve</b> ekspozon vepra.</p>
-<p><b>Opera dhe Baleti</b> është qendra artistike.</p>
+<p>Muzeu Historik, Galeria e Arteve dhe Opera janë qendrat kryesore kulturore.</p>
 </div>
 
 <div style="background:#1e293b; padding:25px; border-radius:15px; margin:20px 0;">
 <h3 style="color:#38bdf8;">🎉 Jeta kulturore</h3>
-<p>Tirana është qytet i gjallë me aktivitete.</p>
-<p>Kuzhina shqiptare është shumë e pasur.</p>
-<p>Mikpritja është karakteristikë kryesore.</p>
+<p>Tirana është një qytet i gjallë me aktivitete dhe tradita të pasura.</p>
 </div>
-
 </div>
 </section>
 
 <!-- 🎥 VIDEO -->
 <h2>🎥 Çfarë është Smart City?</h2>
-<iframe src="https://www.youtube.com/embed/5g6b2P9R9LQ" allowfullscreen></iframe>
+<iframe width="100%" height="300"
+src="https://www.youtube.com/embed/1QFZ5VbF3r0"
+title="Smart City"
+frameborder="0"
+allowfullscreen>
+</iframe>
 
 <!-- 🌍 KRAHASIM -->
 <h2>🌍 Krahasimi i qyteteve</h2>
@@ -272,13 +266,11 @@ th {
 
 <script>
 
-// ORA LIVE
 setInterval(()=>{
 let now=new Date();
 document.getElementById("clock").innerText=now.toLocaleTimeString();
 },1000);
 
-// MOTI
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
@@ -286,7 +278,6 @@ document.getElementById("weather").innerText =
 d.current_weather.temperature+"°C";
 });
 
-// GRAFIK
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
@@ -299,7 +290,6 @@ backgroundColor:['#38bdf8','#22c55e','#f59e0b','#ef4444']
 }
 });
 
-// NJOFTIME
 function notify(){
 if(Notification.permission==="granted"){
 new Notification("Smart City",{body:"Update në qytet!"});
@@ -308,7 +298,6 @@ Notification.requestPermission();
 }
 }
 
-// FEEDBACK
 function sendFeedback(e){
 e.preventDefault();
 document.getElementById("comments").innerHTML +=

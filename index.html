@@ -135,7 +135,8 @@ button {
 <p>Big Data për energji dhe planifikim urban.</p>
 </div>
 
-<div class="card city" style="background:url('https://images.unsplash.com/photo-1555992336-03a23c6c7e76') center/cover;">
+<!-- FIX I TIRANES -->
+<div class="card city" style="background:url('https://upload.wikimedia.org/wikipedia/commons/3/36/Tirana_from_Dajti.jpg') center/cover;">
 <h3>Tirana</h3>
 <p>Zhvillim me ndriçim LED dhe sisteme inteligjente.</p>
 </div>
@@ -202,12 +203,16 @@ document.getElementById("weather").innerText =
 d.current_weather.temperature+"°C";
 });
 
-// GRAFIK
+// GRAFIK (FIX)
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
 labels:['Trafik','Siguri','Energji','Mjedis'],
-datasets:[{data:[80,70,85,75]}]
+datasets:[{
+    label:'Performanca e qytetit',
+    data:[80,70,85,75],
+    backgroundColor:['#38bdf8','#22c55e','#f59e0b','#ef4444']
+}]
 }
 });
 

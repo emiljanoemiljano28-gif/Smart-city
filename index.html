@@ -15,7 +15,6 @@ body {
     color:white;
 }
 
-/* HEADER */
 header {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1494526585095-c41746248156') center/cover no-repeat;
@@ -31,7 +30,6 @@ header {
     text-shadow:0 0 20px #38bdf8;
 }
 
-/* LAYOUT */
 .container {padding:20px;}
 
 .grid {
@@ -66,7 +64,6 @@ button {
     cursor:pointer;
 }
 
-/* QYTETE */
 .city {
     min-height:200px;
     display:flex;
@@ -130,14 +127,15 @@ button {
 <p>Transport publik inteligjent dhe automatizim.</p>
 </div>
 
-<div class="card city" style="background:url('https://images.unsplash.com/photo-1494526585095-c41746248156') center/cover;">
-<h3>New York</h3>
-<p>Big Data për energji dhe planifikim urban.</p>
+<!-- ✅ TIMES SQUARE FIX -->
+<div class="card city" style="background:url('https://images.unsplash.com/photo-1549924231-f129b911e442') center/cover;">
+<h3>New York (Times Square)</h3>
+<p>Big Data dhe teknologji për menaxhimin urban.</p>
 </div>
 
-<!-- ✅ FIX FINAL TIRANA -->
+<!-- ✅ TIRANA FIX -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb" style="width:100%; border-radius:10px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tirana_from_Dajti.jpg/800px-Tirana_from_Dajti.jpg" style="width:100%; border-radius:10px;">
 <h3>Tirana</h3>
 <p>Zhvillim me ndriçim LED dhe sisteme inteligjente.</p>
 </div>
@@ -196,7 +194,6 @@ button {
 
 <script>
 
-// MOTI
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
@@ -204,7 +201,6 @@ document.getElementById("weather").innerText =
 d.current_weather.temperature+"°C";
 });
 
-// GRAFIK
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
@@ -217,7 +213,6 @@ datasets:[{
 }
 });
 
-// NJOFTIME
 function notify(){
 if(Notification.permission==="granted"){
 new Notification("Smart City",{body:"Update në qytet!"});
@@ -226,7 +221,6 @@ Notification.requestPermission();
 }
 }
 
-// FEEDBACK
 function sendFeedback(e){
 e.preventDefault();
 document.getElementById("comments").innerHTML +=

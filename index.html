@@ -210,12 +210,13 @@ th {
 </div>
 </section>
 
-<!-- 🎥 VIDEO -->
+<!-- 🎥 VIDEO (E RREGULLUAR) -->
 <h2>🎥 Çfarë është Smart City?</h2>
 <iframe width="100%" height="300"
-src="https://www.youtube.com/embed/1QFZ5VbF3r0"
+src="https://www.youtube.com/embed/hIXhnWUmMvw"
 title="Smart City"
 frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen>
 </iframe>
 
@@ -266,11 +267,13 @@ allowfullscreen>
 
 <script>
 
+// ORA
 setInterval(()=>{
 let now=new Date();
 document.getElementById("clock").innerText=now.toLocaleTimeString();
 },1000);
 
+// MOTI
 fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
 .then(r=>r.json())
 .then(d=>{
@@ -278,6 +281,7 @@ document.getElementById("weather").innerText =
 d.current_weather.temperature+"°C";
 });
 
+// GRAFIK
 let chart=new Chart(document.getElementById('chart'),{
 type:'bar',
 data:{
@@ -290,6 +294,7 @@ backgroundColor:['#38bdf8','#22c55e','#f59e0b','#ef4444']
 }
 });
 
+// NJOFTIME
 function notify(){
 if(Notification.permission==="granted"){
 new Notification("Smart City",{body:"Update në qytet!"});
@@ -298,6 +303,7 @@ Notification.requestPermission();
 }
 }
 
+// FEEDBACK
 function sendFeedback(e){
 e.preventDefault();
 document.getElementById("comments").innerHTML +=

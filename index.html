@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Rusia në Kohën e Dostojevskit</title>
@@ -22,7 +23,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#080808;
+background:#050505;
 color:white;
 font-family:'Poppins',sans-serif;
 overflow-x:hidden;
@@ -39,18 +40,18 @@ z-index:1000;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:20px;
+gap:28px;
 flex-wrap:wrap;
 padding:18px 15px;
-background:rgba(0,0,0,0.75);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.82);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 nav a{
 text-decoration:none;
 color:white;
-font-size:16px;
+font-size:18px;
 transition:0.3s;
 }
 
@@ -62,9 +63,9 @@ color:#d4af37;
 width:100%;
 text-align:center;
 font-family:'Cinzel',serif;
-font-size:58px;
+font-size:64px;
 color:#d4af37;
-letter-spacing:3px;
+letter-spacing:4px;
 margin-bottom:10px;
 }
 
@@ -79,7 +80,7 @@ text-align:center;
 padding:220px 20px 100px;
 
 background:
-linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.88)),
+linear-gradient(rgba(0,0,0,0.70),rgba(0,0,0,0.88)),
 url('./IMG-20260525-WA0011.jpg');
 
 background-size:cover;
@@ -87,43 +88,44 @@ background-position:center;
 }
 
 .hero-content{
-max-width:1000px;
+max-width:1100px;
 }
 
 .hero h1{
-font-size:82px;
+font-size:90px;
 font-family:'Cinzel',serif;
 color:#d4af37;
-margin-bottom:25px;
-text-shadow:0 0 30px black;
+margin-bottom:30px;
+text-shadow:0 0 35px black;
+line-height:1.2;
 }
 
 .hero p{
-font-size:28px;
+font-size:32px;
 color:#ddd;
-margin-bottom:40px;
+margin-bottom:45px;
 }
 
 .hero button{
-padding:18px 45px;
+padding:20px 48px;
 border:none;
 border-radius:50px;
 background:#8b0000;
 color:white;
-font-size:20px;
+font-size:22px;
 cursor:pointer;
 transition:0.4s;
 }
 
 .hero button:hover{
-transform:scale(1.08);
+transform:scale(1.07);
 background:#a00000;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section{
-padding:120px 10%;
+padding:120px 9%;
 }
 
 .section-title{
@@ -132,21 +134,22 @@ margin-bottom:70px;
 }
 
 .section-title h2{
-font-size:58px;
+font-size:60px;
 font-family:'Cinzel',serif;
 color:#d4af37;
 margin-bottom:15px;
 }
 
 .section-title p{
+font-size:24px;
 color:#bbb;
-font-size:22px;
 }
- /* TIMELINE */
+
+/* TIMELINE */
 
 .timeline{
 position:relative;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -162,7 +165,7 @@ margin-left:-2px;
 }
 
 .timeline-item{
-padding:20px 40px;
+padding:20px 45px;
 position:relative;
 width:50%;
 }
@@ -176,55 +179,52 @@ left:50%;
 }
 
 .timeline-content{
-background:#141414;
+background:#111;
 padding:35px;
-border-radius:20px;
+border-radius:25px;
 border:1px solid rgba(255,255,255,0.05);
 transition:0.4s;
 }
 
 .timeline-content:hover{
-transform:translateY(-10px);
-border-color:#8b0000;
+transform:translateY(-8px);
 box-shadow:0 0 30px rgba(139,0,0,0.25);
 }
 
 .timeline-content h3{
+font-size:36px;
 color:#d4af37;
-margin-bottom:20px;
-font-size:32px;
+margin-bottom:25px;
 }
 
 .timeline-content img{
 width:100%;
 border-radius:18px;
-margin-bottom:25px;
+margin-bottom:28px;
 }
 
 .timeline-content p{
-font-size:22px;
-line-height:1.9;
+font-size:24px;
+line-height:2;
 }
-
-/* CARDS */
+ /* CARDS */
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 gap:35px;
 }
 
 .card{
-background:#141414;
+background:#111;
 padding:35px;
-border-radius:20px;
+border-radius:25px;
 border:1px solid rgba(255,255,255,0.05);
 transition:0.4s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-border-color:#8b0000;
+transform:translateY(-8px);
 box-shadow:0 0 30px rgba(139,0,0,0.25);
 }
 
@@ -235,39 +235,50 @@ margin-bottom:25px;
 }
 
 .card h3{
+font-size:34px;
 color:#d4af37;
-margin-bottom:18px;
-font-size:32px;
+margin-bottom:22px;
 }
 
 .card p{
-font-size:22px;
-line-height:1.9;
+font-size:24px;
+line-height:2;
+}
+
+/* DOSTO IMAGE */
+
+.dosto-image{
+width:100%;
+max-width:700px;
+display:block;
+margin:0 auto 60px auto;
+border-radius:25px;
+box-shadow:0 0 35px rgba(0,0,0,0.5);
 }
 
 /* BOOKS */
 
 .books{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:35px;
 }
 
 .book{
-background:#141414;
-border-radius:20px;
+background:#111;
+border-radius:25px;
 overflow:hidden;
 transition:0.4s;
 }
 
 .book:hover{
 transform:scale(1.03);
-box-shadow:0 0 30px rgba(139,0,0,0.35);
+box-shadow:0 0 35px rgba(139,0,0,0.35);
 }
 
 .book img{
 width:100%;
-height:390px;
+height:420px;
 object-fit:cover;
 }
 
@@ -276,16 +287,17 @@ padding:30px;
 }
 
 .book-content h3{
+font-size:34px;
 color:#d4af37;
-margin-bottom:18px;
-font-size:30px;
+margin-bottom:20px;
 }
 
 .book-content p{
-font-size:21px;
-line-height:1.8;
+font-size:23px;
+line-height:2;
 }
- /* GALLERY */
+
+/* GALLERY */
 
 .gallery{
 display:grid;
@@ -295,56 +307,56 @@ gap:25px;
 
 .gallery img{
 width:100%;
-height:320px;
+height:340px;
 object-fit:cover;
-border-radius:18px;
+border-radius:20px;
 transition:0.4s;
 cursor:pointer;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px rgba(139,0,0,0.35);
+transform:scale(1.04);
+box-shadow:0 0 30px rgba(139,0,0,0.3);
 }
-
 /* QUIZ */
 
 .quiz{
 margin-top:50px;
-background:#141414;
+background:#111;
 padding:45px;
-border-radius:25px;
+border-radius:30px;
 display:flex;
 flex-direction:column;
 gap:40px;
 }
 
 .question-box{
-background:#101010;
+background:#0c0c0c;
 padding:35px;
-border-radius:20px;
+border-radius:25px;
 }
 
 .question-box h3{
-font-size:32px;
+font-size:36px;
 color:#d4af37;
 margin-bottom:20px;
 }
 
 .question-box p{
-font-size:24px;
-margin-bottom:20px;
+font-size:25px;
+margin-bottom:25px;
+line-height:1.8;
 }
 
 .question-box button{
 width:100%;
 padding:18px;
-margin-bottom:12px;
+margin-bottom:14px;
 border:none;
 border-radius:50px;
 background:#8b0000;
 color:white;
-font-size:20px;
+font-size:21px;
 cursor:pointer;
 transition:0.3s;
 }
@@ -355,8 +367,8 @@ transform:scale(1.02);
 }
 
 .answer{
-margin-top:15px;
-font-size:26px;
+margin-top:18px;
+font-size:28px;
 font-weight:bold;
 }
 
@@ -381,20 +393,24 @@ color:white;
 }
 
 @keyframes snowFall{
+
 0%{
 transform:translateY(-10px);
 opacity:0;
 }
+
 10%{
 opacity:1;
 }
+
 100%{
 transform:translateY(110vh);
 opacity:0;
 }
+
 }
 
-/* MUSIC */
+/* MUSIC BUTTON */
 
 .music-btn{
 position:fixed;
@@ -404,21 +420,23 @@ z-index:9999;
 background:#8b0000;
 color:white;
 border:none;
-padding:16px 24px;
+padding:18px 26px;
 border-radius:50px;
 cursor:pointer;
-font-size:18px;
+font-size:20px;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
 }
 
 /* FOOTER */
 
 footer{
-background:#050505;
-padding:45px;
+background:#020202;
+padding:50px;
 text-align:center;
 color:#999;
-font-size:20px;
+font-size:22px;
 line-height:2;
+margin-top:70px;
 }
 
 /* RESPONSIVE */
@@ -430,15 +448,24 @@ padding-top:260px;
 }
 
 .hero h1{
-font-size:54px;
+font-size:58px;
+line-height:1.3;
 }
 
 .hero p{
-font-size:22px;
+font-size:24px;
 }
 
 .logo{
-font-size:42px;
+font-size:46px;
+}
+
+nav{
+gap:18px;
+}
+
+nav a{
+font-size:16px;
 }
 
 .timeline::after{
@@ -447,8 +474,9 @@ left:20px;
 
 .timeline-item{
 width:100%;
-padding-left:60px;
-padding-right:0;
+left:0 !important;
+padding-left:70px;
+padding-right:10px;
 margin-bottom:35px;
 }
 
@@ -456,8 +484,33 @@ margin-bottom:35px;
 left:0;
 }
 
+.timeline-content p,
+.card p,
+.book-content p{
+font-size:21px;
+line-height:1.9;
+}
+
+.timeline-content h3,
+.card h3,
+.book-content h3{
+font-size:30px;
+}
+
 .gallery{
 grid-template-columns:1fr;
+}
+
+.gallery img{
+height:auto;
+}
+
+.question-box h3{
+font-size:30px;
+}
+
+.question-box p{
+font-size:22px;
 }
 
 }
@@ -509,7 +562,7 @@ Fillo Udhëtimin
 </div>
 
 </section>
-<section id="historia">
+ <section id="historia">
 
 <div class="section-title">
 
@@ -527,10 +580,14 @@ Fillo Udhëtimin
 
 <h3>Rusia në Shekullin XIX</h3>
 
-<img src="./IMG-20260525-WA0006.jpg">
+<img src="./IMG-20260525-WA0004.jpg">
 
 <p>
 Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha dhe më të fuqishme në botë. Ajo shtrihej nga Europa Lindore deri në Azi dhe drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe popullin. Shoqëria ruse ishte shumë e ndarë: aristokracia dhe familjet fisnike jetonin në luks, ndërsa shumica e popullsisë, sidomos fshatarët, jetonin në varfëri dhe pa të drejta. Kjo pabarazi sociale krijoi pakënaqësi dhe tensione që do të ndikonin në historinë e mëvonshme të vendit.
+</p>
+
+<p>
+Në këtë periudhë Rusia përballej me probleme ekonomike dhe sociale, ndërkohë që fuqitë europiane po modernizoheshin me ritme më të shpejta. Kjo krijoi nevojën për reforma dhe ndryshime të mëdha politike e shoqërore.
 </p>
 
 </div>
@@ -546,7 +603,11 @@ Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha dhe më të 
 <img src="./IMG-20260525-WA0005.jpg">
 
 <p>
-Aleksandri II njihet si një nga sundimtarët më reformatorë të Rusisë. Ai ndërmori ndryshime të rëndësishme për modernizimin e vendit pas humbjeve ushtarake dhe krizave ekonomike. Reformat e tij prekën administratën shtetërore, ushtrinë, arsimin dhe sistemin gjyqësor. Aleksandri II besonte se Rusia duhej të modernizohej për të konkurruar me vendet e tjera europiane.
+Aleksandri II njihet si një nga sundimtarët më reformatorë të Rusisë. Ai ndërmori ndryshime të rëndësishme për modernizimin e vendit pas humbjeve ushtarake dhe krizave ekonomike. Reformat e tij prekën administratën shtetërore, ushtrinë, arsimin dhe sistemin gjyqësor.
+</p>
+
+<p>
+Aleksandri II besonte se Rusia duhej të modernizohej për të konkurruar me vendet e tjera europiane. Megjithatë, shumë prej reformave të tij u kundërshtuan nga grupet konservatore dhe aristokracia.
 </p>
 
 </div>
@@ -562,7 +623,11 @@ Aleksandri II njihet si një nga sundimtarët më reformatorë të Rusisë. Ai n
 <img src="./IMG-20260525-WA0009.jpg">
 
 <p>
-Një nga ngjarjet më të rëndësishme në historinë ruse ishte çlirimi i bujkrobërve në vitin 1861. Për shekuj me radhë, miliona fshatarë kishin qenë të lidhur me tokën dhe pronarët e saj, pa liri personale. Reforma e Aleksandrit II u dha atyre të drejtën e lëvizjes dhe të pronësisë, por shumë prej tyre vazhduan të jetonin në kushte të vështira ekonomike. Megjithatë, kjo reformë shënoi fillimin e ndryshimeve të mëdha sociale në Rusi.
+Një nga ngjarjet më të rëndësishme në historinë ruse ishte çlirimi i bujkrobërve në vitin 1861. Për shekuj me radhë, miliona fshatarë kishin qenë të lidhur me tokën dhe pronarët e saj, pa liri personale. Reforma e Aleksandrit II u dha atyre të drejtën e lëvizjes dhe të pronësisë.
+</p>
+
+<p>
+Megjithëse reforma solli ndryshime të rëndësishme, shumë fshatarë vazhduan të jetonin në varfëri dhe me vështirësi ekonomike. Kjo krijoi pakënaqësi sociale që do të ndikonte në zhvillimet politike të Rusisë.
 </p>
 
 </div>
@@ -575,10 +640,14 @@ Një nga ngjarjet më të rëndësishme në historinë ruse ishte çlirimi i buj
 
 <h3>Industrializimi</h3>
 
-<img src="./IMG-20260525-WA0011.jpg">
+<img src="./IMG-20260525-WA0006.jpg">
 
 <p>
-Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të shpejta. U ndërtuan fabrika, hekurudha dhe qendra të mëdha industriale, sidomos në qytete si Shën Petersburgu dhe Moska. Industrializimi solli zhvillim ekonomik, por edhe probleme sociale si varfëria urbane, kushtet e këqija të punës dhe pakënaqësia e punëtorëve. Këto ndryshime ndikuan shumë edhe në letërsinë dhe filozofinë ruse.
+Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të shpejta. U ndërtuan fabrika, hekurudha dhe qendra të mëdha industriale, sidomos në qytete si Shën Petersburgu dhe Moska.
+</p>
+
+<p>
+Industrializimi solli zhvillim ekonomik, por edhe probleme sociale si varfëria urbane, kushtet e këqija të punës dhe pakënaqësia e punëtorëve. Këto ndryshime ndikuan shumë edhe në letërsinë dhe filozofinë ruse të kohës.
 </p>
 
 </div>
@@ -600,7 +669,7 @@ Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të s
 </div>
 
 <img class="dosto-image"
-src="./IMG-20260525-WA0004.jpg">
+src="./IMG-20260525-WA0011.jpg">
 
 <div class="cards">
  <div class="card">
@@ -608,7 +677,15 @@ src="./IMG-20260525-WA0004.jpg">
 <h3>Jeta e Tij</h3>
 
 <p>
-Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë botërore dhe një figurë shumë e rëndësishme e kulturës ruse. Ai lindi në vitin 1821 në Moska dhe që në rini tregoi interes për letërsinë, filozofinë dhe problemet sociale të kohës. Veprat e tij analizojnë psikologjinë njerëzore dhe konfliktet morale që përjeton individi. Ai konsiderohet si një nga autorët më të thellë të letërsisë botërore për mënyrën se si trajtoi shpirtin dhe ndërgjegjen njerëzore.
+Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë botërore dhe një figurë shumë e rëndësishme e kulturës ruse. Ai lindi në vitin 1821 në Moska dhe që në rini tregoi interes për letërsinë, filozofinë dhe problemet sociale të kohës. Veprat e tij analizojnë psikologjinë njerëzore dhe konfliktet morale që përjeton individi.
+</p>
+
+<p>
+Ai konsiderohet si një nga autorët më të thellë të letërsisë botërore për mënyrën se si trajtoi shpirtin dhe ndërgjegjen njerëzore. Personazhet e tij janë kompleksë dhe shpesh përballen me dilema morale, vuajtje shpirtërore dhe konflikte të brendshme.
+</p>
+
+<p>
+Përmes romaneve të tij, Dostojevski ndikoi jo vetëm në letërsi, por edhe në filozofi, psikologji dhe kulturën moderne europiane.
 </p>
 
 </div>
@@ -617,10 +694,18 @@ Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë 
 
 <h3>Burgimi në Siberi</h3>
 
-<img src="./IMG-20260525-WA0008.jpg">
+<img src="./IMG-20260525-WA0012.jpg">
 
 <p>
-Në vitin 1849, Dostojevski u arrestua për pjesëmarrje në një grup intelektualësh që diskutonin ide politike dhe sociale kundër regjimit carist. Ai u dënua me internim në Siberi, ku kaloi disa vite në kushte shumë të vështira. Përvoja e burgimit ndikoi thellësisht në jetën dhe mendimin e tij filozofik. Pas kthimit, ai filloi të shkruante vepra edhe më të thella psikologjikisht dhe shpirtërisht. Vuajtjet dhe përvojat e Siberisë u reflektuan më vonë në shumë prej personazheve dhe romaneve të tij.
+Në vitin 1849, Dostojevski u arrestua për pjesëmarrje në një grup intelektualësh që diskutonin ide politike dhe sociale kundër regjimit carist. Ai u dënua fillimisht me vdekje, por vetëm pak minuta para ekzekutimit dënimi iu kthye në internim në Siberi.
+</p>
+
+<p>
+Ai kaloi disa vite në kushte shumë të vështira, duke jetuar mes të burgosurve dhe duke përjetuar vuajtje fizike dhe psikologjike. Kjo periudhë ndikoi thellësisht në mënyrën se si ai e kuptonte jetën, vuajtjen dhe shpirtin njerëzor.
+</p>
+
+<p>
+Pas kthimit nga Siberia, Dostojevski filloi të shkruante vepra edhe më të thella psikologjikisht dhe filozofikisht. Përvojat e burgimit u reflektuan më vonë në shumë prej personazheve dhe romaneve të tij.
 </p>
 
 </div>
@@ -632,7 +717,15 @@ Në vitin 1849, Dostojevski u arrestua për pjesëmarrje në një grup intelektu
 <img src="./IMG-20260525-WA0007.jpg">
 
 <p>
-Veprat e Dostojevskit trajtojnë tema si liria, faji, vuajtja, morali dhe besimi. Ai analizonte konfliktin e brendshëm të njeriut dhe mënyrën se si shoqëria ndikon në psikologjinë individuale. Personazhet e tij shpesh përballen me zgjedhje të vështira morale dhe kriza ekzistenciale. Përmes romaneve të tij, ai ngriti pyetje të rëndësishme filozofike mbi jetën, drejtësinë dhe kuptimin e ekzistencës njerëzore.
+Veprat e Dostojevskit trajtojnë tema si liria, faji, vuajtja, morali dhe besimi. Ai analizonte konfliktin e brendshëm të njeriut dhe mënyrën se si shoqëria ndikon në psikologjinë individuale.
+</p>
+
+<p>
+Personazhet e tij shpesh përballen me zgjedhje të vështira morale dhe kriza ekzistenciale. Përmes romaneve të tij, ai ngriti pyetje të rëndësishme filozofike mbi jetën, drejtësinë dhe kuptimin e ekzistencës njerëzore.
+</p>
+
+<p>
+Filozofia e tij ndikoi më vonë shumë mendimtarë dhe shkrimtarë europianë, duke e bërë Dostojevskin një nga figurat më të rëndësishme të mendimit modern.
 </p>
 
 </div>
@@ -641,10 +734,18 @@ Veprat e Dostojevskit trajtojnë tema si liria, faji, vuajtja, morali dhe besimi
 
 <h3>Besimi dhe Morali</h3>
 
-<img src="./IMG-20260525-WA0012.jpg">
+<img src="./IMG-20260525-WA0011.jpg">
 
 <p>
-Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe shpëtimi moral i njeriut. Ai besonte se vuajtja mund ta ndihmojë njeriun të kuptojë veten dhe të arrijë shpëtimin shpirtëror. Në romanet e tij ai eksploron ndërgjegjen njerëzore, përgjegjësinë morale dhe luftën mes së mirës dhe së keqes. Për Dostojevskin, morali dhe feja ishin të lidhura ngushtë me fatin dhe lumturinë e njeriut.
+Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe shpëtimi moral i njeriut. Ai besonte se vuajtja mund ta ndihmojë njeriun të kuptojë veten dhe të arrijë shpëtimin shpirtëror.
+</p>
+
+<p>
+Në romanet e tij ai eksploron ndërgjegjen njerëzore, përgjegjësinë morale dhe luftën mes së mirës dhe së keqes. Për Dostojevskin, morali dhe feja ishin të lidhura ngushtë me fatin dhe lumturinë e njeriut.
+</p>
+
+<p>
+Shumë prej personazheve të tij kalojnë përmes krizave shpirtërore dhe morale për të gjetur kuptimin e jetës dhe paqen e brendshme.
 </p>
 
 </div>
@@ -652,7 +753,6 @@ Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe
 </div>
 
 </section>
-
 <section id="harta">
 
 <div class="section-title">
@@ -663,16 +763,16 @@ Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe
 
 </div>
 
-<div style="max-width:1100px; margin:auto;">
+<div style="max-width:1200px; margin:auto;">
 
 <img 
-src="./IMG-20260525-WA0010.jpg"
+src="./IMG-20260525-WA0008.jpg"
 
 style="
 width:100%;
-border-radius:20px;
-margin-bottom:40px;
-box-shadow:0 0 40px rgba(0,0,0,0.5);
+border-radius:25px;
+margin-bottom:45px;
+box-shadow:0 0 40px rgba(0,0,0,0.55);
 ">
 
 <div class="card">
@@ -687,11 +787,16 @@ Në shekullin XIX, Perandoria Ruse ishte një nga shtetet më të mëdha dhe më
 Në qytetet kryesore si Moska dhe Shën Petersburgu filluan proceset e modernizimit dhe industrializimit, ndërsa zonat rurale mbeteshin të varfra dhe të pazhvilluara. Kjo krijoi kontraste të mëdha sociale mes aristokracisë dhe shtresave të varfra.
 </p>
 
+<p>
+Rusia kishte ndikim të madh në politikën europiane dhe shpesh përfshihej në konflikte ushtarake dhe diplomatike me fuqitë e tjera të kohës. Pozicioni i saj gjeografik dhe madhësia territoriale e bënin një nga perandoritë më të rëndësishme të shekullit XIX.
+</p>
+
 </div>
 
 </div>
 
 </section>
+
 <section id="ndikimi">
 
 <div class="section-title">
@@ -711,11 +816,15 @@ Në qytetet kryesore si Moska dhe Shën Petersburgu filluan proceset e modernizi
 <img src="./IMG-20260525-WA0009.jpg">
 
 <p>
-Varfëria ishte një realitet i rëndë në Rusinë e shekullit XIX dhe një nga temat kryesore të Dostojevskit. Ai e paraqet varfërinë jo vetëm si mungesë materiale, por edhe si gjendje shpirtërore që ndikon në dinjitetin, zgjedhjet dhe sjelljen e njeriut. Personazhet e tij shpesh jetojnë në kushte ekstreme, duke treguar se si shoqëria i shtyn njerëzit drejt dëshpërimit.
+Varfëria ishte një realitet i rëndë në Rusinë e shekullit XIX dhe një nga temat kryesore të Dostojevskit. Ai e paraqet varfërinë jo vetëm si mungesë materiale, por edhe si gjendje shpirtërore që ndikon në dinjitetin, zgjedhjet dhe sjelljen e njeriut.
 </p>
 
 <p>
-Në shumë raste, ai kritikon shoqërinë ruse për indiferencën ndaj shtresave të varfra dhe për pabarazitë e mëdha sociale që ekzistonin në Perandorinë Ruse. Përmes personazheve të tij ai tregonte se varfëria mund të ndikojë jo vetëm në jetën materiale, por edhe në gjendjen emocionale dhe morale të individit.
+Personazhet e tij shpesh jetojnë në kushte ekstreme, duke treguar se si shoqëria i shtyn njerëzit drejt dëshpërimit. Në shumë raste, ai kritikon shoqërinë ruse për indiferencën ndaj shtresave të varfra dhe për pabarazitë e mëdha sociale që ekzistonin në Perandorinë Ruse.
+</p>
+
+<p>
+Përmes personazheve të tij ai tregonte se varfëria mund të ndikojë jo vetëm në jetën materiale, por edhe në gjendjen emocionale dhe morale të individit.
 </p>
 
 </div>
@@ -727,20 +836,29 @@ Në shumë raste, ai kritikon shoqërinë ruse për indiferencën ndaj shtresave
 <img src="./IMG-20260525-WA0007.jpg">
 
 <p>
-Krimi në veprat e Dostojevskit nuk është thjesht veprim i jashtëligjshëm, por një mënyrë për të eksploruar mendjen njerëzore. Ai analizon motivet e brendshme, fajin dhe pasojat psikologjike të krimit. Në romane si “Krim dhe Ndëshkim”, krimi shërben si pikënisje për një debat moral dhe shpirtëror mbi të drejtën dhe të gabuarën.
+Krimi në veprat e Dostojevskit nuk është thjesht veprim i jashtëligjshëm, por një mënyrë për të eksploruar mendjen njerëzore. Ai analizon motivet e brendshme, fajin dhe pasojat psikologjike të krimit.
 </p>
 
 <p>
-Dostojevski tregon se pas çdo krimi fshihet një konflikt i thellë psikologjik dhe moral. Personazhet e tij shpesh përballen me ndërgjegjen, frikën dhe ndjenjën e fajit.
+Në romane si “Krim dhe Ndëshkim”, krimi shërben si pikënisje për një debat moral dhe shpirtëror mbi të drejtën dhe të gabuarën. Dostojevski tregon se pas çdo krimi fshihet një konflikt i thellë psikologjik dhe moral.
+</p>
+
+<p>
+Personazhet e tij shpesh përballen me ndërgjegjen, frikën dhe ndjenjën e fajit, duke treguar se dënimi më i madh shpesh vjen nga vetë ndërgjegjja njerëzore.
 </p>
 
 </div>
+
+</div>
+
+</section>
+<div class="cards">
 
 <div class="card">
 
 <h3>Psikologjia njerëzore</h3>
 
-<img src="./IMG-20260525-WA0004.jpg">
+<img src="./IMG-20260525-WA0011.jpg">
 
 <p>
 Fjodor Dostojevski konsiderohet si një nga pionierët e analizës psikologjike në letërsi. Ai futet thellë në mendimet, frikërat dhe konfliktet e brendshme të personazheve, duke treguar se njeriu është i ndarë mes arsyes, emocioneve dhe instinkteve.
@@ -748,6 +866,10 @@ Fjodor Dostojevski konsiderohet si një nga pionierët e analizës psikologjike 
 
 <p>
 Personazhet e tij shpesh përjetojnë ankth, vetmi dhe konflikte morale. Përmes tyre, ai krijon një pasqyrë të thellë të natyrës njerëzore dhe të dilemave që shoqërojnë jetën e individit.
+</p>
+
+<p>
+Analizat psikologjike të Dostojevskit ndikuan shumë më vonë në zhvillimin e psikologjisë moderne dhe të filozofisë ekzistencialiste.
 </p>
 
 </div>
@@ -766,6 +888,10 @@ Feja dhe besimi janë elemente thelbësore në veprat e tij. Personazhet shpesh 
 Dostojevski besonte se besimi mund ta ndihmojë njeriun të përballojë vuajtjet dhe sfidat e jetës. Përmes romaneve të tij ai trajton pyetje filozofike mbi ekzistencën, mëkatin dhe faljen.
 </p>
 
+<p>
+Në shumë prej veprave të tij, besimi lidhet ngushtë me moralin, përgjegjësinë dhe shpëtimin shpirtëror të individit.
+</p>
+
 </div>
 
 <div class="card">
@@ -779,7 +905,11 @@ Në veprat e Fjodor Dostojevskit trajtohet shpesh pyetja: çfarë është drejt�
 </p>
 
 <p>
-Shpesh personazhet ndihen fajtorë edhe kur nuk ndëshkohen ligjërisht, duke treguar se drejtësia e brendshme është më e fortë se ajo e jashtme. Përmes këtyre konflikteve, Dostojevski analizon marrëdhënien mes moralit, fajit dhe përgjegjësisë njerëzore.
+Shpesh personazhet ndihen fajtorë edhe kur nuk ndëshkohen ligjërisht, duke treguar se drejtësia e brendshme është më e fortë se ajo e jashtme.
+</p>
+
+<p>
+Përmes këtyre konflikteve, Dostojevski analizon marrëdhënien mes moralit, fajit dhe përgjegjësisë njerëzore, duke krijuar debate filozofike që vazhdojnë të diskutohen edhe sot.
 </p>
 
 </div>
@@ -798,11 +928,16 @@ Personazhet e tij përjetojnë konflikte të forta mes së mirës dhe së keqes.
 Zgjedhjet morale shpesh sjellin vuajtje, por edhe rritje shpirtërore dhe reflektim mbi jetën. Përmes këtyre konflikteve, Dostojevski krijon personazhe komplekse dhe thellësisht njerëzore.
 </p>
 
+<p>
+Këto dilema morale janë një nga arsyet pse veprat e tij vazhdojnë të lexohen dhe studiohen në mbarë botën edhe sot.
+</p>
+
 </div>
 
 </div>
 
 </section>
+
 <section id="veprat">
 
 <div class="section-title">
@@ -814,8 +949,7 @@ Zgjedhjet morale shpesh sjellin vuajtje, por edhe rritje shpirtërore dhe reflek
 </div>
 
 <div class="books">
-
-<div class="book">
+ <div class="book">
 
 <img src="./IMG-20260525-WA0007.jpg">
 
@@ -828,7 +962,7 @@ Një nga romanet më të njohura të letërsisë botërore. Vepra trajton fajin,
 </p>
 
 <p>
-Përmes këtij romani, Dostojevski eksploron pyetje filozofike mbi drejtësinë, moralin dhe përgjegjësinë personale. “Krim dhe Ndëshkim” konsiderohet si një nga veprat më të rëndësishme të letërsisë psikologjike.
+Përmes këtij romani, Dostojevski eksploron pyetje filozofike mbi drejtësinë, moralin dhe përgjegjësinë personale. “Krim dhe Ndëshkim” konsiderohet si një nga veprat më të rëndësishme të letërsisë psikologjike dhe moderne.
 </p>
 
 </div>
@@ -837,7 +971,7 @@ Përmes këtij romani, Dostojevski eksploron pyetje filozofike mbi drejtësinë,
 
 <div class="book">
 
-<img src="./IMG-20260525-WA0004.jpg">
+<img src="./IMG-20260525-WA0011.jpg">
 
 <div class="book-content">
 
@@ -913,11 +1047,11 @@ Në këtë roman, Dostojevski trajton tema si besimi, liria, morali dhe përgjeg
 
 <img src="./IMG-20260525-WA0011.jpg">
 
-<img src="./IMG-20260525-WA0010.jpg">
+<img src="./IMG-20260525-WA0008.jpg">
 
 <img src="./IMG-20260525-WA0009.jpg">
 
-<img src="./IMG-20260525-WA0008.jpg">
+<img src="./IMG-20260525-WA0012.jpg">
 
 <img src="./IMG-20260525-WA0007.jpg">
 
@@ -926,8 +1060,6 @@ Në këtë roman, Dostojevski trajton tema si besimi, liria, morali dhe përgjeg
 <img src="./IMG-20260525-WA0005.jpg">
 
 <img src="./IMG-20260525-WA0004.jpg">
-
-<img src="./IMG-20260525-WA0012.jpg">
 
 </div>
 
@@ -948,7 +1080,7 @@ Në këtë roman, Dostojevski trajton tema si besimi, liria, morali dhe përgjeg
 
 <h3>Dënimi me Vdekje</h3>
 
-<img src="./IMG-20260525-WA0008.jpg">
+<img src="./IMG-20260525-WA0012.jpg">
 
 <p>
 Dostojevski u dënua fillimisht me vdekje për pjesëmarrje në një grup intelektualësh me ide politike kundër regjimit carist. Vetëm pak minuta para ekzekutimit, dënimi iu kthye në internim në Siberi. Kjo ngjarje ndikoi thellësisht në psikologjinë dhe filozofinë e tij.
@@ -996,85 +1128,6 @@ Ai konsiderohet si një nga autorët që ndikoi më shumë në zhvillimin e filo
 
 </section>
 
-<section id="world">
-
-<div class="section-title">
-
-<h2>Ndikimi në Botë</h2>
-
-<p>Figura dhe mendimtarë të ndikuar nga Dostojevski</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="./IMG-20260525-WA0004.jpg">
-
-<h3>Friedrich Nietzsche</h3>
-
-<p>
-Nietzsche e konsideronte Dostojevskin një nga psikologët më të mëdhenj të historisë. Ai admiroi mënyrën se si shkrimtari rus analizonte natyrën njerëzore dhe konfliktet morale.
-</p>
-
-<p>
-Filozofi gjerman e shihte Dostojevskin si një autor që kuptonte thellësisht shpirtin njerëzor dhe kompleksitetin e mendjes.
-</p>
-
-</div>
-
-<div class="card">
-
-<img src="./IMG-20260525-WA0005.jpg">
-
-<h3>Sigmund Freud</h3>
-
-<p>
-Freud analizoi veprat e Dostojevskit për të kuptuar psikologjinë njerëzore dhe ndikimin e fajit në mendjen e individit.
-</p>
-
-<p>
-Ai e konsideronte Dostojevskin një nga shkrimtarët që kishte depërtuar më thellë në psikikën e njeriut dhe konfliktet e ndërgjegjes.
-</p>
-
-</div>
-
-<div class="card">
-
-<img src="./IMG-20260525-WA0006.jpg">
-
-<h3>Franz Kafka</h3>
-
-<p>
-Kafka u ndikua nga atmosfera psikologjike dhe filozofike e romaneve të Dostojevskit, sidomos nga ndjenja e ankthit, izolimit dhe absurditetit të jetës moderne.
-</p>
-
-<p>
-Shumë studiues shohin ngjashmëri mes personazheve të Kafkës dhe konflikteve morale të krijuara nga Dostojevski.
-</p>
-
-</div>
-
-<div class="card">
-
-<img src="./IMG-20260525-WA0012.jpg">
-
-<h3>Albert Camus</h3>
-
-<p>
-Camus u ndikua nga temat ekzistencialiste të Dostojevskit dhe konfliktet morale që paraqiten në veprat e tij.
-</p>
-
-<p>
-Ai analizoi veçanërisht pyetjet filozofike mbi lirinë, përgjegjësinë dhe absurditetin e ekzistencës njerëzore.
-</p>
-
-</div>
-
-</div>
-
-</section>
 <section id="quiz">
 
 <div class="section-title">
@@ -1142,7 +1195,6 @@ Nikolla II
 <div class="answer" id="a2"></div>
 
 </div>
-
 <div class="question-box">
 
 <h3>Pyetja 3</h3>

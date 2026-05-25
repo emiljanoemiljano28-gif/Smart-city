@@ -29,17 +29,6 @@ overflow-x:hidden;
 line-height:1.9;
 }
 
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-width:10px;
-}
-
-::-webkit-scrollbar-thumb{
-background:#8b0000;
-border-radius:20px;
-}
-
 /* NAVBAR */
 
 nav{
@@ -91,7 +80,7 @@ padding:180px 20px 100px;
 
 background:
 linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.88)),
-url('https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1600&auto=format&fit=crop');
+url('./IMG-20260525-WA0004.jpg');
 
 background-size:cover;
 background-position:center;
@@ -99,7 +88,6 @@ background-position:center;
 
 .hero-content{
 max-width:1000px;
-animation:fadeIn 2s ease;
 }
 
 .hero h1{
@@ -178,7 +166,6 @@ margin-left:-2px;
 padding:20px 40px;
 position:relative;
 width:50%;
-animation:fadeUp 1s ease;
 }
 
 .timeline-item.left{
@@ -237,6 +224,8 @@ margin-bottom:15px;
 font-size:24px;
 }
 
+/* FOTO DOSTOJEVSKI */
+
 .dosto-image{
 width:100%;
 max-width:450px;
@@ -244,12 +233,12 @@ display:block;
 margin:0 auto 40px;
 border-radius:20px;
 transition:0.4s;
+object-fit:cover;
 }
 
 .dosto-image:hover{
 transform:scale(1.03);
 }
-
 /* BOOKS */
 
 .books{
@@ -285,46 +274,28 @@ color:#d4af37;
 margin-bottom:15px;
 }
 
-<section id="galeria">
+/* GALLERY */
 
-<div class="section-title">
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
 
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+cursor:pointer;
+}
 
-<section id="galeria">
+.gallery img:hover{
+transform:scale(1.05);
+}
 
-<div class="section-title">
-
-<h2>Galeria Historike</h2>
-
-<p>Rusia dhe bota e Dostojevskit në shekullin XIX</p>
-
-</div>
-
-<div class="gallery">
-
-<img src="IMG-20260525-WA0004.jpg">
-
-<img src="IMG-20260525-WA0005.jpg">
-
-<img src="IMG-20260525-WA0006.jpg">
-
-<img src="IMG-20260525-WA0007.jpg">
-
-<img src="IMG-20260525-WA0008.jpg">
-
-<img src="IMG-20260525-WA0009.jpg">
-
-<img src="IMG-20260525-WA0010.jpg">
-
-<img src="IMG-20260525-WA0011.jpg">
-
-<img src="IMG-20260525-WA0012.jpg">
-
-</div>
-
-</section>
-  
-  /* QUIZ */
+/* QUIZ */
 
 .quiz{
 margin-top:40px;
@@ -428,44 +399,14 @@ padding:15px 20px;
 border-radius:50px;
 cursor:pointer;
 font-size:16px;
-box-shadow:0 0 20px rgba(139,0,0,0.5);
 }
-
-/* FOOTER */
 
 footer{
 background:#050505;
 padding:45px;
 text-align:center;
 color:#999;
-border-top:1px solid rgba(255,255,255,0.08);
 }
-
-/* ANIMATION */
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(50px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* MOBILE */
 
 @media(max-width:900px){
 
@@ -475,37 +416,12 @@ flex-direction:column;
 gap:15px;
 }
 
-nav h2{
-font-size:32px;
-text-align:center;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-gap:14px;
-}
-
-nav ul li a{
-font-size:14px;
-}
-
 .hero{
 padding-top:240px;
-padding-bottom:120px;
 }
 
 .hero h1{
-font-size:54px;
-line-height:1.2;
-}
-
-.hero p{
-font-size:19px;
-}
-
-section{
-padding:90px 7%;
+font-size:52px;
 }
 
 .timeline::after{
@@ -523,59 +439,8 @@ margin-bottom:35px;
 left:0;
 }
 
-.timeline-content{
-padding:25px;
-}
-
-.timeline-content h3{
-font-size:28px;
-line-height:1.4;
-}
-
-.timeline-content p{
-font-size:18px;
-line-height:2;
-word-break:break-word;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.books{
-grid-template-columns:1fr;
-}
-
 .gallery{
 grid-template-columns:1fr;
-}
-
-.gallery img{
-height:260px;
-}
-
-.quiz{
-padding:20px;
-}
-
-.question-box{
-padding:22px;
-}
-
-.question-box p{
-font-size:18px;
-}
-
-.question-box button{
-padding:15px;
-font-size:16px;
-}
-
-.music-btn{
-bottom:15px;
-right:15px;
-padding:14px 18px;
-font-size:15px;
 }
 
 }
@@ -619,7 +484,7 @@ font-size:15px;
 </div>
 
 </section>
-<!-- HISTORIA -->
+  <!-- HISTORIA -->
 
 <section id="historia">
 
@@ -681,6 +546,15 @@ Një nga ngjarjet më të rëndësishme në historinë ruse ishte çlirimi i buj
 
 <h3>Industrializimi</h3>
 
+<img 
+src="./IMG-20260525-WA0011.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
+
 <p>
 Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të shpejta. U ndërtuan fabrika, hekurudha dhe qendra të mëdha industriale, sidomos në qytete si Shën Petersburgu dhe Moska. Industrializimi solli zhvillim ekonomik, por edhe probleme sociale si varfëria urbane, kushtet e këqija të punës dhe pakënaqësia e punëtorëve. Këto ndryshime ndikuan shumë edhe në letërsinë dhe filozofinë ruse.
 </p>
@@ -706,11 +580,10 @@ Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të s
 </div>
 
 <img class="dosto-image"
-src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
+src="./IMG-20260525-WA0005.jpg">
 
 <div class="cards">
-
-<div class="card">
+  <div class="card">
 
 <h3>Jeta e Tij</h3>
 
@@ -720,12 +593,18 @@ Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë 
 
 </div>
 
-</div>
-
-</section>
 <div class="card">
 
 <h3>Burgimi në Siberi</h3>
+
+<img 
+src="./IMG-20260525-WA0008.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <p>
 Në vitin 1849, Dostojevski u arrestua për pjesëmarrje në një grup intelektualësh që diskutonin ide politike dhe sociale kundër regjimit carist. Ai u dënua me internim në Siberia, ku kaloi disa vite në kushte shumë të vështira. Përvoja e burgimit ndikoi thellësisht në jetën dhe mendimin e tij filozofik. Pas kthimit, ai filloi të shkruante vepra edhe më të thella psikologjikisht dhe shpirtërisht.
@@ -747,6 +626,15 @@ Veprat e Dostojevskit trajtojnë tema si liria, faji, vuajtja, morali dhe besimi
 
 <h3>Besimi dhe Morali</h3>
 
+<img 
+src="./IMG-20260525-WA0006.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
+
 <p>
 Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe shpëtimi moral i njeriut. Ai besonte se vuajtja mund ta ndihmojë njeriun të kuptojë veten dhe të arrijë shpëtimin shpirtëror. Në romanet e tij, si Krim dhe Ndëshkim dhe Vëllezërit Karamazov, ai eksploron ndërgjegjen njerëzore, përgjegjësinë morale dhe luftën mes së mirës dhe së keqes.
 </p>
@@ -757,7 +645,7 @@ Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe
 
 </section>
 
-<!-- HARTA E PERANDORISE RUSE -->
+<!-- HARTA -->
 
 <section id="harta">
 
@@ -772,7 +660,7 @@ Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe
 <div style="max-width:1100px; margin:auto;">
 
 <img 
-src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Russian_Empire_Map_1914.png"
+src="./IMG-20260525-WA0010.jpg"
 
 style="
 width:100%;
@@ -791,10 +679,6 @@ Në shekullin XIX, Perandoria Ruse ishte një nga shtetet më të mëdha dhe më
 
 <p>
 Në qytetet kryesore si Moska dhe Shën Petersburgu filluan proceset e modernizimit dhe industrializimit, ndërsa zonat rurale mbeteshin të varfra dhe të pazhvilluara. Kjo krijoi kontraste të mëdha sociale mes aristokracisë dhe shtresave të varfra.
-</p>
-
-<p>
-Rusia drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe ushtronin kontroll të fortë mbi shoqërinë. Censura, kontrolli shtetëror dhe mungesa e lirive politike krijuan pakënaqësi të mëdha te intelektualët dhe shtresat e varfra të popullsisë.
 </p>
 
 </div>
@@ -820,9 +704,14 @@ Rusia drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe us
 
 <h3>Varfëria</h3>
 
-<p>
-Varfëria ishte një realitet i rëndë në Rusinë e shekullit XIX dhe një nga temat kryesore të Dostojevskit. Ai e paraqet varfërinë jo vetëm si mungesë materiale, por edhe si gjendje shpirtërore që ndikon në dinjitetin, zgjedhjet dhe sjelljen e njeriut. Personazhet e tij shpesh jetojnë në kushte ekstreme, duke treguar se si shoqëria i shtyn njerëzit drejt dëshpërimit.
-</p>
+<img 
+src="./IMG-20260525-WA0009.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <p>
 Varfëria ishte një realitet i rëndë në Rusinë e shekullit XIX dhe një nga temat kryesore të Dostojevskit. Ai e paraqet varfërinë jo vetëm si mungesë materiale, por edhe si gjendje shpirtërore që ndikon në dinjitetin, zgjedhjet dhe sjelljen e njeriut. Personazhet e tij shpesh jetojnë në kushte ekstreme, duke treguar se si shoqëria i shtyn njerëzit drejt dëshpërimit.
@@ -838,12 +727,21 @@ Në shumë raste, ai kritikon shoqërinë ruse për indiferencën ndaj shtresave
 
 <h3>Krimi</h3>
 
+<img 
+src="./IMG-20260525-WA0007.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
+
 <p>
-Krimi në veprat e Dostojevskit nuk është thjesht veprim i jashtëligjshëm, por një mënyrë për të eksploruar mendjen njerëzore. Ai analizon motivet e brendshme, fajin dhe pasojat psikologjike të krimit. Në romane si “Krim dhe Ndëshkim”, krimi shërben si pikënisje për një debat moral dhe shpirtëror mbi të drejtën dhe të gabuarën.
+Krimi në veprat e Dostojevskit nuk është thjesht veprim i jashtëligjshëm, por një mënyrë për të eksploruar mendjen njerëzore. Ai analizon motivet e brendshme, fajin dhe pasojat psikologjike të krimit.
 </p>
 
 <p>
-Krimi në veprat e Dostojevskit nuk është thjesht veprim i jashtëligjshëm, por një mënyrë për të eksploruar mendjen njerëzore. Ai analizon motivet e brendshme, fajin dhe pasojat psikologjike të krimit. Në romane si “Krim dhe Ndëshkim”, krimi shërben si pikënisje për një debat moral dhe shpirtëror mbi të drejtën dhe të gabuarën.
+Në romane si “Krim dhe Ndëshkim”, krimi shërben si pikënisje për një debat moral dhe shpirtëror mbi të drejtën dhe të gabuarën.
 </p>
 
 </div>
@@ -852,12 +750,17 @@ Krimi në veprat e Dostojevskit nuk është thjesht veprim i jashtëligjshëm, p
 
 <h3>Psikologjia njerëzore</h3>
 
-<p>
-Fjodor Dostojevski konsiderohet si një nga pionierët e analizës psikologjike në letërsi. Ai futet thellë në mendimet, frikërat dhe konfliktet e brendshme të personazheve, duke treguar se njeriu është i ndarë mes arsyes, emocioneve dhe instinkteve.
-</p>
+<img 
+src="./IMG-20260525-WA0004.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <p>
-Personazhet e tij shpesh përjetojnë ankth, vetmi dhe konflikte morale. Përmes tyre, ai krijon një pasqyrë të thellë të natyrës njerëzore.
+Fjodor Dostojevski konsiderohet si një nga pionierët e analizës psikologjike në letërsi. Ai futet thellë në mendimet, frikërat dhe konfliktet e brendshme të personazheve, duke treguar se njeriu është i ndarë mes arsyes, emocioneve dhe instinkteve.
 </p>
 
 </div>
@@ -866,12 +769,17 @@ Personazhet e tij shpesh përjetojnë ankth, vetmi dhe konflikte morale. Përmes
 
 <h3>Feja</h3>
 
-<p>
-Feja dhe besimi janë elemente thelbësore në veprat e tij. Personazhet shpesh përballen me dyshime shpirtërore, kërkim faljeje dhe nevojën për shpëtim moral. Feja shfaqet si një rrugë për shpresë, por edhe si një burim konflikti të brendshëm.
-</p>
+<img 
+src="./IMG-20260525-WA0006.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <p>
-Dostojevski besonte se vuajtja dhe besimi mund ta ndihmonin njeriun të arrinte paqe shpirtërore dhe të kuptonte kuptimin e jetës.
+Feja dhe besimi janë elemente thelbësore në veprat e tij. Personazhet shpesh përballen me dyshime shpirtërore, kërkim faljeje dhe nevojën për shpëtim moral. Feja shfaqet si një rrugë për shpresë, por edhe si një burim konflikti të brendshëm.
 </p>
 
 </div>
@@ -880,12 +788,17 @@ Dostojevski besonte se vuajtja dhe besimi mund ta ndihmonin njeriun të arrinte 
 
 <h3>Drejtësia</h3>
 
-<p>
-Në veprat e Fjodor Dostojevskit trajtohet shpesh pyetja: çfarë është drejtësia e vërtetë? Ai dallon mes ligjit të shoqërisë dhe ndërgjegjes morale të individit.
-</p>
+<img 
+src="./IMG-20260525-WA0012.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <p>
-Shpesh personazhet ndihen fajtorë edhe kur nuk ndëshkohen ligjërisht, duke treguar se drejtësia e brendshme është më e fortë se ajo e jashtme.
+Në veprat e Fjodor Dostojevskit trajtohet shpesh pyetja: çfarë është drejtësia e vërtetë? Ai dallon mes ligjit të shoqërisë dhe ndërgjegjes morale të individit.
 </p>
 
 </div>
@@ -894,12 +807,17 @@ Shpesh personazhet ndihen fajtorë edhe kur nuk ndëshkohen ligjërisht, duke tr
 
 <h3>Konfliktet morale</h3>
 
-<p>
-Personazhet e tij përjetojnë konflikte të forta mes së mirës dhe së keqes. Ky dualitet tregon se njeriu nuk është as krejt i mirë, as krejt i keq.
-</p>
+<img 
+src="./IMG-20260525-WA0005.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <p>
-Zgjedhjet morale shpesh sjellin vuajtje, por edhe rritje shpirtërore dhe reflektim mbi jetën.
+Personazhet e tij përjetojnë konflikte të forta mes së mirës dhe së keqes. Ky dualitet tregon se njeriu nuk është as krejt i mirë, as krejt i keq.
 </p>
 
 </div>
@@ -923,7 +841,7 @@ Zgjedhjet morale shpesh sjellin vuajtje, por edhe rritje shpirtërore dhe reflek
 
 <div class="book">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Crimeandpunishmentcover.png">
+<img src="./IMG-20260525-WA0007.jpg">
 
 <div class="book-content">
 
@@ -939,7 +857,7 @@ Një nga romanet më të njohura të letërsisë botërore. Vepra trajton fajin,
 
 <div class="book">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/The_Idiot_Dostoevsky.jpg">
+<img src="./IMG-20260525-WA0005.jpg">
 
 <div class="book-content">
 
@@ -955,7 +873,7 @@ Romani paraqet përplasjen mes pafajësisë dhe korrupsionit në shoqërinë rus
 
 <div class="book">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/White_nights.jpg">
+<img src="./IMG-20260525-WA0004.jpg">
 
 <div class="book-content">
 
@@ -971,7 +889,7 @@ Një histori melankolike për vetminë, dashurinë dhe ëndrrat e humbura në at
 
 <div class="book">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Brothers_Karamazov.jpg">
+<img src="./IMG-20260525-WA0012.jpg">
 
 <div class="book-content">
 
@@ -989,7 +907,7 @@ Një kryevepër filozofike dhe morale që trajton fenë, drejtësinë, konflikte
 
 </section>
 
-<!-- GALERIA HISTORIKE -->
+<!-- GALERIA -->
 
 <section id="galeria">
 
@@ -1003,17 +921,23 @@ Një kryevepër filozofike dhe morale që trajton fenë, drejtësinë, konflikte
 
 <div class="gallery">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
+<img src="./IMG-20260525-WA0004.jpg">
 
-<img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1200&auto=format&fit=crop">
+<img src="./IMG-20260525-WA0005.jpg">
 
-<img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1200&auto=format&fit=crop">
+<img src="./IMG-20260525-WA0006.jpg">
 
-<img src="https://images.unsplash.com/photo-1520637836862-4d197d17c13a?q=80&w=1200&auto=format&fit=crop">
+<img src="./IMG-20260525-WA0007.jpg">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Russian_Empire_Map_1914.png">
+<img src="./IMG-20260525-WA0008.jpg">
 
-<img src="https://images.unsplash.com/photo-1491156855053-9cdff72c7f85?q=80&w=1200&auto=format&fit=crop">
+<img src="./IMG-20260525-WA0009.jpg">
+
+<img src="./IMG-20260525-WA0010.jpg">
+
+<img src="./IMG-20260525-WA0011.jpg">
+
+<img src="./IMG-20260525-WA0012.jpg">
 
 </div>
 
@@ -1037,6 +961,15 @@ Një kryevepër filozofike dhe morale që trajton fenë, drejtësinë, konflikte
 
 <h3>Dënimi me Vdekje</h3>
 
+<img 
+src="./IMG-20260525-WA0008.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
+
 <p>
 Dostojevski u dënua fillimisht me vdekje për pjesëmarrje në një grup intelektualësh me ide politike kundër regjimit carist. Vetëm pak minuta para ekzekutimit, dënimi iu kthye në internim në Siberi.
 </p>
@@ -1047,6 +980,15 @@ Dostojevski u dënua fillimisht me vdekje për pjesëmarrje në një grup intele
 
 <h3>Varësia nga Bixhozi</h3>
 
+<img 
+src="./IMG-20260525-WA0005.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
+
 <p>
 Shkrimtari rus pati probleme të mëdha financiare për shkak të varësisë nga bixhozi, gjë që ndikoi edhe në jetën e tij personale.
 </p>
@@ -1056,6 +998,15 @@ Shkrimtari rus pati probleme të mëdha financiare për shkak të varësisë nga
 <div class="card">
 
 <h3>Ndikimi Botëror</h3>
+
+<img 
+src="./IMG-20260525-WA0006.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <p>
 Veprat e Dostojevskit ndikuan filozofë, psikologë dhe shkrimtarë të mëdhenj si Nietzsche, Freud, Kafka dhe Camus.
@@ -1082,6 +1033,15 @@ Veprat e Dostojevskit ndikuan filozofë, psikologë dhe shkrimtarë të mëdhenj
 
 <div class="card">
 
+<img 
+src="./IMG-20260525-WA0005.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
+
 <h3>Friedrich Nietzsche</h3>
 
 <p>
@@ -1091,6 +1051,15 @@ Nietzsche e konsideronte Dostojevskin një nga psikologët më të mëdhenj të 
 </div>
 
 <div class="card">
+
+<img 
+src="./IMG-20260525-WA0006.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <h3>Sigmund Freud</h3>
 
@@ -1102,6 +1071,15 @@ Freud analizoi veprat e Dostojevskit për të kuptuar psikologjinë njerëzore d
 
 <div class="card">
 
+<img 
+src="./IMG-20260525-WA0004.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
+
 <h3>Franz Kafka</h3>
 
 <p>
@@ -1111,6 +1089,15 @@ Kafka u ndikua nga atmosfera psikologjike dhe filozofike e romaneve të Dostojev
 </div>
 
 <div class="card">
+
+<img 
+src="./IMG-20260525-WA0012.jpg"
+style="
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+object-fit:cover;
+">
 
 <h3>Albert Camus</h3>
 
@@ -1213,7 +1200,6 @@ Camus u ndikua nga temat ekzistencialiste të Dostojevskit dhe konfliktet morale
 </div>
 
 </section>
-
 <!-- MUSIC BUTTON -->
 
 <button class="music-btn" onclick="toggleMusic()">

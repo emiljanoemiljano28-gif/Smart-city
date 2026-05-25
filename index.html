@@ -398,6 +398,8 @@ opacity:0;
 }
 }
 
+/* MUSIC BUTTON */
+
 .music-btn{
 position:fixed;
 bottom:20px;
@@ -410,7 +412,10 @@ padding:15px 20px;
 border-radius:50px;
 cursor:pointer;
 font-size:16px;
+box-shadow:0 0 20px rgba(139,0,0,0.5);
 }
+
+/* FOOTER */
 
 footer{
 background:#050505;
@@ -419,6 +424,8 @@ text-align:center;
 color:#999;
 border-top:1px solid rgba(255,255,255,0.08);
 }
+
+/* ANIMATION */
 
 @keyframes fadeIn{
 from{
@@ -440,6 +447,121 @@ to{
 opacity:1;
 transform:translateY(0);
 }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+padding:15px;
+flex-direction:column;
+gap:15px;
+}
+
+nav h2{
+font-size:32px;
+text-align:center;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:14px;
+}
+
+nav ul li a{
+font-size:14px;
+}
+
+.hero{
+padding-top:240px;
+padding-bottom:120px;
+}
+
+.hero h1{
+font-size:54px;
+line-height:1.2;
+}
+
+.hero p{
+font-size:19px;
+}
+
+section{
+padding:90px 7%;
+}
+
+.timeline::after{
+left:20px;
+}
+
+.timeline-item{
+width:100%;
+padding-left:60px;
+padding-right:0;
+margin-bottom:35px;
+}
+
+.timeline-item.right{
+left:0;
+}
+
+.timeline-content{
+padding:25px;
+}
+
+.timeline-content h3{
+font-size:28px;
+line-height:1.4;
+}
+
+.timeline-content p{
+font-size:18px;
+line-height:2;
+word-break:break-word;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.books{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+height:260px;
+}
+
+.quiz{
+padding:20px;
+}
+
+.question-box{
+padding:22px;
+}
+
+.question-box p{
+font-size:18px;
+}
+
+.question-box button{
+padding:15px;
+font-size:16px;
+}
+
+.music-btn{
+bottom:15px;
+right:15px;
+padding:14px 18px;
+font-size:15px;
+}
+
 }
 
 </style>
@@ -466,7 +588,6 @@ transform:translateY(0);
 </ul>
 
 </nav>
-
 <section class="hero">
 
 <div class="hero-content">
@@ -481,6 +602,8 @@ transform:translateY(0);
 
 </section>
 
+<!-- HISTORIA -->
+
 <section id="historia">
 
 <div class="section-title">
@@ -494,19 +617,21 @@ transform:translateY(0);
 <div class="timeline">
 
 <div class="timeline-item left">
+
 <div class="timeline-content">
 
 <h3>Rusia në Shekullin XIX</h3>
 
 <p>
-Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha dhe më të fuqishme në botë
-  .Ajo shtrihej nga Europa Lindore deri në Azi dhe drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe popullin. Shoqëria ruse ishte shumë e ndarë: aristokracia dhe familjet fisnike jetonin në luks, ndërsa shumica e popullsisë, sidomos fshatarët, jetonin në varfëri dhe pa të drejta. Kjo pabarazi sociale krijoi pakënaqësi dhe tensione që do të ndikonin në historinë e mëvonshme të vendit.
+Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha dhe më të fuqishme në botë. Ajo shtrihej nga Europa Lindore deri në Azi dhe drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe popullin. Shoqëria ruse ishte shumë e ndarë: aristokracia dhe familjet fisnike jetonin në luks, ndërsa shumica e popullsisë, sidomos fshatarët, jetonin në varfëri dhe pa të drejta. Kjo pabarazi sociale krijoi pakënaqësi dhe tensione që do të ndikonin në historinë e mëvonshme të vendit.
 </p>
 
 </div>
+
 </div>
 
 <div class="timeline-item right">
+
 <div class="timeline-content">
 
 <h3>Cari Aleksandri II</h3>
@@ -516,9 +641,11 @@ Aleksandri II njihet si një nga sundimtarët më reformatorë të Rusisë. Ai n
 </p>
 
 </div>
+
 </div>
 
 <div class="timeline-item left">
+
 <div class="timeline-content">
 
 <h3>Çlirimi i Bujkrobërve</h3>
@@ -528,9 +655,11 @@ Një nga ngjarjet më të rëndësishme në historinë ruse ishte çlirimi i buj
 </p>
 
 </div>
+
 </div>
 
 <div class="timeline-item right">
+
 <div class="timeline-content">
 
 <h3>Industrializimi</h3>
@@ -540,6 +669,7 @@ Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të s
 </p>
 
 </div>
+
 </div>
 
 </div>
@@ -606,7 +736,6 @@ Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe
 </div>
 
 </section>
-
 <!-- NDIKIMI -->
 
 <section id="ndikimi">
@@ -661,9 +790,30 @@ Feja dhe besimi luajnë rol të rëndësishëm në veprat e tij.
 
 </div>
 
+<div class="card">
+
+<h3>Drejtësia</h3>
+
+<p>
+Në veprat e tij trajtohen pyetje të thella mbi drejtësinë, ligjin dhe ndërgjegjen morale.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Konfliktet Morale</h3>
+
+<p>
+Personazhet e Dostojevskit shpesh përjetojnë luftë të fortë mes së mirës dhe së keqes.
+</p>
+
+</div>
+
 </div>
 
 </section>
+
 <!-- VEPRAT -->
 
 <section id="veprat">
@@ -687,8 +837,7 @@ Feja dhe besimi luajnë rol të rëndësishëm në veprat e tij.
 <h3>Krim dhe Ndëshkim</h3>
 
 <p>
-Një roman psikologjik që trajton fajin,
-ndërgjegjen dhe pasojat morale të krimit.
+Një roman psikologjik që trajton fajin, ndërgjegjen dhe pasojat morale të krimit.
 </p>
 
 </div>
@@ -704,7 +853,7 @@ ndërgjegjen dhe pasojat morale të krimit.
 <h3>Idioti</h3>
 
 <p>
-Romani paraqet përplasjen mes pafajësisë dhe korrupsionit.
+Romani paraqet përplasjen mes pafajësisë dhe korrupsionit në shoqëri.
 </p>
 
 </div>
@@ -720,7 +869,7 @@ Romani paraqet përplasjen mes pafajësisë dhe korrupsionit.
 <h3>Netë të Bardha</h3>
 
 <p>
-Një histori melankolike për vetminë dhe dashurinë.
+Një histori melankolike për vetminë, ëndrrat dhe dashurinë e pamundur.
 </p>
 
 </div>
@@ -792,8 +941,7 @@ Një kryevepër mbi fenë, moralin dhe konfliktet familjare.
 <h3>Dënimi me Vdekje</h3>
 
 <p>
-Dostojevski u dënua fillimisht me vdekje,
-por dënimi iu kthye në internim në momentet e fundit.
+Dostojevski u dënua fillimisht me vdekje, por dënimi iu kthye në internim në momentet e fundit.
 </p>
 
 </div>
@@ -821,7 +969,6 @@ Veprat e Dostojevskit ndikuan filozofë dhe shkrimtarë në gjithë botën.
 </div>
 
 </section>
-
 <!-- NDIKIMI NE BOTE -->
 
 <section id="world">
@@ -841,7 +988,7 @@ Veprat e Dostojevskit ndikuan filozofë dhe shkrimtarë në gjithë botën.
 <h3>Nietzsche</h3>
 
 <p>
-Nietzsche e konsideronte Dostojevskin një nga psikologët më të mëdhenj.
+Nietzsche e konsideronte Dostojevskin një nga psikologët më të mëdhenj të historisë.
 </p>
 
 </div>
@@ -851,7 +998,7 @@ Nietzsche e konsideronte Dostojevskin një nga psikologët më të mëdhenj.
 <h3>Freud</h3>
 
 <p>
-Freud analizonte veprat e Dostojevskit për psikologjinë njerëzore.
+Freud analizonte veprat e Dostojevskit për të kuptuar psikologjinë njerëzore dhe konfliktet e brendshme.
 </p>
 
 </div>
@@ -861,7 +1008,7 @@ Freud analizonte veprat e Dostojevskit për psikologjinë njerëzore.
 <h3>Kafka</h3>
 
 <p>
-Kafka u ndikua nga atmosfera psikologjike dhe filozofike e romaneve të tij.
+Kafka u ndikua nga atmosfera psikologjike dhe filozofike e romaneve të Dostojevskit.
 </p>
 
 </div>
@@ -871,7 +1018,7 @@ Kafka u ndikua nga atmosfera psikologjike dhe filozofike e romaneve të tij.
 <h3>Camus</h3>
 
 <p>
-Camus u ndikua nga temat ekzistencialiste të Dostojevskit.
+Camus u ndikua nga temat ekzistencialiste dhe morale të Dostojevskit.
 </p>
 
 </div>
@@ -879,6 +1026,7 @@ Camus u ndikua nga temat ekzistencialiste të Dostojevskit.
 </div>
 
 </section>
+
 <!-- QUIZ -->
 
 <section id="quiz">
@@ -969,7 +1117,7 @@ Camus u ndikua nga temat ekzistencialiste të Dostojevskit.
 
 </section>
 
-<!-- MUSIC BUTTON -->
+<!-- MUSIC -->
 
 <button class="music-btn" onclick="toggleMusic()">
 🎵 Muzika
@@ -1017,11 +1165,11 @@ document.getElementById(id).style.color=color;
 
 /* SNOW */
 
-const snowContainer = document.getElementById('snow');
+const snowContainer=document.getElementById('snow');
 
 for(let i=0;i<80;i++){
 
-let snowflake = document.createElement('span');
+let snowflake=document.createElement('span');
 
 snowflake.innerHTML='❄';
 

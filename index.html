@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="sq">
-
 <head>
 
 <meta charset="UTF-8">
@@ -38,21 +37,6 @@ width:10px;
 ::-webkit-scrollbar-thumb{
 background:#8b0000;
 border-radius:20px;
-}
-
-/* BACKGROUND */
-
-#particles{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-pointer-events:none;
-
-background:
-radial-gradient(circle at top,#1a1a1a,#080808 70%);
 }
 
 /* NAVBAR */
@@ -101,16 +85,14 @@ color:#d4af37;
 /* HERO */
 
 .hero{
-
 min-height:100vh;
-
-padding-top:180px;
 
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding-inline:20px;
+
+padding:180px 20px 100px;
 
 background:
 linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.88)),
@@ -121,8 +103,8 @@ background-position:center;
 }
 
 .hero-content{
-animation:fadeIn 2s ease;
 max-width:1000px;
+animation:fadeIn 2s ease;
 }
 
 .hero h1{
@@ -145,10 +127,9 @@ border:none;
 border-radius:50px;
 background:#8b0000;
 color:white;
-font-size:17px;
+font-size:18px;
 cursor:pointer;
 transition:0.4s;
-box-shadow:0 0 25px rgba(139,0,0,0.45);
 }
 
 .hero button:hover{
@@ -261,7 +242,7 @@ margin-bottom:15px;
 font-size:24px;
 }
 
-/* DOSTO IMAGE */
+/* IMAGE */
 
 .dosto-image{
 width:100%;
@@ -279,116 +260,16 @@ transform:scale(1.03);
 /* QUOTE */
 
 .quote-box{
-
 max-width:900px;
-
 margin:40px auto 0;
-
 text-align:center;
-
 font-size:30px;
-
 font-style:italic;
-
 color:#d4af37;
-
 padding:50px;
-
 background:#111;
-
 border-radius:20px;
-
 border:1px solid rgba(255,255,255,0.05);
-
-animation:fadeIn 2s ease;
-}
-
-/* BOOKS */
-
-.books{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.book{
-background:#141414;
-border-radius:20px;
-overflow:hidden;
-transition:0.4s;
-}
-
-.book:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px rgba(139,0,0,0.35);
-}
-
-.book img{
-width:100%;
-height:370px;
-object-fit:cover;
-}
-
-.book-content{
-padding:25px;
-}
-
-.book-content h3{
-color:#d4af37;
-margin-bottom:15px;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:320px;
-object-fit:cover;
-border-radius:15px;
-transition:0.4s;
-cursor:pointer;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* INTERACTIVE */
-
-.interactive{
-text-align:center;
-}
-
-.fact-box{
-background:#141414;
-padding:40px;
-border-radius:20px;
-max-width:850px;
-margin:30px auto;
-font-size:20px;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-.interactive button{
-padding:15px 35px;
-border:none;
-border-radius:40px;
-background:#8b0000;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.4s;
-margin:10px;
-}
-
-.interactive button:hover{
-transform:scale(1.08);
 }
 
 /* QUIZ */
@@ -398,13 +279,54 @@ margin-top:40px;
 background:#141414;
 padding:40px;
 border-radius:20px;
-max-width:850px;
+max-width:900px;
 margin-inline:auto;
+
+display:flex;
+flex-direction:column;
+gap:40px;
 }
 
-.quiz h3{
-margin-bottom:20px;
+.question-box{
+background:#101010;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.question-box h3{
 color:#d4af37;
+margin-bottom:15px;
+font-size:28px;
+}
+
+.question-box p{
+font-size:22px;
+margin-bottom:20px;
+}
+
+.question-box button{
+width:100%;
+padding:18px;
+margin-bottom:12px;
+border:none;
+border-radius:40px;
+background:#8b0000;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.question-box button:hover{
+transform:scale(1.03);
+background:#a00000;
+}
+
+.answer{
+margin-top:15px;
+font-size:24px;
+font-weight:bold;
 }
 
 /* FOOTER */
@@ -423,7 +345,7 @@ color:#d4af37;
 margin-bottom:15px;
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 
 @keyframes fadeIn{
 from{
@@ -463,7 +385,7 @@ justify-content:center;
 }
 
 .hero h1{
-font-size:46px;
+font-size:48px;
 }
 
 .hero p{
@@ -489,6 +411,10 @@ font-size:22px;
 padding:35px;
 }
 
+.question-box p{
+font-size:18px;
+}
+
 }
 
 </style>
@@ -497,22 +423,17 @@ padding:35px;
 
 <body>
 
-<div id="particles"></div>
-
 <!-- NAVBAR -->
 
 <nav>
 
-<h2>DOSTOEVSKI</h2>
+<h2>DOSTOJEVSKI</h2>
 
 <ul>
 
 <li><a href="#historia">Historia</a></li>
 <li><a href="#dosto">Dostojevski</a></li>
-<li><a href="#ndikimi">Ndikimi</a></li>
-<li><a href="#veprat">Veprat</a></li>
-<li><a href="#galeria">Galeria</a></li>
-<li><a href="#interaktive">Interaktive</a></li>
+<li><a href="#quiz">Quiz</a></li>
 
 </ul>
 
@@ -569,7 +490,7 @@ të cilët kishin pushtet absolut mbi shtetin dhe popullin.
 
 <p>
 Aleksandri II njihet si një nga sundimtarët më reformatorë të Rusisë.
-Ai ndërmori ndryshime të rëndësishme për modernizimin e vendit.
+Ai ndërmori reforma të rëndësishme për modernizimin e vendit.
 </p>
 
 </div>
@@ -594,35 +515,8 @@ një nga ngjarjet më të rëndësishme në historinë ruse.
 <h3>Industrializimi</h3>
 
 <p>
-Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të shpejta.
-U ndërtuan fabrika, hekurudha dhe qendra të mëdha industriale.
-</p>
-
-</div>
-</div>
-
-<div class="timeline-item left">
-<div class="timeline-content">
-
-<h3>Varfëria dhe Pabarazia Sociale</h3>
-
-<p>
-Shoqëria ruse ishte shumë e ndarë.
-Aristokracia jetonte në luks,
-ndërsa shumica e popullsisë jetonte në varfëri dhe pa të drejta.
-</p>
-
-</div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-
-<h3>Ndikimi në Shoqëri</h3>
-
-<p>
-Ndryshimet ekonomike dhe sociale ndikuan thellë në jetën e njerëzve.
-Shumë intelektualë filluan të kritikonin padrejtësitë sociale.
+Industrializimi solli zhvillim ekonomik,
+por edhe probleme sociale dhe varfëri urbane.
 </p>
 
 </div>
@@ -632,7 +526,7 @@ Shumë intelektualë filluan të kritikonin padrejtësitë sociale.
 
 </section>
 
-<!-- DOSTO -->
+<!-- DOSTOJEVSKI -->
 
 <section id="dosto">
 
@@ -655,7 +549,6 @@ src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
 
 <p>
 Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë botërore.
-Ai lindi në vitin 1821 në Moska.
 </p>
 
 </div>
@@ -665,8 +558,7 @@ Ai lindi në vitin 1821 në Moska.
 <h3>Burgimi në Siberi</h3>
 
 <p>
-Në vitin 1849, Dostojevski u arrestua për aktivitetet politike
-dhe u internua në Siberi.
+Ai u internua në Siberi pas arrestimit për aktivitetet politike.
 </p>
 
 </div>
@@ -676,8 +568,7 @@ dhe u internua në Siberi.
 <h3>Idetë Filozofike</h3>
 
 <p>
-Veprat e tij trajtojnë tema si liria,
-faji, vuajtja, morali dhe besimi.
+Veprat e tij trajtojnë moralin, fenë dhe konfliktin e brendshëm njerëzor.
 </p>
 
 </div>
@@ -687,30 +578,7 @@ faji, vuajtja, morali dhe besimi.
 <h3>Besimi dhe Morali</h3>
 
 <p>
-Dostojevski besonte se vuajtja mund ta ndihmojë njeriun
-të arrijë shpëtimin shpirtëror.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Filozofia e Vuajtjes</h3>
-
-<p>
-Dostojevski besonte se vuajtja ishte pjesë e rëndësishme
-e zhvillimit moral dhe shpirtëror të njeriut.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Konflikti i Brendshëm</h3>
-
-<p>
-Personazhet e Dostojevskit përjetojnë konflikte të forta psikologjike
-dhe morale.
+Dostojevski analizonte shpëtimin moral dhe ndërgjegjen njerëzore.
 </p>
 
 </div>
@@ -732,219 +600,94 @@ but in finding something to live for.”
 
 </section>
 
-<!-- NDIKIMI -->
+<!-- QUIZ -->
 
-<section id="ndikimi">
-
-<div class="section-title">
-
-<h2>Ndikimi i Rusisë tek Letërsia</h2>
-
-<p>Tematika kryesore në krijimtarinë e Dostojevskit</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>Varfëria</h3>
-<p>Një nga temat më të forta në letërsinë ruse.</p>
-</div>
-
-<div class="card">
-<h3>Krimi</h3>
-<p>Analizë psikologjike e fajit dhe ndërgjegjes.</p>
-</div>
-
-<div class="card">
-<h3>Psikologjia</h3>
-<p>Eksplorim i mendimeve dhe konflikteve të brendshme.</p>
-</div>
-
-<div class="card">
-<h3>Feja</h3>
-<p>Besimi dhe morali si tema qendrore.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- VEPRAT -->
-
-<section id="veprat">
+<section id="quiz">
 
 <div class="section-title">
 
-<h2>Veprat Kryesore</h2>
+<h2>Quiz Interaktiv</h2>
 
-<p>Kryeveprat e Dostojevskit</p>
-
-</div>
-
-<div class="books">
-
-<div class="book">
-
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
-
-<div class="book-content">
-
-<h3>Krim dhe Ndëshkim</h3>
-
-<p>Roman psikologjik mbi fajin dhe ndërgjegjen.</p>
-
-</div>
-
-</div>
-
-<div class="book">
-
-<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop">
-
-<div class="book-content">
-
-<h3>Idioti</h3>
-
-<p>Përplasja mes mirësisë dhe korrupsionit.</p>
-
-</div>
-
-</div>
-
-<div class="book">
-
-<img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop">
-
-<div class="book-content">
-
-<h3>Netë të Bardha</h3>
-
-<p>Histori melankolike për vetminë dhe dashurinë.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- GALERIA -->
-
-<section id="galeria">
-
-<div class="section-title">
-
-<h2>Galeria</h2>
-
-<p>Rusia e vjetër dhe bota e Dostojevskit</p>
-
-</div>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1529429611270-5b5b0fddf2e8?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-</section>
-
-<!-- INTERAKTIVE -->
-
-<section id="interaktive" class="interactive">
-
-<div class="section-title">
-
-<h2>Interaktive</h2>
-
-<p>Eksploro botën e Dostojevskit</p>
-
-</div>
-
-<button onclick="newFact()">Shfaq Fakt</button>
-
-<div class="fact-box" id="factBox">
-
-Dostojevski u internua në Siberi për 4 vite.
+<p>Testo njohuritë për Dostojevskin</p>
 
 </div>
 
 <div class="quiz">
 
+<div class="question-box">
+
 <h3>Pyetja 1</h3>
 
 <p>Kush është vepra më e njohur e Dostojevskit?</p>
 
-<button onclick="quiz('Gabim')">Lufta dhe Paqja</button>
+<button onclick="showAnswer('a1','Gabim','red')">Hamleti</button>
+<button onclick="showAnswer('a1','Saktë!','lightgreen')">Krim dhe Ndëshkim</button>
+<button onclick="showAnswer('a1','Gabim','red')">Fausti</button>
+<button onclick="showAnswer('a1','Gabim','red')">Lufta dhe Paqja</button>
 
-<button onclick="quiz('Saktë!')">Krim dhe Ndëshkim</button>
+<div class="answer" id="a1"></div>
 
-<button onclick="quiz('Gabim')">Hamleti</button>
+</div>
 
-<button onclick="quiz('Gabim')">Fausti</button>
-
-<hr style="margin:40px 0; border-color:#333;">
+<div class="question-box">
 
 <h3>Pyetja 2</h3>
 
-<p>Në cilin shekull Rusia ishte një nga perandoritë më të mëdha në botë?</p>
+<p>Në cilin shekull Rusia ishte një nga perandoritë më të mëdha?</p>
 
-<button onclick="quiz('Gabim')">Shekulli XVII</button>
+<button onclick="showAnswer('a2','Gabim','red')">Shekulli XVII</button>
+<button onclick="showAnswer('a2','Gabim','red')">Shekulli XVIII</button>
+<button onclick="showAnswer('a2','Saktë!','lightgreen')">Shekulli XIX</button>
+<button onclick="showAnswer('a2','Gabim','red')">Shekulli XX</button>
 
-<button onclick="quiz('Gabim')">Shekulli XVIII</button>
+<div class="answer" id="a2"></div>
 
-<button onclick="quiz('Saktë!')">Shekulli XIX</button>
+</div>
 
-<button onclick="quiz('Gabim')">Shekulli XX</button>
-
-<hr style="margin:40px 0; border-color:#333;">
+<div class="question-box">
 
 <h3>Pyetja 3</h3>
 
-<p>Kush ishte cari që ndërmori reforma modernizuese në Rusi?</p>
+<p>Kush ishte cari reformator i Rusisë?</p>
 
-<button onclick="quiz('Gabim')">Ivani IV</button>
+<button onclick="showAnswer('a3','Gabim','red')">Ivani IV</button>
+<button onclick="showAnswer('a3','Saktë!','lightgreen')">Aleksandri II</button>
+<button onclick="showAnswer('a3','Gabim','red')">Nikolla II</button>
+<button onclick="showAnswer('a3','Gabim','red')">Pjetri I</button>
 
-<button onclick="quiz('Saktë!')">Aleksandri II</button>
+<div class="answer" id="a3"></div>
 
-<button onclick="quiz('Gabim')">Pjetri I</button>
+</div>
 
-<button onclick="quiz('Gabim')">Nikolla II</button>
-
-<hr style="margin:40px 0; border-color:#333;">
+<div class="question-box">
 
 <h3>Pyetja 4</h3>
 
 <p>Kush ishte Fjodor Dostojevski?</p>
 
-<button onclick="quiz('Gabim')">Piktor rus</button>
+<button onclick="showAnswer('a4','Gabim','red')">Piktor rus</button>
+<button onclick="showAnswer('a4','Gabim','red')">Kompozitor rus</button>
+<button onclick="showAnswer('a4','Saktë!','lightgreen')">Shkrimtar dhe filozof rus</button>
+<button onclick="showAnswer('a4','Gabim','red')">Politikan rus</button>
 
-<button onclick="quiz('Gabim')">Politikan rus</button>
+<div class="answer" id="a4"></div>
 
-<button onclick="quiz('Saktë!')">Shkrimtar dhe filozof rus</button>
+</div>
 
-<button onclick="quiz('Gabim')">Kompozitor rus</button>
-
-<hr style="margin:40px 0; border-color:#333;">
+<div class="question-box">
 
 <h3>Pyetja 5</h3>
 
 <p>Cila temë trajtohet shpesh në veprat e Dostojevskit?</p>
 
-<button onclick="quiz('Gabim')">Sporti</button>
+<button onclick="showAnswer('a5','Gabim','red')">Sporti</button>
+<button onclick="showAnswer('a5','Gabim','red')">Astronomia</button>
+<button onclick="showAnswer('a5','Saktë!','lightgreen')">Morali dhe konflikti i brendshëm</button>
+<button onclick="showAnswer('a5','Gabim','red')">Teknologjia</button>
 
-<button onclick="quiz('Gabim')">Teknologjia</button>
+<div class="answer" id="a5"></div>
 
-<button onclick="quiz('Saktë!')">Morali dhe konflikti i brendshëm</button>
-
-<button onclick="quiz('Gabim')">Astronomia</button>
-
-<h2 id="quiz-result" style="margin-top:30px;color:#d4af37;"></h2>
+</div>
 
 </div>
 
@@ -974,35 +717,10 @@ behavior:'smooth'
 
 }
 
-const facts = [
+function showAnswer(id,text,color){
 
-"Dostojevski u internua në Siberi për 4 vite.",
-
-"Ai ndikoi filozofë si Nietzsche dhe Freud.",
-
-"'Krim dhe Ndëshkim' konsiderohet një nga romanet më të mëdha psikologjike.",
-
-"Dostojevski përjetoi varfëri ekstreme gjatë jetës së tij.",
-
-"Rusia ishte një nga perandoritë më të mëdha në botë gjatë shekullit XIX.",
-
-"Aleksandri II ndërmori reforma të rëndësishme për modernizimin e Rusisë.",
-
-"Industrializimi ndryshoi jetën ekonomike dhe sociale të Rusisë."
-
-];
-
-function newFact(){
-
-let random = Math.floor(Math.random()*facts.length);
-
-document.getElementById('factBox').innerHTML = facts[random];
-
-}
-
-function quiz(answer){
-
-document.getElementById('quiz-result').innerHTML = answer;
+document.getElementById(id).innerHTML=text;
+document.getElementById(id).style.color=color;
 
 }
 

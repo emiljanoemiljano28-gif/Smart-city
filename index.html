@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Rusia në Kohën e Dostojevskit</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -19,20 +21,36 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0b0b0b;
+background:#090909;
 color:white;
 font-family:'Poppins',sans-serif;
 overflow-x:hidden;
-line-height:1.7;
+line-height:1.8;
 }
 
-section{
-padding:110px 10%;
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
 }
 
-::selection{
+::-webkit-scrollbar-thumb{
 background:#8b0000;
-color:white;
+border-radius:20px;
+}
+
+/* PARTICLES */
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
+background:
+radial-gradient(circle at top,#1b1b1b,#090909 70%);
 }
 
 /* NAVBAR */
@@ -46,7 +64,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.75);
 backdrop-filter:blur(10px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
@@ -54,13 +72,13 @@ border-bottom:1px solid rgba(255,255,255,0.08);
 nav h2{
 font-family:'Cinzel',serif;
 color:#d4af37;
-letter-spacing:2px;
+letter-spacing:3px;
 }
 
 nav ul{
 display:flex;
-gap:25px;
 list-style:none;
+gap:25px;
 }
 
 nav ul li a{
@@ -85,7 +103,7 @@ text-align:center;
 padding:20px;
 
 background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.85)),
 url('https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1600&auto=format&fit=crop');
 
 background-size:cover;
@@ -97,29 +115,29 @@ animation:fadeIn 2s ease;
 }
 
 .hero h1{
-font-size:72px;
+font-size:78px;
 font-family:'Cinzel',serif;
 color:#d4af37;
 margin-bottom:20px;
-text-shadow:0 0 25px black;
+text-shadow:0 0 30px black;
 }
 
 .hero p{
-font-size:24px;
+font-size:25px;
 color:#ddd;
 margin-bottom:40px;
 }
 
 .hero button{
-padding:16px 40px;
+padding:16px 45px;
 border:none;
-border-radius:40px;
+border-radius:50px;
 background:#8b0000;
 color:white;
 font-size:17px;
 cursor:pointer;
 transition:0.4s;
-box-shadow:0 0 25px rgba(139,0,0,0.4);
+box-shadow:0 0 25px rgba(139,0,0,0.5);
 }
 
 .hero button:hover{
@@ -127,7 +145,11 @@ transform:scale(1.08);
 background:#a00000;
 }
 
-/* TITLES */
+/* SECTION */
+
+section{
+padding:120px 10%;
+}
 
 .section-title{
 text-align:center;
@@ -135,14 +157,15 @@ margin-bottom:70px;
 }
 
 .section-title h2{
-font-size:48px;
+font-size:50px;
 font-family:'Cinzel',serif;
 color:#d4af37;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 .section-title p{
 color:#bbb;
+font-size:18px;
 }
 
 /* TIMELINE */
@@ -180,17 +203,17 @@ left:50%;
 }
 
 .timeline-content{
-background:#151515;
-padding:30px;
+background:#141414;
+padding:35px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.05);
 transition:0.4s;
 }
 
 .timeline-content:hover{
 transform:translateY(-10px);
 border-color:#8b0000;
-box-shadow:0 0 25px rgba(139,0,0,0.25);
+box-shadow:0 0 30px rgba(139,0,0,0.3);
 }
 
 .timeline-content h3{
@@ -208,7 +231,7 @@ gap:30px;
 }
 
 .card{
-background:#151515;
+background:#141414;
 padding:35px;
 border-radius:20px;
 transition:0.4s;
@@ -218,13 +241,26 @@ border:1px solid rgba(255,255,255,0.05);
 .card:hover{
 transform:translateY(-10px) scale(1.03);
 border-color:#8b0000;
-box-shadow:0 0 30px rgba(139,0,0,0.25);
+box-shadow:0 0 30px rgba(139,0,0,0.3);
 }
 
 .card h3{
 color:#d4af37;
 margin-bottom:15px;
 font-size:24px;
+}
+
+/* DOSTO IMAGE */
+
+.dosto-image{
+width:100%;
+border-radius:20px;
+margin-bottom:20px;
+transition:0.4s;
+}
+
+.dosto-image:hover{
+transform:scale(1.03);
 }
 
 /* BOOKS */
@@ -236,15 +272,15 @@ gap:30px;
 }
 
 .book{
-background:#151515;
+background:#141414;
 border-radius:20px;
 overflow:hidden;
 transition:0.4s;
 }
 
 .book:hover{
-transform:scale(1.04);
-box-shadow:0 0 30px rgba(139,0,0,0.3);
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(139,0,0,0.35);
 }
 
 .book img{
@@ -283,6 +319,22 @@ cursor:pointer;
 transform:scale(1.05);
 }
 
+/* QUOTE */
+
+.quote-box{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:28px;
+font-style:italic;
+color:#d4af37;
+padding:50px;
+background:#111;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.05);
+animation:fadeIn 2s ease;
+}
+
 /* INTERACTIVE */
 
 .interactive{
@@ -290,13 +342,12 @@ text-align:center;
 }
 
 .fact-box{
-background:#151515;
+background:#141414;
 padding:40px;
 border-radius:20px;
 max-width:850px;
 margin:30px auto;
 font-size:20px;
-color:#ddd;
 border:1px solid rgba(255,255,255,0.05);
 }
 
@@ -309,16 +360,39 @@ color:white;
 font-size:16px;
 cursor:pointer;
 transition:0.4s;
+margin:10px;
 }
 
 .interactive button:hover{
 transform:scale(1.08);
 }
 
+/* QUIZ */
+
+.quiz{
+margin-top:40px;
+background:#141414;
+padding:40px;
+border-radius:20px;
+max-width:850px;
+margin-inline:auto;
+}
+
+.quiz h3{
+margin-bottom:20px;
+color:#d4af37;
+}
+
+.quiz button{
+display:block;
+width:100%;
+margin:10px 0;
+}
+
 /* FOOTER */
 
 footer{
-background:#070707;
+background:#050505;
 padding:45px;
 text-align:center;
 color:#999;
@@ -326,9 +400,9 @@ border-top:1px solid rgba(255,255,255,0.08);
 }
 
 footer h3{
-color:#d4af37;
-margin-bottom:10px;
 font-family:'Cinzel',serif;
+color:#d4af37;
+margin-bottom:15px;
 }
 
 /* ANIMATIONS */
@@ -371,7 +445,7 @@ justify-content:center;
 }
 
 .hero h1{
-font-size:44px;
+font-size:45px;
 }
 
 .hero p{
@@ -395,9 +469,12 @@ left:0;
 }
 
 </style>
+
 </head>
 
 <body>
+
+<div id="particles"></div>
 
 <!-- NAVBAR -->
 
@@ -406,12 +483,14 @@ left:0;
 <h2>DOSTOEVSKI</h2>
 
 <ul>
+
 <li><a href="#historia">Historia</a></li>
 <li><a href="#dosto">Dostojevski</a></li>
 <li><a href="#ndikimi">Ndikimi</a></li>
 <li><a href="#veprat">Veprat</a></li>
 <li><a href="#galeria">Galeria</a></li>
 <li><a href="#interaktive">Interaktive</a></li>
+
 </ul>
 
 </nav>
@@ -536,7 +615,7 @@ Kjo atmosferë ndikoi drejtpërdrejt në krijimtarinë e Dostojevskit.
 
 </section>
 
-<!-- DOSTOJEVSKI -->
+<!-- DOSTO -->
 
 <section id="dosto">
 
@@ -547,6 +626,9 @@ Kjo atmosferë ndikoi drejtpërdrejt në krijimtarinë e Dostojevskit.
 <p>Jeta dhe filozofia e tij</p>
 
 </div>
+
+<img class="dosto-image"
+src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
 
 <div class="cards">
 
@@ -600,6 +682,19 @@ Dostojevski besonte se vuajtja dhe ndërgjegjja kishin rol të rëndësishëm n�
 
 </section>
 
+<!-- QUOTE -->
+
+<section>
+
+<div class="quote-box" id="quote">
+
+“The mystery of human existence lies not in just staying alive,
+but in finding something to live for.”
+
+</div>
+
+</section>
+
 <!-- NDIKIMI -->
 
 <section id="ndikimi">
@@ -641,8 +736,7 @@ Ai eksploronte mendimet dhe konfliktet e brendshme të personazheve.
 <div class="card">
 <h3>Feja</h3>
 <p>
-Feja dhe besimi luajnë rol të rëndësishëm në veprat e tij,
-sidomos në lidhje me shpëtimin moral dhe kuptimin e jetës.
+Feja dhe besimi luajnë rol të rëndësishëm në veprat e tij.
 </p>
 </div>
 
@@ -657,8 +751,7 @@ ligjin dhe përgjegjësinë morale.
 <div class="card">
 <h3>Konfliktet Morale</h3>
 <p>
-Personazhet e Dostojevskit përballen shpesh me zgjedhje të vështira morale,
-duke reflektuar konfliktet e shoqërisë ruse të kohës.
+Personazhet e Dostojevskit përballen shpesh me zgjedhje të vështira morale.
 </p>
 </div>
 
@@ -706,8 +799,7 @@ ndërgjegjen dhe pasojat morale të krimit.
 <h3>Idioti</h3>
 
 <p>
-Romani paraqet përplasjen mes pafajësisë,
-mirësisë dhe korrupsionit të shoqërisë.
+Romani paraqet përplasjen mes pafajësisë dhe korrupsionit.
 </p>
 
 </div>
@@ -723,8 +815,7 @@ mirësisë dhe korrupsionit të shoqërisë.
 <h3>Netë të Bardha</h3>
 
 <p>
-Një histori melankolike për vetminë,
-ëndrrat dhe dashurinë e parealizuar.
+Një histori melankolike për vetminë dhe dashurinë.
 </p>
 
 </div>
@@ -740,8 +831,7 @@ Një histori melankolike për vetminë,
 <h3>Vëllezërit Karamazov</h3>
 
 <p>
-Një nga kryeveprat më të mëdha të letërsisë botërore,
-që trajton fenë, moralin dhe konfliktet familjare.
+Një kryevepër mbi fenë, moralin dhe konfliktet familjare.
 </p>
 
 </div>
@@ -786,7 +876,7 @@ që trajton fenë, moralin dhe konfliktet familjare.
 
 <h2>Interaktive</h2>
 
-<p>Fakte interesante për Dostojevskin</p>
+<p>Eksploro botën e Dostojevskit</p>
 
 </div>
 
@@ -795,6 +885,24 @@ që trajton fenë, moralin dhe konfliktet familjare.
 <div class="fact-box" id="factBox">
 
 Dostojevski u dënua fillimisht me vdekje para se dënimi t'i kthehej në internim në Siberi.
+
+</div>
+
+<div class="quiz">
+
+<h3>Sa di për Dostojevskin?</h3>
+
+<p>Kush ishte vepra më e njohur e tij?</p>
+
+<button onclick="quiz('Gabim')">Lufta dhe Paqja</button>
+
+<button onclick="quiz('Saktë!')">Krim dhe Ndëshkim</button>
+
+<button onclick="quiz('Gabim')">Hamleti</button>
+
+<button onclick="quiz('Gabim')">Fausti</button>
+
+<h2 id="quiz-result"></h2>
 
 </div>
 
@@ -830,13 +938,13 @@ const facts = [
 
 "Dostojevski u internua në Siberi për 4 vite.",
 
-"Ai konsiderohet një nga pionierët e psikologjisë moderne në letërsi.",
+"Ai ndikoi filozofë si Nietzsche dhe Freud.",
 
-"Romani 'Krim dhe Ndëshkim' është një nga veprat më të rëndësishme të letërsisë botërore.",
+"'Krim dhe Ndëshkim' konsiderohet një nga romanet më të mëdha psikologjike.",
 
-"Veprat e Dostojevskit ndikuan filozofë si Nietzsche dhe Freud.",
+"Dostojevski përjetoi varfëri ekstreme gjatë jetës së tij.",
 
-"Dostojevski përjetoi varfëri dhe borxhe të shumta gjatë jetës së tij."
+"Ai analizonte thellë psikologjinë dhe moralin njerëzor."
 
 ];
 
@@ -844,9 +952,43 @@ function newFact(){
 
 let random = Math.floor(Math.random()*facts.length);
 
-document.getElementById("factBox").innerHTML = facts[random];
+document.getElementById('factBox').innerHTML = facts[random];
 
 }
+
+function quiz(answer){
+
+document.getElementById('quiz-result').innerHTML = answer;
+
+}
+
+/* QUOTE CHANGE */
+
+const quotes = [
+
+"The mystery of human existence lies not in just staying alive, but in finding something to live for.",
+
+"Pain and suffering are always inevitable for a large intelligence and a deep heart.",
+
+"To live without hope is to cease to live.",
+
+"The soul is healed by being with children."
+
+];
+
+let q = 0;
+
+setInterval(()=>{
+
+q++;
+
+if(q >= quotes.length){
+q = 0;
+}
+
+document.getElementById('quote').innerHTML = quotes[q];
+
+},6000);
 
 </script>
 

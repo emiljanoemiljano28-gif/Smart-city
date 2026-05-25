@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
 
 <meta charset="UTF-8">
@@ -21,14 +22,14 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#090909;
+background:#080808;
 color:white;
 font-family:'Poppins',sans-serif;
 overflow-x:hidden;
 line-height:1.8;
 }
 
-/* SCROLLBAR */
+/* SCROLL */
 
 ::-webkit-scrollbar{
 width:10px;
@@ -39,7 +40,7 @@ background:#8b0000;
 border-radius:20px;
 }
 
-/* PARTICLES */
+/* BACKGROUND */
 
 #particles{
 position:fixed;
@@ -47,10 +48,11 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-pointer-events:none;
 z-index:-1;
+pointer-events:none;
+
 background:
-radial-gradient(circle at top,#1b1b1b,#090909 70%);
+radial-gradient(circle at top,#1a1a1a,#080808 70%);
 }
 
 /* NAVBAR */
@@ -60,12 +62,16 @@ position:fixed;
 top:0;
 width:100%;
 z-index:1000;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 padding:20px 60px;
+
 background:rgba(0,0,0,0.75);
 backdrop-filter:blur(10px);
+
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
@@ -84,8 +90,8 @@ gap:25px;
 nav ul li a{
 text-decoration:none;
 color:white;
-transition:0.3s;
 font-size:15px;
+transition:0.3s;
 }
 
 nav ul li a:hover{
@@ -95,15 +101,19 @@ color:#d4af37;
 /* HERO */
 
 .hero{
-height:100vh;
+
+min-height:100vh;
+
+padding-top:180px;
+
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding-inline:20px;
 
 background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.85)),
+linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.88)),
 url('https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1600&auto=format&fit=crop');
 
 background-size:cover;
@@ -112,18 +122,19 @@ background-position:center;
 
 .hero-content{
 animation:fadeIn 2s ease;
+max-width:1000px;
 }
 
 .hero h1{
 font-size:78px;
 font-family:'Cinzel',serif;
 color:#d4af37;
-margin-bottom:20px;
+margin-bottom:25px;
 text-shadow:0 0 30px black;
 }
 
 .hero p{
-font-size:25px;
+font-size:24px;
 color:#ddd;
 margin-bottom:40px;
 }
@@ -137,7 +148,7 @@ color:white;
 font-size:17px;
 cursor:pointer;
 transition:0.4s;
-box-shadow:0 0 25px rgba(139,0,0,0.5);
+box-shadow:0 0 25px rgba(139,0,0,0.45);
 }
 
 .hero button:hover{
@@ -213,7 +224,7 @@ transition:0.4s;
 .timeline-content:hover{
 transform:translateY(-10px);
 border-color:#8b0000;
-box-shadow:0 0 30px rgba(139,0,0,0.3);
+box-shadow:0 0 30px rgba(139,0,0,0.25);
 }
 
 .timeline-content h3{
@@ -234,14 +245,14 @@ gap:30px;
 background:#141414;
 padding:35px;
 border-radius:20px;
-transition:0.4s;
 border:1px solid rgba(255,255,255,0.05);
+transition:0.4s;
 }
 
 .card:hover{
 transform:translateY(-10px) scale(1.03);
 border-color:#8b0000;
-box-shadow:0 0 30px rgba(139,0,0,0.3);
+box-shadow:0 0 30px rgba(139,0,0,0.25);
 }
 
 .card h3{
@@ -254,13 +265,42 @@ font-size:24px;
 
 .dosto-image{
 width:100%;
+max-width:450px;
+display:block;
+margin:0 auto 40px;
 border-radius:20px;
-margin-bottom:20px;
 transition:0.4s;
 }
 
 .dosto-image:hover{
 transform:scale(1.03);
+}
+
+/* QUOTE */
+
+.quote-box{
+
+max-width:900px;
+
+margin:40px auto 0;
+
+text-align:center;
+
+font-size:30px;
+
+font-style:italic;
+
+color:#d4af37;
+
+padding:50px;
+
+background:#111;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,0.05);
+
+animation:fadeIn 2s ease;
 }
 
 /* BOOKS */
@@ -317,22 +357,6 @@ cursor:pointer;
 
 .gallery img:hover{
 transform:scale(1.05);
-}
-
-/* QUOTE */
-
-.quote-box{
-max-width:900px;
-margin:auto;
-text-align:center;
-font-size:28px;
-font-style:italic;
-color:#d4af37;
-padding:50px;
-background:#111;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.05);
-animation:fadeIn 2s ease;
 }
 
 /* INTERACTIVE */
@@ -405,7 +429,7 @@ color:#d4af37;
 margin-bottom:15px;
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 
 @keyframes fadeIn{
 from{
@@ -445,7 +469,7 @@ justify-content:center;
 }
 
 .hero h1{
-font-size:45px;
+font-size:46px;
 }
 
 .hero p{
@@ -464,6 +488,11 @@ padding-right:20px;
 
 .timeline-item.right{
 left:0;
+}
+
+.quote-box{
+font-size:22px;
+padding:35px;
 }
 
 }
@@ -534,7 +563,6 @@ left:0;
 Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha në botë.
 Shoqëria ruse karakterizohej nga pabarazi të mëdha sociale,
 ku aristokracia jetonte në luks ndërsa shumica e popullsisë jetonte në varfëri.
-Kjo periudhë solli ndryshime të mëdha politike, ekonomike dhe kulturore.
 </p>
 
 </div>
@@ -548,7 +576,6 @@ Kjo periudhë solli ndryshime të mëdha politike, ekonomike dhe kulturore.
 <p>
 Cari Aleksandri II njihet për reformat e tij modernizuese.
 Ai ndërmori hapa për të reformuar administratën, ushtrinë dhe sistemin gjyqësor.
-Megjithatë, shumë probleme sociale vazhduan të ekzistonin dhe pakënaqësitë në popull u rritën.
 </p>
 
 </div>
@@ -562,8 +589,6 @@ Megjithatë, shumë probleme sociale vazhduan të ekzistonin dhe pakënaqësitë
 <p>
 Në vitin 1861 u shpall çlirimi i bujkrobërve,
 një nga reformat më të rëndësishme në historinë ruse.
-Edhe pse fshatarët fituan lirinë personale,
-shumë prej tyre vazhduan të jetonin në kushte të vështira ekonomike.
 </p>
 
 </div>
@@ -575,37 +600,8 @@ shumë prej tyre vazhduan të jetonin në kushte të vështira ekonomike.
 <h3>Industrializimi</h3>
 
 <p>
-Industrializimi solli zhvillimin e qyteteve dhe fabrikave.
-Shumë njerëz u zhvendosën nga fshatrat drejt qyteteve në kërkim të punës,
-duke krijuar një klasë të re punëtore dhe tensione të mëdha sociale.
-</p>
-
-</div>
-</div>
-
-<div class="timeline-item left">
-<div class="timeline-content">
-
-<h3>Varfëria dhe Revoltat</h3>
-
-<p>
-Varfëria ekstreme dhe kushtet e vështira të jetesës shkaktuan revolta dhe protesta.
-Populli kërkonte më shumë liri, drejtësi dhe kushte më të mira ekonomike.
-Këto tensione ndikuan thellë në letërsinë dhe mendimin filozofik të kohës.
-</p>
-
-</div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-content">
-
-<h3>Censura dhe Kontrolli Shtetëror</h3>
-
-<p>
-Qeveria ruse ushtronte kontroll të fortë mbi shtypin dhe letërsinë.
-Shkrimtarët dhe intelektualët shpesh censuroheshin për idetë e tyre.
-Kjo atmosferë ndikoi drejtpërdrejt në krijimtarinë e Dostojevskit.
+Industrializimi solli zhvillimin e qyteteve dhe fabrikave,
+duke ndryshuar jetën ekonomike dhe sociale të Rusisë.
 </p>
 
 </div>
@@ -638,7 +634,6 @@ src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
 
 <p>
 Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë botërore.
-Ai lindi në Moskë në vitin 1821 dhe u bë i njohur për analizën e thellë psikologjike të personazheve të tij.
 </p>
 
 </div>
@@ -648,21 +643,17 @@ Ai lindi në Moskë në vitin 1821 dhe u bë i njohur për analizën e thellë p
 <h3>Burgimi në Siberi</h3>
 
 <p>
-Në vitin 1849, Dostojevski u arrestua për aktivitetet e tij politike.
-Ai u dënua fillimisht me vdekje,
-por dënimi iu kthye në internim dhe punë të detyruar në Siberi.
-Kjo përvojë ndryshoi thellësisht botëkuptimin e tij.
+Ai u internua në Siberi pas arrestimit për aktivitetet politike.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>Vështirësitë Ekonomike</h3>
+<h3>Idetë Filozofike</h3>
 
 <p>
-Gjatë jetës së tij, Dostojevski përjetoi probleme të shumta financiare.
-Borxhet dhe varësia nga bixhozi ndikuan në jetën dhe krijimtarinë e tij letrare.
+Veprat e tij trajtojnë moralin, fenë dhe konfliktin e brendshëm njerëzor.
 </p>
 
 </div>
@@ -672,8 +663,7 @@ Borxhet dhe varësia nga bixhozi ndikuan në jetën dhe krijimtarinë e tij letr
 <h3>Besimi dhe Morali</h3>
 
 <p>
-Besimi fetar dhe kërkimi moral janë ndër temat kryesore të veprave të tij.
-Dostojevski besonte se vuajtja dhe ndërgjegjja kishin rol të rëndësishëm në shpëtimin shpirtëror të njeriut.
+Dostojevski analizonte shpëtimin moral dhe ndërgjegjen njerëzore.
 </p>
 
 </div>
@@ -711,48 +701,22 @@ but in finding something to live for.”
 
 <div class="card">
 <h3>Varfëria</h3>
-<p>
-Varfëria ishte një realitet i përditshëm për shumë njerëz në Rusi
-dhe kjo temë shfaqet shpesh në veprat e Dostojevskit.
-</p>
+<p>Një nga temat më të forta në letërsinë ruse.</p>
 </div>
 
 <div class="card">
 <h3>Krimi</h3>
-<p>
-Krimi përdoret si mënyrë për të analizuar psikologjinë,
-fajin dhe ndërgjegjen njerëzore.
-</p>
+<p>Analizë psikologjike e fajit dhe ndërgjegjes.</p>
 </div>
 
 <div class="card">
-<h3>Psikologjia Njerëzore</h3>
-<p>
-Dostojevski konsiderohet pionier i analizës psikologjike në letërsi.
-Ai eksploronte mendimet dhe konfliktet e brendshme të personazheve.
-</p>
+<h3>Psikologjia</h3>
+<p>Eksplorim i mendimeve dhe konflikteve të brendshme.</p>
 </div>
 
 <div class="card">
 <h3>Feja</h3>
-<p>
-Feja dhe besimi luajnë rol të rëndësishëm në veprat e tij.
-</p>
-</div>
-
-<div class="card">
-<h3>Drejtësia</h3>
-<p>
-Në romanet e tij trajtohet vazhdimisht pyetja mbi drejtësinë,
-ligjin dhe përgjegjësinë morale.
-</p>
-</div>
-
-<div class="card">
-<h3>Konfliktet Morale</h3>
-<p>
-Personazhet e Dostojevskit përballen shpesh me zgjedhje të vështira morale.
-</p>
+<p>Besimi dhe morali si tema qendrore.</p>
 </div>
 
 </div>
@@ -781,10 +745,7 @@ Personazhet e Dostojevskit përballen shpesh me zgjedhje të vështira morale.
 
 <h3>Krim dhe Ndëshkim</h3>
 
-<p>
-Një roman psikologjik që trajton fajin,
-ndërgjegjen dhe pasojat morale të krimit.
-</p>
+<p>Roman psikologjik mbi fajin dhe ndërgjegjen.</p>
 
 </div>
 
@@ -798,9 +759,7 @@ ndërgjegjen dhe pasojat morale të krimit.
 
 <h3>Idioti</h3>
 
-<p>
-Romani paraqet përplasjen mes pafajësisë dhe korrupsionit.
-</p>
+<p>Përplasja mes mirësisë dhe korrupsionit.</p>
 
 </div>
 
@@ -814,25 +773,7 @@ Romani paraqet përplasjen mes pafajësisë dhe korrupsionit.
 
 <h3>Netë të Bardha</h3>
 
-<p>
-Një histori melankolike për vetminë dhe dashurinë.
-</p>
-
-</div>
-
-</div>
-
-<div class="book">
-
-<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop">
-
-<div class="book-content">
-
-<h3>Vëllezërit Karamazov</h3>
-
-<p>
-Një kryevepër mbi fenë, moralin dhe konfliktet familjare.
-</p>
+<p>Histori melankolike për vetminë dhe dashurinë.</p>
 
 </div>
 
@@ -862,8 +803,6 @@ Një kryevepër mbi fenë, moralin dhe konfliktet familjare.
 
 <img src="https://images.unsplash.com/photo-1529429611270-5b5b0fddf2e8?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
-
 </div>
 
 </section>
@@ -880,11 +819,11 @@ Një kryevepër mbi fenë, moralin dhe konfliktet familjare.
 
 </div>
 
-<button onclick="newFact()">Shfaq Fakt Interesant</button>
+<button onclick="newFact()">Shfaq Fakt</button>
 
 <div class="fact-box" id="factBox">
 
-Dostojevski u dënua fillimisht me vdekje para se dënimi t'i kthehej në internim në Siberi.
+Dostojevski u internua në Siberi për 4 vite.
 
 </div>
 
@@ -892,7 +831,7 @@ Dostojevski u dënua fillimisht me vdekje para se dënimi t'i kthehej në intern
 
 <h3>Sa di për Dostojevskin?</h3>
 
-<p>Kush ishte vepra më e njohur e tij?</p>
+<p>Kush është vepra më e njohur e tij?</p>
 
 <button onclick="quiz('Gabim')">Lufta dhe Paqja</button>
 
@@ -922,8 +861,6 @@ Dostojevski u dënua fillimisht me vdekje para se dënimi t'i kthehej në intern
 
 </footer>
 
-<!-- SCRIPT -->
-
 <script>
 
 function goHistory(){
@@ -942,9 +879,7 @@ const facts = [
 
 "'Krim dhe Ndëshkim' konsiderohet një nga romanet më të mëdha psikologjike.",
 
-"Dostojevski përjetoi varfëri ekstreme gjatë jetës së tij.",
-
-"Ai analizonte thellë psikologjinë dhe moralin njerëzor."
+"Dostojevski përjetoi varfëri ekstreme gjatë jetës së tij."
 
 ];
 
@@ -962,17 +897,13 @@ document.getElementById('quiz-result').innerHTML = answer;
 
 }
 
-/* QUOTE CHANGE */
-
 const quotes = [
 
 "The mystery of human existence lies not in just staying alive, but in finding something to live for.",
 
 "Pain and suffering are always inevitable for a large intelligence and a deep heart.",
 
-"To live without hope is to cease to live.",
-
-"The soul is healed by being with children."
+"To live without hope is to cease to live."
 
 ];
 

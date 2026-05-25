@@ -398,8 +398,6 @@ opacity:0;
 }
 }
 
-/* MUSIC BUTTON */
-
 .music-btn{
 position:fixed;
 bottom:20px;
@@ -412,10 +410,7 @@ padding:15px 20px;
 border-radius:50px;
 cursor:pointer;
 font-size:16px;
-box-shadow:0 0 20px rgba(139,0,0,0.5);
 }
-
-/* FOOTER */
 
 footer{
 background:#050505;
@@ -424,8 +419,6 @@ text-align:center;
 color:#999;
 border-top:1px solid rgba(255,255,255,0.08);
 }
-
-/* ANIMATION */
 
 @keyframes fadeIn{
 from{
@@ -447,39 +440,6 @@ to{
 opacity:1;
 transform:translateY(0);
 }
-}
-
-@media(max-width:900px){
-
-nav{
-padding:20px;
-flex-direction:column;
-gap:20px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.timeline::after{
-left:20px;
-}
-
-.timeline-item{
-width:100%;
-padding-left:70px;
-padding-right:20px;
-}
-
-.timeline-item.right{
-left:0;
-}
-
 }
 
 </style>
@@ -539,11 +499,14 @@ left:0;
 <h3>Rusia në Shekullin XIX</h3>
 
 <p>
-Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha dhe më të fuqishme në botë. Ajo shtrihej nga Europa Lindore deri në Azi dhe drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe popullin. Shoqëria ruse ishte shumë e ndarë: aristokracia dhe familjet fisnike jetonin në luks, ndërsa shumica e popullsisë, sidomos fshatarët, jetonin në varfëri dhe pa të drejta. Kjo pabarazi sociale krijoi pakënaqësi dhe tensione që do të ndikonin në historinë e mëvonshme të vendit.
+Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha dhe më të fuqishme në botë
+  .Ajo shtrihej nga Europa Lindore deri në Azi dhe drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe popullin. Shoqëria ruse ishte shumë e ndarë: aristokracia dhe familjet fisnike jetonin në luks, ndërsa shumica e popullsisë, sidomos fshatarët, jetonin në varfëri dhe pa të drejta. Kjo pabarazi sociale krijoi pakënaqësi dhe tensione që do të ndikonin në historinë e mëvonshme të vendit.
 </p>
 
 </div>
-</div><div class="timeline-item right">
+</div>
+
+<div class="timeline-item right">
 <div class="timeline-content">
 
 <h3>Cari Aleksandri II</h3>
@@ -798,13 +761,13 @@ Një kryevepër mbi fenë, moralin dhe konfliktet familjare.
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1200&auto=format&fit=crop">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
+
+<img src="https://images.unsplash.com/photo-1520637836862-4d197d17c13a?q=80&w=1200&auto=format&fit=crop">
 
 <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1529429611270-5b5b0fddf2e8?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
+<img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1200&auto=format&fit=crop">
 
 </div>
 
@@ -1099,20 +1062,6 @@ playing=false;
 }
 
 }
-
-/* LIGHTBOX */
-
-const galleryImages=document.querySelectorAll('.gallery img');
-
-galleryImages.forEach(img=>{
-
-img.addEventListener('click',()=>{
-
-window.open(img.src,'_blank');
-
-});
-
-});
 
 </script>
 

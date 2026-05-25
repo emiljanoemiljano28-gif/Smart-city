@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="sq">
-
 <head>
 
 <meta charset="UTF-8">
@@ -47,16 +46,12 @@ position:fixed;
 top:0;
 width:100%;
 z-index:1000;
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-
 padding:20px 60px;
-
 background:rgba(0,0,0,0.75);
 backdrop-filter:blur(10px);
-
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
@@ -86,14 +81,11 @@ color:#d4af37;
 /* HERO */
 
 .hero{
-
 min-height:100vh;
-
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-
 padding:180px 20px 100px;
 
 background:
@@ -274,6 +266,62 @@ border-radius:20px;
 border:1px solid rgba(255,255,255,0.05);
 }
 
+/* BOOKS */
+
+.books{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.book{
+background:#141414;
+border-radius:20px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.book:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(139,0,0,0.35);
+}
+
+.book img{
+width:100%;
+height:370px;
+object-fit:cover;
+}
+
+.book-content{
+padding:25px;
+}
+
+.book-content h3{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
 /* QUIZ */
 
 .quiz{
@@ -283,7 +331,6 @@ padding:40px;
 border-radius:20px;
 max-width:900px;
 margin-inline:auto;
-
 display:flex;
 flex-direction:column;
 gap:40px;
@@ -347,7 +394,7 @@ color:#d4af37;
 margin-bottom:15px;
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 
 @keyframes fadeIn{
 from{
@@ -433,13 +480,14 @@ font-size:18px;
 
 <li><a href="#historia">Historia</a></li>
 <li><a href="#dosto">Dostojevski</a></li>
+<li><a href="#ndikimi">Ndikimi</a></li>
+<li><a href="#veprat">Veprat</a></li>
+<li><a href="#galeria">Galeria</a></li>
 <li><a href="#quiz">Quiz</a></li>
 
 </ul>
 
 </nav>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -454,8 +502,6 @@ font-size:18px;
 </div>
 
 </section>
-
-<!-- HISTORIA -->
 
 <section id="historia">
 
@@ -521,62 +567,192 @@ Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të s
 
 </section>
 
-<!-- DOSTOJEVSKI -->
+<!-- NDIKIMI -->
 
-<section id="dosto">
+<section id="ndikimi">
 
 <div class="section-title">
 
-<h2>Fjodor Dostojevski</h2>
+<h2>Ndikimi i Rusisë tek Letërsia</h2>
 
-<p>Jeta dhe filozofia e tij</p>
+<p>Tematika kryesore në krijimtarinë e Dostojevskit</p>
 
 </div>
-
-<img class="dosto-image"
-src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Dostoevsky_1872.jpg">
 
 <div class="cards">
 
 <div class="card">
 
-<h3>Jeta e Tij</h3>
+<h3>Varfëria</h3>
 
 <p>
-Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë botërore dhe një figurë shumë e rëndësishme e kulturës ruse. Ai lindi në vitin 1821 në Moska dhe që në rini tregoi interes për letërsinë, filozofinë dhe problemet sociale të kohës. Veprat e tij analizojnë psikologjinë njerëzore dhe konfliktet morale që përjeton individi.
+Varfëria ishte një realitet i përditshëm për shumë njerëz në Rusi
+dhe kjo temë shfaqet shpesh në veprat e Dostojevskit.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>Burgimi në Siberi</h3>
+<h3>Krimi</h3>
 
 <p>
-Në vitin 1849, Dostojevski u arrestua për pjesëmarrje në një grup intelektualësh që diskutonin ide politike dhe sociale kundër regjimit carist. Ai u dënua me internim në Siberia, ku kaloi disa vite në kushte shumë të vështira. Përvoja e burgimit ndikoi thellësisht në jetën dhe mendimin e tij filozofik. Pas kthimit, ai filloi të shkruante vepra edhe më të thella psikologjikisht dhe shpirtërisht.
+Krimi përdoret si mënyrë për të analizuar psikologjinë,
+fajin dhe ndërgjegjen njerëzore.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>Idetë Filozofike</h3>
+<h3>Psikologjia Njerëzore</h3>
 
 <p>
-Veprat e Dostojevskit trajtojnë tema si liria, faji, vuajtja, morali dhe besimi. Ai analizonte konfliktin e brendshëm të njeriut dhe mënyrën se si shoqëria ndikon në psikologjinë individuale. Personazhet e tij shpesh përballen me zgjedhje të vështira morale dhe kriza ekzistenciale.
+Dostojevski konsiderohet pionier i analizës psikologjike në letërsi.
+Ai eksploronte mendimet dhe konfliktet e brendshme të personazheve.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>Besimi dhe Morali</h3>
+<h3>Feja</h3>
 
 <p>
-Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe shpëtimi moral i njeriut. Ai besonte se vuajtja mund ta ndihmojë njeriun të kuptojë veten dhe të arrijë shpëtimin shpirtëror. Në romanet e tij, si Krim dhe Ndëshkim dhe Vëllezërit Karamazov, ai eksploron ndërgjegjen njerëzore, përgjegjësinë morale dhe luftën mes së mirës dhe së keqes.
+Feja dhe besimi luajnë rol të rëndësishëm në veprat e tij.
 </p>
 
 </div>
+
+<div class="card">
+
+<h3>Drejtësia</h3>
+
+<p>
+Në romanet e tij trajtohet vazhdimisht pyetja mbi drejtësinë,
+ligjin dhe përgjegjësinë morale.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Konfliktet Morale</h3>
+
+<p>
+Personazhet e Dostojevskit përballen shpesh me zgjedhje të vështira morale.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VEPRAT -->
+
+<section id="veprat">
+
+<div class="section-title">
+
+<h2>Veprat Kryesore</h2>
+
+<p>Kryeveprat e Dostojevskit</p>
+
+</div>
+
+<div class="books">
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Krim dhe Ndëshkim</h3>
+
+<p>
+Një roman psikologjik që trajton fajin,
+ndërgjegjen dhe pasojat morale të krimit.
+</p>
+
+</div>
+
+</div>
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Idioti</h3>
+
+<p>
+Romani paraqet përplasjen mes pafajësisë dhe korrupsionit.
+</p>
+
+</div>
+
+</div>
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Netë të Bardha</h3>
+
+<p>
+Një histori melankolike për vetminë dhe dashurinë.
+</p>
+
+</div>
+
+</div>
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Vëllezërit Karamazov</h3>
+
+<p>
+Një kryevepër mbi fenë, moralin dhe konfliktet familjare.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section id="galeria">
+
+<div class="section-title">
+
+<h2>Galeria</h2>
+
+<p>Rusia e vjetër dhe bota e Dostojevskit</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1529429611270-5b5b0fddf2e8?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
 
 </div>
 
@@ -672,6 +848,8 @@ Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
 
 <h3>Rusia në Kohën e Dostojevskit</h3>
@@ -700,6 +878,30 @@ document.getElementById(id).innerHTML=text;
 document.getElementById(id).style.color=color;
 
 }
+
+const quotes = [
+
+"The mystery of human existence lies not in just staying alive, but in finding something to live for.",
+
+"Pain and suffering are always inevitable for a large intelligence and a deep heart.",
+
+"To live without hope is to cease to live."
+
+];
+
+let q = 0;
+
+setInterval(()=>{
+
+q++;
+
+if(q >= quotes.length){
+q = 0;
+}
+
+document.getElementById('quote').innerHTML = quotes[q];
+
+},6000);
 
 </script>
 

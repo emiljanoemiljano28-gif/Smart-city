@@ -1,316 +1,851 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart City</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>Rusia në Kohën e Dostojevskit</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin:0;
-    font-family:Arial;
-    background:#0f172a;
-    color:white;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
-header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1494526585095-c41746248156') center/cover no-repeat;
-    height:45vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+body{
+background:#0b0b0b;
+color:white;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+line-height:1.7;
 }
 
-.header-content h1 {
-    font-size:50px;
-    text-shadow:0 0 20px #38bdf8;
+section{
+padding:110px 10%;
 }
 
-.container {padding:20px;}
-
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+::selection{
+background:#8b0000;
+color:white;
 }
 
-.card {
-    background:#1e293b;
-    padding:15px;
-    border-radius:12px;
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-h2 {
-    color:#38bdf8;
-    text-align:center;
+nav h2{
+font-family:'Cinzel',serif;
+color:#d4af37;
+letter-spacing:2px;
 }
 
-iframe {
-    width:100%;
-    height:300px;
-    border-radius:10px;
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
 }
 
-button {
-    padding:10px;
-    background:#38bdf8;
-    border:none;
-    border-radius:10px;
-    color:white;
-    cursor:pointer;
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:0.3s;
+font-size:15px;
 }
 
-.city {
-    min-height:200px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:15px;
-    border-radius:12px;
-    background-size:cover;
-    background-position:center;
+nav ul li a:hover{
+color:#d4af37;
 }
 
-table {
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),
+url('https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
 }
 
-td, th {
-    padding:10px;
-    border:1px solid #334155;
-    text-align:center;
+.hero-content{
+animation:fadeIn 2s ease;
 }
 
-th {
-    background:#38bdf8;
+.hero h1{
+font-size:72px;
+font-family:'Cinzel',serif;
+color:#d4af37;
+margin-bottom:20px;
+text-shadow:0 0 25px black;
 }
+
+.hero p{
+font-size:24px;
+color:#ddd;
+margin-bottom:40px;
+}
+
+.hero button{
+padding:16px 40px;
+border:none;
+border-radius:40px;
+background:#8b0000;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 0 25px rgba(139,0,0,0.4);
+}
+
+.hero button:hover{
+transform:scale(1.08);
+background:#a00000;
+}
+
+/* TITLES */
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:48px;
+font-family:'Cinzel',serif;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.section-title p{
+color:#bbb;
+}
+
+/* TIMELINE */
+
+.timeline{
+position:relative;
+max-width:1100px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#8b0000;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-2px;
+}
+
+.timeline-item{
+padding:20px 40px;
+position:relative;
+width:50%;
+animation:fadeUp 1s ease;
+}
+
+.timeline-item.left{
+left:0;
+}
+
+.timeline-item.right{
+left:50%;
+}
+
+.timeline-content{
+background:#151515;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+}
+
+.timeline-content:hover{
+transform:translateY(-10px);
+border-color:#8b0000;
+box-shadow:0 0 25px rgba(139,0,0,0.25);
+}
+
+.timeline-content h3{
+color:#d4af37;
+margin-bottom:15px;
+font-size:24px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#151515;
+padding:35px;
+border-radius:20px;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+border-color:#8b0000;
+box-shadow:0 0 30px rgba(139,0,0,0.25);
+}
+
+.card h3{
+color:#d4af37;
+margin-bottom:15px;
+font-size:24px;
+}
+
+/* BOOKS */
+
+.books{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.book{
+background:#151515;
+border-radius:20px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.book:hover{
+transform:scale(1.04);
+box-shadow:0 0 30px rgba(139,0,0,0.3);
+}
+
+.book img{
+width:100%;
+height:370px;
+object-fit:cover;
+}
+
+.book-content{
+padding:25px;
+}
+
+.book-content h3{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* INTERACTIVE */
+
+.interactive{
+text-align:center;
+}
+
+.fact-box{
+background:#151515;
+padding:40px;
+border-radius:20px;
+max-width:850px;
+margin:30px auto;
+font-size:20px;
+color:#ddd;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.interactive button{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#8b0000;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.interactive button:hover{
+transform:scale(1.08);
+}
+
+/* FOOTER */
+
+footer{
+background:#070707;
+padding:45px;
+text-align:center;
+color:#999;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer h3{
+color:#d4af37;
+margin-bottom:10px;
+font-family:'Cinzel',serif;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+nav{
+padding:20px;
+flex-direction:column;
+gap:20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:44px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.timeline::after{
+left:20px;
+}
+
+.timeline-item{
+width:100%;
+padding-left:70px;
+padding-right:20px;
+}
+
+.timeline-item.right{
+left:0;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="header-content">
-<h1>🌆 SMART CITY</h1>
-<p>Teknologji Informacioni dhe Komunikimi</p>
-</div>
-</header>
+<!-- NAVBAR -->
 
-<div class="container">
+<nav>
 
-<!-- DASHBOARD -->
-<div class="grid">
+<h2>DOSTOEVSKI</h2>
 
-<div class="card">
-<h2>🗺️ Harta</h2>
-<iframe src="https://maps.google.com/maps?q=Tirana&output=embed"></iframe>
-</div>
+<ul>
+<li><a href="#historia">Historia</a></li>
+<li><a href="#dosto">Dostojevski</a></li>
+<li><a href="#ndikimi">Ndikimi</a></li>
+<li><a href="#veprat">Veprat</a></li>
+<li><a href="#galeria">Galeria</a></li>
+<li><a href="#interaktive">Interaktive</a></li>
+</ul>
 
-<div class="card">
-<h2>🌦️ Moti</h2>
-<p id="weather">Loading...</p>
-</div>
+</nav>
 
-<div class="card">
-<h2>📊 Grafik</h2>
-<canvas id="chart"></canvas>
-</div>
+<!-- HERO -->
 
-<div class="card">
-<h2>🔔 Njoftime</h2>
-<button onclick="notify()">Kliko</button>
-</div>
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Rusia në Kohën e Dostojevskit</h1>
+
+<p>Histori, Shoqëri dhe Letërsi</p>
+
+<button onclick="goHistory()">Fillo Udhëtimin</button>
 
 </div>
 
-<!-- QYTETE -->
-<h2>🌆 Qytete Smart</h2>
-<div class="grid">
-
-<div class="card city" style="background:url('https://images.unsplash.com/photo-1532236204992-f5e85c024202') center/cover;">
-<h3>Shanghai</h3>
-<p>AI dhe sensorë për menaxhimin e trafikut.</p>
-</div>
-
-<div class="card city" style="background:url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c') center/cover;">
-<h3>Tokyo</h3>
-<p>Transport publik inteligjent dhe automatizim.</p>
-</div>
-
-<div class="card city" style="background:url('https://images.unsplash.com/photo-1494526585095-c41746248156') center/cover;">
-<h3>New York</h3>
-<p>Big Data për energji dhe planifikim urban.</p>
-</div>
-
-</div>
-
-<!-- TRANSPORT -->
-<h2>🚗 Transporti Inteligjent</h2>
-<div class="grid">
-<div class="card">📡 Trafiku menaxhohet me sensorë inteligjentë.</div>
-<div class="card">📱 Orar transporti në kohë reale.</div>
-<div class="card">🚲⚡ Automjete elektrike.</div>
-<div class="card">🗺️ Navigim dhe trafik live.</div>
-</div>
-
-<!-- ENERGJI -->
-<h2>🌱 Energjia & Mjedisi</h2>
-<div class="grid">
-<div class="card">💡 Ndriçim inteligjent.</div>
-<div class="card">☀️ Energji diellore.</div>
-<div class="card">🌫️ Monitorim i ajrit.</div>
-<div class="card">🌳 Hapësira të gjelbra.</div>
-</div>
-
-<!-- SHENDET -->
-<h2>🏥 Shëndetësia & Siguria</h2>
-<div class="grid">
-<div class="card">💻 Shërbime mjekësore online.</div>
-<div class="card">📹 Kamera sigurie.</div>
-<div class="card">🚨 Njoftime emergjence.</div>
-</div>
-
-<!-- SHERBIME -->
-<h2>📱 Shërbime Digjitale</h2>
-<div class="grid">
-<div class="card">💳 Pagesa online.</div>
-<div class="card">🛠️ Raportim problemesh.</div>
-<div class="card">📶 Wi-Fi publik.</div>
-</div>
-
-<!-- 🇦🇱 TIRANA -->
-<section style="padding:60px 20px;">
-<h2 style="color:#38bdf8; text-align:center;">🇦🇱 Tirana – Qyteti dhe Kultura</h2>
-
-<div style="text-align:center; font-size:20px; margin-bottom:20px;">
-🕒 Ora në Tiranë: <span id="clock"></span>
-</div>
-
-<div style="max-width:1000px; margin:auto;">
-<div style="background:#1e293b; padding:25px; border-radius:15px; margin:20px 0;">
-<h3 style="color:#facc15;">🏛️ Vendet turistike</h3>
-<p>Sheshi Skënderbej, Kalaja e Tiranës, Pazari i Ri dhe Parku i Liqenit janë pikat kryesore turistike.</p>
-</div>
-
-<div style="background:#1e293b; padding:25px; border-radius:15px; margin:20px 0;">
-<h3 style="color:#22c55e;">🎭 Kultura</h3>
-<p>Muzeu Historik, Galeria e Arteve dhe Opera janë qendrat kryesore kulturore.</p>
-</div>
-
-<div style="background:#1e293b; padding:25px; border-radius:15px; margin:20px 0;">
-<h3 style="color:#38bdf8;">🎉 Jeta kulturore</h3>
-<p>Tirana është një qytet i gjallë me aktivitete dhe tradita të pasura.</p>
-</div>
-</div>
 </section>
 
-<!-- 🎥 VIDEO (TITULL I RI I BUKUR) -->
-<h2 style="color:#38bdf8; text-align:center;">
-🇦🇱 TIRANA NË NJË VIDEO
-</h2>
+<!-- HISTORIA -->
 
-<iframe width="100%" height="300"
-src="https://www.youtube.com/embed/kChp3Dup1DM"
-title="Tirana City"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
+<section id="historia">
 
-<!-- 🌍 KRAHASIM -->
-<h2>🌍 Krahasimi i qyteteve</h2>
-<table>
-<tr>
-<th>Qyteti</th>
-<th>Teknologjia</th>
-<th>Transporti</th>
-<th>Energjia</th>
-</tr>
-<tr>
-<td>Tokyo</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐</td>
-</tr>
-<tr>
-<td>Shanghai</td>
-<td>⭐⭐⭐⭐⭐</td>
-<td>⭐⭐⭐⭐</td>
-<td>⭐⭐⭐</td>
-</tr>
-<tr>
-<td>Tirana 🇦🇱</td>
-<td>⭐⭐⭐⭐</td>
-<td>⭐⭐⭐</td>
-<td>⭐⭐⭐</td>
-</tr>
-</table>
+<div class="section-title">
 
-<!-- HARTA -->
-<h2>🗺️ Shërbime në qytet</h2>
-<iframe src="https://maps.google.com/maps?q=spital tirane&output=embed"></iframe>
+<h2>Historia e Rusisë</h2>
 
-<!-- FEEDBACK -->
-<h2>🗣️ Feedback</h2>
-<form onsubmit="sendFeedback(event)">
-<input type="text" id="name" placeholder="Emri" required><br><br>
-<textarea id="msgInput" placeholder="Sugjerimi..." required></textarea><br><br>
-<button type="submit">Dërgo</button>
-</form>
-
-<div id="comments"></div>
+<p>Rusia e shekullit XIX dhe transformimi i saj historik</p>
 
 </div>
+
+<div class="timeline">
+
+<div class="timeline-item left">
+<div class="timeline-content">
+
+<h3>Rusia në Shekullin XIX</h3>
+
+<p>
+Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha në botë.
+Shoqëria ruse karakterizohej nga pabarazi të mëdha sociale,
+ku aristokracia jetonte në luks ndërsa shumica e popullsisë jetonte në varfëri.
+Kjo periudhë solli ndryshime të mëdha politike, ekonomike dhe kulturore.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+
+<h3>Cari Aleksandri II</h3>
+
+<p>
+Cari Aleksandri II njihet për reformat e tij modernizuese.
+Ai ndërmori hapa për të reformuar administratën, ushtrinë dhe sistemin gjyqësor.
+Megjithatë, shumë probleme sociale vazhduan të ekzistonin dhe pakënaqësitë në popull u rritën.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+
+<h3>Çlirimi i Bujkrobërve</h3>
+
+<p>
+Në vitin 1861 u shpall çlirimi i bujkrobërve,
+një nga reformat më të rëndësishme në historinë ruse.
+Edhe pse fshatarët fituan lirinë personale,
+shumë prej tyre vazhduan të jetonin në kushte të vështira ekonomike.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+
+<h3>Industrializimi</h3>
+
+<p>
+Industrializimi solli zhvillimin e qyteteve dhe fabrikave.
+Shumë njerëz u zhvendosën nga fshatrat drejt qyteteve në kërkim të punës,
+duke krijuar një klasë të re punëtore dhe tensione të mëdha sociale.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+
+<h3>Varfëria dhe Revoltat</h3>
+
+<p>
+Varfëria ekstreme dhe kushtet e vështira të jetesës shkaktuan revolta dhe protesta.
+Populli kërkonte më shumë liri, drejtësi dhe kushte më të mira ekonomike.
+Këto tensione ndikuan thellë në letërsinë dhe mendimin filozofik të kohës.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+
+<h3>Censura dhe Kontrolli Shtetëror</h3>
+
+<p>
+Qeveria ruse ushtronte kontroll të fortë mbi shtypin dhe letërsinë.
+Shkrimtarët dhe intelektualët shpesh censuroheshin për idetë e tyre.
+Kjo atmosferë ndikoi drejtpërdrejt në krijimtarinë e Dostojevskit.
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- DOSTOJEVSKI -->
+
+<section id="dosto">
+
+<div class="section-title">
+
+<h2>Fjodor Dostojevski</h2>
+
+<p>Jeta dhe filozofia e tij</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Jeta e Tij</h3>
+
+<p>
+Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë botërore.
+Ai lindi në Moskë në vitin 1821 dhe u bë i njohur për analizën e thellë psikologjike të personazheve të tij.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Burgimi në Siberi</h3>
+
+<p>
+Në vitin 1849, Dostojevski u arrestua për aktivitetet e tij politike.
+Ai u dënua fillimisht me vdekje,
+por dënimi iu kthye në internim dhe punë të detyruar në Siberi.
+Kjo përvojë ndryshoi thellësisht botëkuptimin e tij.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Vështirësitë Ekonomike</h3>
+
+<p>
+Gjatë jetës së tij, Dostojevski përjetoi probleme të shumta financiare.
+Borxhet dhe varësia nga bixhozi ndikuan në jetën dhe krijimtarinë e tij letrare.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Besimi dhe Morali</h3>
+
+<p>
+Besimi fetar dhe kërkimi moral janë ndër temat kryesore të veprave të tij.
+Dostojevski besonte se vuajtja dhe ndërgjegjja kishin rol të rëndësishëm në shpëtimin shpirtëror të njeriut.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NDIKIMI -->
+
+<section id="ndikimi">
+
+<div class="section-title">
+
+<h2>Ndikimi i Rusisë tek Letërsia</h2>
+
+<p>Tematika kryesore në krijimtarinë e Dostojevskit</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Varfëria</h3>
+<p>
+Varfëria ishte një realitet i përditshëm për shumë njerëz në Rusi
+dhe kjo temë shfaqet shpesh në veprat e Dostojevskit.
+</p>
+</div>
+
+<div class="card">
+<h3>Krimi</h3>
+<p>
+Krimi përdoret si mënyrë për të analizuar psikologjinë,
+fajin dhe ndërgjegjen njerëzore.
+</p>
+</div>
+
+<div class="card">
+<h3>Psikologjia Njerëzore</h3>
+<p>
+Dostojevski konsiderohet pionier i analizës psikologjike në letërsi.
+Ai eksploronte mendimet dhe konfliktet e brendshme të personazheve.
+</p>
+</div>
+
+<div class="card">
+<h3>Feja</h3>
+<p>
+Feja dhe besimi luajnë rol të rëndësishëm në veprat e tij,
+sidomos në lidhje me shpëtimin moral dhe kuptimin e jetës.
+</p>
+</div>
+
+<div class="card">
+<h3>Drejtësia</h3>
+<p>
+Në romanet e tij trajtohet vazhdimisht pyetja mbi drejtësinë,
+ligjin dhe përgjegjësinë morale.
+</p>
+</div>
+
+<div class="card">
+<h3>Konfliktet Morale</h3>
+<p>
+Personazhet e Dostojevskit përballen shpesh me zgjedhje të vështira morale,
+duke reflektuar konfliktet e shoqërisë ruse të kohës.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- VEPRAT -->
+
+<section id="veprat">
+
+<div class="section-title">
+
+<h2>Veprat Kryesore</h2>
+
+<p>Kryeveprat e Dostojevskit</p>
+
+</div>
+
+<div class="books">
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Krim dhe Ndëshkim</h3>
+
+<p>
+Një roman psikologjik që trajton fajin,
+ndërgjegjen dhe pasojat morale të krimit.
+</p>
+
+</div>
+
+</div>
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Idioti</h3>
+
+<p>
+Romani paraqet përplasjen mes pafajësisë,
+mirësisë dhe korrupsionit të shoqërisë.
+</p>
+
+</div>
+
+</div>
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Netë të Bardha</h3>
+
+<p>
+Një histori melankolike për vetminë,
+ëndrrat dhe dashurinë e parealizuar.
+</p>
+
+</div>
+
+</div>
+
+<div class="book">
+
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop">
+
+<div class="book-content">
+
+<h3>Vëllezërit Karamazov</h3>
+
+<p>
+Një nga kryeveprat më të mëdha të letërsisë botërore,
+që trajton fenë, moralin dhe konfliktet familjare.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section id="galeria">
+
+<div class="section-title">
+
+<h2>Galeria</h2>
+
+<p>Rusia e vjetër dhe bota e Dostojevskit</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1529429611270-5b5b0fddf2e8?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- INTERAKTIVE -->
+
+<section id="interaktive" class="interactive">
+
+<div class="section-title">
+
+<h2>Interaktive</h2>
+
+<p>Fakte interesante për Dostojevskin</p>
+
+</div>
+
+<button onclick="newFact()">Shfaq Fakt Interesant</button>
+
+<div class="fact-box" id="factBox">
+
+Dostojevski u dënua fillimisht me vdekje para se dënimi t'i kthehej në internim në Siberi.
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>Rusia në Kohën e Dostojevskit</h3>
+
+<p>Projekt Historik & Letrar</p>
+
+<p>Lënda: Letërsi / Histori</p>
+
+<p>Viti Shkollor 2025-2026</p>
+
+</footer>
+
+<!-- SCRIPT -->
 
 <script>
 
-// ORA
-setInterval(()=>{
-let now=new Date();
-document.getElementById("clock").innerText=now.toLocaleTimeString();
-},1000);
+function goHistory(){
 
-// MOTI
-fetch("https://api.open-meteo.com/v1/forecast?latitude=41.33&longitude=19.82&current_weather=true")
-.then(r=>r.json())
-.then(d=>{
-document.getElementById("weather").innerText =
-d.current_weather.temperature+"°C";
+document.getElementById('historia').scrollIntoView({
+behavior:'smooth'
 });
 
-// GRAFIK
-let chart=new Chart(document.getElementById('chart'),{
-type:'bar',
-data:{
-labels:['Trafik','Siguri','Energji','Mjedis'],
-datasets:[{
-label:'Performanca e qytetit',
-data:[80,70,85,75],
-backgroundColor:['#38bdf8','#22c55e','#f59e0b','#ef4444']
-}]
-}
-});
-
-// NJOFTIME
-function notify(){
-if(Notification.permission==="granted"){
-new Notification("Smart City",{body:"Update në qytet!"});
-}else{
-Notification.requestPermission();
-}
 }
 
-// FEEDBACK
-function sendFeedback(e){
-e.preventDefault();
-document.getElementById("comments").innerHTML +=
-`<p><b>${document.getElementById("name").value}</b>: ${document.getElementById("msgInput").value}</p>`;
+const facts = [
+
+"Dostojevski u internua në Siberi për 4 vite.",
+
+"Ai konsiderohet një nga pionierët e psikologjisë moderne në letërsi.",
+
+"Romani 'Krim dhe Ndëshkim' është një nga veprat më të rëndësishme të letërsisë botërore.",
+
+"Veprat e Dostojevskit ndikuan filozofë si Nietzsche dhe Freud.",
+
+"Dostojevski përjetoi varfëri dhe borxhe të shumta gjatë jetës së tij."
+
+];
+
+function newFact(){
+
+let random = Math.floor(Math.random()*facts.length);
+
+document.getElementById("factBox").innerHTML = facts[random];
+
 }
 
 </script>

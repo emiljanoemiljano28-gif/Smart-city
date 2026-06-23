@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LingoLux Connection</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#333;
+}
+
+header{
+background:#0b1f3a;
+color:white;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#d4af37;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-content{
+background:rgba(0,0,0,0.45);
+padding:40px;
+border-radius:15px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.btn{
+background:#d4af37;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.section{
+padding:80px 8%;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+color:#0b1f3a;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.destinations{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.destination{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.destination img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.destination h3{
+padding:15px;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+background:#0b1f3a;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.lang-btn{
+cursor:pointer;
+background:#d4af37;
+border:none;
+padding:8px 15px;
+border-radius:5px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">LingoLux Connection</div>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#destinations">Destinations</a>
+<a href="#contact">Contact</a>
+<button class="lang-btn" onclick="changeLanguage()">🇦🇱 / 🇬🇧</button>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1 id="title">Connecting You To The World</h1>
+<p id="subtitle">
+Flights • Hotels • Ferries • Tours
+</p>
+<a href="#contact" class="btn" id="btnText">Contact Us</a>
+</div>
+</section>
+
+<section class="section" id="services">
+<h2 id="servicesTitle">Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>✈️ Flight Tickets</h3>
+</div>
+
+<div class="card">
+<h3>🏨 Hotel Reservations</h3>
+</div>
+
+<div class="card">
+<h3>🛳️ Ferry Tickets</h3>
+</div>
+
+<div class="card">
+<h3>🌍 Tourist Tours</h3>
+</div>
+
+<div class="card">
+<h3>🎒 Travel Packages</h3>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="destinations">
+
+<h2>Popular Destinations</h2>
+
+<div class="destinations">
+
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1549144511-f099e773c147">
+<h3>Paris</h3>
+</div>
+
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+<h3>Dubai</h3>
+</div>
+
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5">
+<h3>Rome</h3>
+</div>
+
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff">
+<h3>Santorini</h3>
+</div>
+
+</div>
+
+</section>
+
+<section class="section contact" id="contact">
+
+<h2>Contact</h2>
+
+<p><strong>📍 Location:</strong> Tirana, Albania</p>
+<br>
+
+<p><strong>📞 Phone:</strong> +355 69 204 2728</p>
+<br>
+
+<p><strong>✉️ Email:</strong> Eni.pejo@gmail.com</p>
+
+</section>
+
+<footer>
+© 2026 LingoLux Connection - All Rights Reserved
+</footer>
+
+<script>
+
+let english=true;
+
+function changeLanguage(){
+
+if(english){
+
+document.getElementById("title").innerText="Udhëtimi Juaj Fillon Këtu";
+document.getElementById("subtitle").innerText="Avion • Hotele • Tragete • Ture";
+document.getElementById("btnText").innerText="Na Kontaktoni";
+document.getElementById("servicesTitle").innerText="Shërbimet Tona";
+
+english=false;
+
+}else{
+
+document.getElementById("title").innerText="Connecting You To The World";
+document.getElementById("subtitle").innerText="Flights • Hotels • Ferries • Tours";
+document.getElementById("btnText").innerText="Contact Us";
+document.getElementById("servicesTitle").innerText="Our Services";
+
+english=true;
+}
+
+}
+</script>
+
+</body>
+</html>

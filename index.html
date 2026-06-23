@@ -1,1354 +1,279 @@
 <!DOCTYPE html>
 <html lang="sq">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rusia në Kohën e Dostojevskit</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>LingoLux Connection</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
+font-family:Arial, sans-serif;
 }
 
 body{
-background:#050505;
-color:white;
-font-family:'Poppins',sans-serif;
-overflow-x:hidden;
-line-height:1.9;
+background:#f5f5f5;
+color:#333;
 }
 
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-z-index:1000;
+header{
+background:#0b1f3a;
+color:white;
+padding:15px 8%;
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-gap:28px;
-flex-wrap:wrap;
-padding:18px 15px;
-background:rgba(0,0,0,0.82);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-nav a{
-text-decoration:none;
-color:white;
-font-size:18px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#d4af37;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
 }
 
 .logo{
-width:100%;
-text-align:center;
-font-family:'Cinzel',serif;
-font-size:64px;
-color:#d4af37;
-letter-spacing:4px;
-margin-bottom:10px;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:220px 20px 100px;
-
-background:
-linear-gradient(rgba(0,0,0,0.70),rgba(0,0,0,0.88)),
-url('./IMG-20260525-WA0011.jpg');
-
-background-size:cover;
-background-position:center;
-}
-
-.hero-content{
-max-width:1100px;
-}
-
-.hero h1{
-font-size:90px;
-font-family:'Cinzel',serif;
-color:#d4af37;
-margin-bottom:30px;
-text-shadow:0 0 35px black;
-line-height:1.2;
-}
-
-.hero p{
-font-size:32px;
-color:#ddd;
-margin-bottom:45px;
-}
-
-.hero button{
-padding:20px 48px;
-border:none;
-border-radius:50px;
-background:#8b0000;
-color:white;
-font-size:22px;
-cursor:pointer;
-transition:0.4s;
-}
-
-.hero button:hover{
-transform:scale(1.07);
-background:#a00000;
-}
-
-/* SECTIONS */
-
-section{
-padding:120px 9%;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:70px;
-}
-
-.section-title h2{
-font-size:60px;
-font-family:'Cinzel',serif;
-color:#d4af37;
-margin-bottom:15px;
-}
-
-.section-title p{
-font-size:24px;
-color:#bbb;
-}
-
-/* TIMELINE */
-
-.timeline{
-position:relative;
-max-width:1200px;
-margin:auto;
-}
-
-.timeline::after{
-content:'';
-position:absolute;
-width:4px;
-background:#8b0000;
-top:0;
-bottom:0;
-left:50%;
-margin-left:-2px;
-}
-
-.timeline-item{
-padding:20px 45px;
-position:relative;
-width:50%;
-}
-
-.timeline-item.left{
-left:0;
-}
-
-.timeline-item.right{
-left:50%;
-}
-
-.timeline-content{
-background:#111;
-padding:35px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.4s;
-}
-
-.timeline-content:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(139,0,0,0.25);
-}
-
-.timeline-content h3{
-font-size:36px;
-color:#d4af37;
-margin-bottom:25px;
-}
-
-.timeline-content img{
-width:100%;
-border-radius:18px;
-margin-bottom:28px;
-}
-
-.timeline-content p{
-font-size:24px;
-line-height:2;
-}
- /* CARDS */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:35px;
-}
-
-.card{
-background:#111;
-padding:35px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(139,0,0,0.25);
-}
-
-.card img{
-width:100%;
-border-radius:18px;
-margin-bottom:25px;
-}
-
-.card h3{
-font-size:34px;
-color:#d4af37;
-margin-bottom:22px;
-}
-
-.card p{
-font-size:24px;
-line-height:2;
-}
-
-/* DOSTO IMAGE */
-
-.dosto-image{
-width:100%;
-max-width:700px;
-display:block;
-margin:0 auto 60px auto;
-border-radius:25px;
-box-shadow:0 0 35px rgba(0,0,0,0.5);
-}
-
-/* BOOKS */
-
-.books{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:35px;
-}
-
-.book{
-background:#111;
-border-radius:25px;
-overflow:hidden;
-transition:0.4s;
-}
-
-.book:hover{
-transform:scale(1.03);
-box-shadow:0 0 35px rgba(139,0,0,0.35);
-}
-
-.book img{
-width:100%;
-height:420px;
-object-fit:cover;
-}
-
-.book-content{
-padding:30px;
-}
-
-.book-content h3{
-font-size:34px;
-color:#d4af37;
-margin-bottom:20px;
-}
-
-.book-content p{
-font-size:23px;
-line-height:2;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.gallery img{
-width:100%;
-height:340px;
-object-fit:cover;
-border-radius:20px;
-transition:0.4s;
-cursor:pointer;
-}
-
-.gallery img:hover{
-transform:scale(1.04);
-box-shadow:0 0 30px rgba(139,0,0,0.3);
-}
-/* QUIZ */
-
-.quiz{
-margin-top:50px;
-background:#111;
-padding:45px;
-border-radius:30px;
-display:flex;
-flex-direction:column;
-gap:40px;
-}
-
-.question-box{
-background:#0c0c0c;
-padding:35px;
-border-radius:25px;
-}
-
-.question-box h3{
-font-size:36px;
-color:#d4af37;
-margin-bottom:20px;
-}
-
-.question-box p{
-font-size:25px;
-margin-bottom:25px;
-line-height:1.8;
-}
-
-.question-box button{
-width:100%;
-padding:18px;
-margin-bottom:14px;
-border:none;
-border-radius:50px;
-background:#8b0000;
-color:white;
-font-size:21px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.question-box button:hover{
-background:#b30000;
-transform:scale(1.02);
-}
-
-.answer{
-margin-top:18px;
 font-size:28px;
+font-weight:bold;
+color:#d4af37;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
 font-weight:bold;
 }
 
-/* SNOW */
-
-.snow{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:9999;
-overflow:hidden;
-}
-
-.snow span{
-position:absolute;
-top:-10px;
-animation:snowFall linear infinite;
-color:white;
-}
-
-@keyframes snowFall{
-
-0%{
-transform:translateY(-10px);
-opacity:0;
-}
-
-10%{
-opacity:1;
-}
-
-100%{
-transform:translateY(110vh);
-opacity:0;
-}
-
-}
-
-/* MUSIC BUTTON */
-
-.music-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-z-index:9999;
-background:#8b0000;
-color:white;
-border:none;
-padding:18px 26px;
-border-radius:50px;
-cursor:pointer;
-font-size:20px;
-box-shadow:0 0 25px rgba(0,0,0,0.4);
-}
-
-/* FOOTER */
-
-footer{
-background:#020202;
-padding:50px;
-text-align:center;
-color:#999;
-font-size:22px;
-line-height:2;
-margin-top:70px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
 .hero{
-padding-top:260px;
+height:100vh;
+background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-content{
+background:rgba(0,0,0,0.45);
+padding:40px;
+border-radius:15px;
 }
 
 .hero h1{
-font-size:58px;
-line-height:1.3;
+font-size:55px;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:24px;
-}
-
-.logo{
-font-size:46px;
-}
-
-nav{
-gap:18px;
-}
-
-nav a{
-font-size:16px;
-}
-
-.timeline::after{
-left:20px;
-}
-
-.timeline-item{
-width:100%;
-left:0 !important;
-padding-left:70px;
-padding-right:10px;
-margin-bottom:35px;
-}
-
-.timeline-item.right{
-left:0;
-}
-
-.timeline-content p,
-.card p,
-.book-content p{
-font-size:21px;
-line-height:1.9;
-}
-
-.timeline-content h3,
-.card h3,
-.book-content h3{
-font-size:30px;
-}
-
-.gallery{
-grid-template-columns:1fr;
-}
-
-.gallery img{
-height:auto;
-}
-
-.question-box h3{
-font-size:30px;
-}
-
-.question-box p{
 font-size:22px;
+margin-bottom:25px;
 }
 
+.btn{
+background:#d4af37;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
 }
 
+.section{
+padding:80px 8%;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+color:#0b1f3a;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.destinations{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.destination{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.destination img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.destination h3{
+padding:15px;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+background:#0b1f3a;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.lang-btn{
+cursor:pointer;
+background:#d4af37;
+border:none;
+padding:8px 15px;
+border-radius:5px;
+font-weight:bold;
+}
 </style>
-
 </head>
 
 <body>
 
-<div class="snow" id="snow"></div>
+<header>
+<div class="logo">LingoLux Connection</div>
 
 <nav>
-
-<div class="logo">
-DOSTOJEVSKI
-</div>
-
-<a href="#historia">Historia</a>
-
-<a href="#dosto">Dostojevski</a>
-
-<a href="#harta">Harta</a>
-
-<a href="#ndikimi">Ndikimi</a>
-
-<a href="#veprat">Veprat</a>
-
-<a href="#galeria">Galeria</a>
-
-<a href="#quiz">Quiz</a>
-
+<a href="#services">Services</a>
+<a href="#destinations">Destinations</a>
+<a href="#contact">Contact</a>
+<button class="lang-btn" onclick="changeLanguage()">🇦🇱 / 🇬🇧</button>
 </nav>
+</header>
 
 <section class="hero">
-
 <div class="hero-content">
-
-<h1>Rusia në Kohën e Dostojevskit</h1>
-
-<p>Histori, Shoqëri dhe Letërsi</p>
-
-<button onclick="goHistory()">
-
-Fillo Udhëtimin
-
-</button>
-
+<h1 id="title">Connecting You To The World</h1>
+<p id="subtitle">
+Flights • Hotels • Ferries • Tours
+</p>
+<a href="#contact" class="btn" id="btnText">Contact Us</a>
 </div>
-
 </section>
- <section id="historia">
 
-<div class="section-title">
+<section class="section" id="services">
+<h2 id="servicesTitle">Our Services</h2>
 
-<h2>Historia e Rusisë</h2>
+<div class="services">
 
-<p>Rusia e shekullit XIX dhe transformimi i saj historik</p>
-
+<div class="card">
+<h3>✈️ Flight Tickets</h3>
 </div>
 
-<div class="timeline">
+<div class="card">
+<h3>🏨 Hotel Reservations</h3>
+</div>
 
-<div class="timeline-item left">
+<div class="card">
+<h3>🛳️ Ferry Tickets</h3>
+</div>
 
-<div class="timeline-content">
+<div class="card">
+<h3>🌍 Tourist Tours</h3>
+</div>
 
-<h3>Rusia në Shekullin XIX</h3>
-
-<img src="./IMG-20260525-WA0004.jpg">
-
-<p>
-Në shekullin XIX, Rusia ishte një nga perandoritë më të mëdha dhe më të fuqishme në botë. Ajo shtrihej nga Europa Lindore deri në Azi dhe drejtohej nga carët, të cilët kishin pushtet absolut mbi shtetin dhe popullin. Shoqëria ruse ishte shumë e ndarë: aristokracia dhe familjet fisnike jetonin në luks, ndërsa shumica e popullsisë, sidomos fshatarët, jetonin në varfëri dhe pa të drejta. Kjo pabarazi sociale krijoi pakënaqësi dhe tensione që do të ndikonin në historinë e mëvonshme të vendit.
-</p>
-
-<p>
-Në këtë periudhë Rusia përballej me probleme ekonomike dhe sociale, ndërkohë që fuqitë europiane po modernizoheshin me ritme më të shpejta. Kjo krijoi nevojën për reforma dhe ndryshime të mëdha politike e shoqërore.
-</p>
-
+<div class="card">
+<h3>🎒 Travel Packages</h3>
 </div>
 
 </div>
+</section>
 
-<div class="timeline-item right">
+<section class="section" id="destinations">
 
-<div class="timeline-content">
+<h2>Popular Destinations</h2>
 
-<h3>Cari Aleksandri II</h3>
+<div class="destinations">
 
-<img src="./IMG-20260525-WA0005.jpg">
-
-<p>
-Aleksandri II njihet si një nga sundimtarët më reformatorë të Rusisë. Ai ndërmori ndryshime të rëndësishme për modernizimin e vendit pas humbjeve ushtarake dhe krizave ekonomike. Reformat e tij prekën administratën shtetërore, ushtrinë, arsimin dhe sistemin gjyqësor.
-</p>
-
-<p>
-Aleksandri II besonte se Rusia duhej të modernizohej për të konkurruar me vendet e tjera europiane. Megjithatë, shumë prej reformave të tij u kundërshtuan nga grupet konservatore dhe aristokracia.
-</p>
-
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1549144511-f099e773c147">
+<h3>Paris</h3>
 </div>
 
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+<h3>Dubai</h3>
 </div>
 
-<div class="timeline-item left">
-
-<div class="timeline-content">
-
-<h3>Çlirimi i Bujkrobërve</h3>
-
-<img src="./IMG-20260525-WA0009.jpg">
-
-<p>
-Një nga ngjarjet më të rëndësishme në historinë ruse ishte çlirimi i bujkrobërve në vitin 1861. Për shekuj me radhë, miliona fshatarë kishin qenë të lidhur me tokën dhe pronarët e saj, pa liri personale. Reforma e Aleksandrit II u dha atyre të drejtën e lëvizjes dhe të pronësisë.
-</p>
-
-<p>
-Megjithëse reforma solli ndryshime të rëndësishme, shumë fshatarë vazhduan të jetonin në varfëri dhe me vështirësi ekonomike. Kjo krijoi pakënaqësi sociale që do të ndikonte në zhvillimet politike të Rusisë.
-</p>
-
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5">
+<h3>Rome</h3>
 </div>
 
-</div>
-
-<div class="timeline-item right">
-
-<div class="timeline-content">
-
-<h3>Industrializimi</h3>
-
-<img src="./IMG-20260525-WA0006.jpg">
-
-<p>
-Në fund të shekullit XIX, Rusia filloi të industrializohej me ritme më të shpejta. U ndërtuan fabrika, hekurudha dhe qendra të mëdha industriale, sidomos në qytete si Shën Petersburgu dhe Moska.
-</p>
-
-<p>
-Industrializimi solli zhvillim ekonomik, por edhe probleme sociale si varfëria urbane, kushtet e këqija të punës dhe pakënaqësia e punëtorëve. Këto ndryshime ndikuan shumë edhe në letërsinë dhe filozofinë ruse të kohës.
-</p>
-
-</div>
-
+<div class="destination">
+<img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff">
+<h3>Santorini</h3>
 </div>
 
 </div>
 
 </section>
 
-<section id="dosto">
+<section class="section contact" id="contact">
 
-<div class="section-title">
+<h2>Contact</h2>
 
-<h2>Fjodor Dostojevski</h2>
+<p><strong>📍 Location:</strong> Tirana, Albania</p>
+<br>
 
-<p>Jeta dhe filozofia e tij</p>
+<p><strong>📞 Phone:</strong> +355 69 204 2728</p>
+<br>
 
-</div>
-
-<img class="dosto-image"
-src="./IMG-20260525-WA0011.jpg">
-
-<div class="cards">
- <div class="card">
-
-<h3>Jeta e Tij</h3>
-
-<p>
-Fjodor Dostojevski ishte një nga shkrimtarët më të mëdhenj të letërsisë botërore dhe një figurë shumë e rëndësishme e kulturës ruse. Ai lindi në vitin 1821 në Moska dhe që në rini tregoi interes për letërsinë, filozofinë dhe problemet sociale të kohës. Veprat e tij analizojnë psikologjinë njerëzore dhe konfliktet morale që përjeton individi.
-</p>
-
-<p>
-Ai konsiderohet si një nga autorët më të thellë të letërsisë botërore për mënyrën se si trajtoi shpirtin dhe ndërgjegjen njerëzore. Personazhet e tij janë kompleksë dhe shpesh përballen me dilema morale, vuajtje shpirtërore dhe konflikte të brendshme.
-</p>
-
-<p>
-Përmes romaneve të tij, Dostojevski ndikoi jo vetëm në letërsi, por edhe në filozofi, psikologji dhe kulturën moderne europiane.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Burgimi në Siberi</h3>
-
-<img src="./IMG-20260525-WA0012.jpg">
-
-<p>
-Në vitin 1849, Dostojevski u arrestua për pjesëmarrje në një grup intelektualësh që diskutonin ide politike dhe sociale kundër regjimit carist. Ai u dënua fillimisht me vdekje, por vetëm pak minuta para ekzekutimit dënimi iu kthye në internim në Siberi.
-</p>
-
-<p>
-Ai kaloi disa vite në kushte shumë të vështira, duke jetuar mes të burgosurve dhe duke përjetuar vuajtje fizike dhe psikologjike. Kjo periudhë ndikoi thellësisht në mënyrën se si ai e kuptonte jetën, vuajtjen dhe shpirtin njerëzor.
-</p>
-
-<p>
-Pas kthimit nga Siberia, Dostojevski filloi të shkruante vepra edhe më të thella psikologjikisht dhe filozofikisht. Përvojat e burgimit u reflektuan më vonë në shumë prej personazheve dhe romaneve të tij.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Idetë Filozofike</h3>
-
-<img src="./IMG-20260525-WA0007.jpg">
-
-<p>
-Veprat e Dostojevskit trajtojnë tema si liria, faji, vuajtja, morali dhe besimi. Ai analizonte konfliktin e brendshëm të njeriut dhe mënyrën se si shoqëria ndikon në psikologjinë individuale.
-</p>
-
-<p>
-Personazhet e tij shpesh përballen me zgjedhje të vështira morale dhe kriza ekzistenciale. Përmes romaneve të tij, ai ngriti pyetje të rëndësishme filozofike mbi jetën, drejtësinë dhe kuptimin e ekzistencës njerëzore.
-</p>
-
-<p>
-Filozofia e tij ndikoi më vonë shumë mendimtarë dhe shkrimtarë europianë, duke e bërë Dostojevskin një nga figurat më të rëndësishme të mendimit modern.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Besimi dhe Morali</h3>
-
-<img src="./IMG-20260525-WA0011.jpg">
-
-<p>
-Një nga temat kryesore në filozofinë e Dostojevskit ishte besimi tek Zoti dhe shpëtimi moral i njeriut. Ai besonte se vuajtja mund ta ndihmojë njeriun të kuptojë veten dhe të arrijë shpëtimin shpirtëror.
-</p>
-
-<p>
-Në romanet e tij ai eksploron ndërgjegjen njerëzore, përgjegjësinë morale dhe luftën mes së mirës dhe së keqes. Për Dostojevskin, morali dhe feja ishin të lidhura ngushtë me fatin dhe lumturinë e njeriut.
-</p>
-
-<p>
-Shumë prej personazheve të tij kalojnë përmes krizave shpirtërore dhe morale për të gjetur kuptimin e jetës dhe paqen e brendshme.
-</p>
-
-</div>
-
-</div>
+<p><strong>✉️ Email:</strong> Eni.pejo@gmail.com</p>
 
 </section>
-<section id="harta">
-
-<div class="section-title">
-
-<h2>Perandoria Ruse</h2>
-
-<p>Shtrirja dhe fuqia e Rusisë në shekullin XIX</p>
-
-</div>
-
-<div style="max-width:1200px; margin:auto;">
-
-<img 
-src="./IMG-20260525-WA0008.jpg"
-
-style="
-width:100%;
-border-radius:25px;
-margin-bottom:45px;
-box-shadow:0 0 40px rgba(0,0,0,0.55);
-">
-
-<div class="card">
-
-<h3>Rusia dhe Shtrirja e Saj</h3>
-
-<p>
-Në shekullin XIX, Perandoria Ruse ishte një nga shtetet më të mëdha dhe më të fuqishme në botë. Ajo shtrihej nga Europa Lindore deri në brigjet e Paqësorit në Azi. Madhësia territoriale i jepte Rusisë fuqi ushtarake dhe politike, por gjithashtu krijonte vështirësi në administrimin dhe zhvillimin e rajoneve të ndryshme.
-</p>
-
-<p>
-Në qytetet kryesore si Moska dhe Shën Petersburgu filluan proceset e modernizimit dhe industrializimit, ndërsa zonat rurale mbeteshin të varfra dhe të pazhvilluara. Kjo krijoi kontraste të mëdha sociale mes aristokracisë dhe shtresave të varfra.
-</p>
-
-<p>
-Rusia kishte ndikim të madh në politikën europiane dhe shpesh përfshihej në konflikte ushtarake dhe diplomatike me fuqitë e tjera të kohës. Pozicioni i saj gjeografik dhe madhësia territoriale e bënin një nga perandoritë më të rëndësishme të shekullit XIX.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="ndikimi">
-
-<div class="section-title">
-
-<h2>Ndikimi i Rusisë tek Letërsia</h2>
-
-<p>Tematika kryesore në krijimtarinë e Dostojevskit</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Varfëria</h3>
-
-<img src="./IMG-20260525-WA0009.jpg">
-
-<p>
-Varfëria ishte një realitet i rëndë në Rusinë e shekullit XIX dhe një nga temat kryesore të Dostojevskit. Ai e paraqet varfërinë jo vetëm si mungesë materiale, por edhe si gjendje shpirtërore që ndikon në dinjitetin, zgjedhjet dhe sjelljen e njeriut.
-</p>
-
-<p>
-Personazhet e tij shpesh jetojnë në kushte ekstreme, duke treguar se si shoqëria i shtyn njerëzit drejt dëshpërimit. Në shumë raste, ai kritikon shoqërinë ruse për indiferencën ndaj shtresave të varfra dhe për pabarazitë e mëdha sociale që ekzistonin në Perandorinë Ruse.
-</p>
-
-<p>
-Përmes personazheve të tij ai tregonte se varfëria mund të ndikojë jo vetëm në jetën materiale, por edhe në gjendjen emocionale dhe morale të individit.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Krimi</h3>
-
-<img src="./IMG-20260525-WA0007.jpg">
-
-<p>
-Krimi në veprat e Dostojevskit nuk është thjesht veprim i jashtëligjshëm, por një mënyrë për të eksploruar mendjen njerëzore. Ai analizon motivet e brendshme, fajin dhe pasojat psikologjike të krimit.
-</p>
-
-<p>
-Në romane si “Krim dhe Ndëshkim”, krimi shërben si pikënisje për një debat moral dhe shpirtëror mbi të drejtën dhe të gabuarën. Dostojevski tregon se pas çdo krimi fshihet një konflikt i thellë psikologjik dhe moral.
-</p>
-
-<p>
-Personazhet e tij shpesh përballen me ndërgjegjen, frikën dhe ndjenjën e fajit, duke treguar se dënimi më i madh shpesh vjen nga vetë ndërgjegjja njerëzore.
-</p>
-
-</div>
-
-</div>
-
-</section>
-<div class="cards">
-
-<div class="card">
-
-<h3>Psikologjia njerëzore</h3>
-
-<img src="./IMG-20260525-WA0011.jpg">
-
-<p>
-Fjodor Dostojevski konsiderohet si një nga pionierët e analizës psikologjike në letërsi. Ai futet thellë në mendimet, frikërat dhe konfliktet e brendshme të personazheve, duke treguar se njeriu është i ndarë mes arsyes, emocioneve dhe instinkteve.
-</p>
-
-<p>
-Personazhet e tij shpesh përjetojnë ankth, vetmi dhe konflikte morale. Përmes tyre, ai krijon një pasqyrë të thellë të natyrës njerëzore dhe të dilemave që shoqërojnë jetën e individit.
-</p>
-
-<p>
-Analizat psikologjike të Dostojevskit ndikuan shumë më vonë në zhvillimin e psikologjisë moderne dhe të filozofisë ekzistencialiste.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Feja</h3>
-
-<img src="./IMG-20260525-WA0012.jpg">
-
-<p>
-Feja dhe besimi janë elemente thelbësore në veprat e tij. Personazhet shpesh përballen me dyshime shpirtërore, kërkim faljeje dhe nevojën për shpëtim moral. Feja shfaqet si një rrugë për shpresë, por edhe si një burim konflikti të brendshëm.
-</p>
-
-<p>
-Dostojevski besonte se besimi mund ta ndihmojë njeriun të përballojë vuajtjet dhe sfidat e jetës. Përmes romaneve të tij ai trajton pyetje filozofike mbi ekzistencën, mëkatin dhe faljen.
-</p>
-
-<p>
-Në shumë prej veprave të tij, besimi lidhet ngushtë me moralin, përgjegjësinë dhe shpëtimin shpirtëror të individit.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Drejtësia</h3>
-
-<img src="./IMG-20260525-WA0005.jpg">
-
-<p>
-Në veprat e Fjodor Dostojevskit trajtohet shpesh pyetja: çfarë është drejtësia e vërtetë? Ai dallon mes ligjit të shoqërisë dhe ndërgjegjes morale të individit.
-</p>
-
-<p>
-Shpesh personazhet ndihen fajtorë edhe kur nuk ndëshkohen ligjërisht, duke treguar se drejtësia e brendshme është më e fortë se ajo e jashtme.
-</p>
-
-<p>
-Përmes këtyre konflikteve, Dostojevski analizon marrëdhënien mes moralit, fajit dhe përgjegjësisë njerëzore, duke krijuar debate filozofike që vazhdojnë të diskutohen edhe sot.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Konfliktet morale</h3>
-
-<img src="./IMG-20260525-WA0006.jpg">
-
-<p>
-Personazhet e tij përjetojnë konflikte të forta mes së mirës dhe së keqes. Ky dualitet tregon se njeriu nuk është as krejt i mirë, as krejt i keq.
-</p>
-
-<p>
-Zgjedhjet morale shpesh sjellin vuajtje, por edhe rritje shpirtërore dhe reflektim mbi jetën. Përmes këtyre konflikteve, Dostojevski krijon personazhe komplekse dhe thellësisht njerëzore.
-</p>
-
-<p>
-Këto dilema morale janë një nga arsyet pse veprat e tij vazhdojnë të lexohen dhe studiohen në mbarë botën edhe sot.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="veprat">
-
-<div class="section-title">
-
-<h2>Veprat Kryesore</h2>
-
-<p>Kryeveprat e Fjodor Dostojevskit</p>
-
-</div>
-
-<div class="books">
- <div class="book">
-
-<img src="./IMG-20260525-WA0007.jpg">
-
-<div class="book-content">
-
-<h3>Krim dhe Ndëshkim</h3>
-
-<p>
-Një nga romanet më të njohura të letërsisë botërore. Vepra trajton fajin, ndërgjegjen dhe pasojat psikologjike të krimit përmes personazhit Rodion Raskolnikov. Romani analizon konfliktin moral mes arsyes dhe ndërgjegjes njerëzore, duke treguar se si veprimet e individit ndikojnë në jetën dhe shpirtin e tij.
-</p>
-
-<p>
-Përmes këtij romani, Dostojevski eksploron pyetje filozofike mbi drejtësinë, moralin dhe përgjegjësinë personale. “Krim dhe Ndëshkim” konsiderohet si një nga veprat më të rëndësishme të letërsisë psikologjike dhe moderne.
-</p>
-
-</div>
-
-</div>
-
-<div class="book">
-
-<img src="./IMG-20260525-WA0011.jpg">
-
-<div class="book-content">
-
-<h3>Idioti</h3>
-
-<p>
-Romani paraqet përplasjen mes pafajësisë dhe korrupsionit në shoqërinë ruse përmes figurës së princit Myshkin. Dostojevski përpiqet të tregojë se si një njeri plot mirësi dhe ndershmëri përballet me egoizmin dhe hipokrizinë e botës.
-</p>
-
-<p>
-Princi Myshkin konsiderohet si një nga personazhet më të veçantë të letërsisë botërore, sepse përfaqëson idealin moral dhe njerëzor në një shoqëri të mbushur me konflikte dhe interesa personale.
-</p>
-
-</div>
-
-</div>
-
-<div class="book">
-
-<img src="./IMG-20260525-WA0006.jpg">
-
-<div class="book-content">
-
-<h3>Netë të Bardha</h3>
-
-<p>
-Një histori melankolike për vetminë, dashurinë dhe ëndrrat e humbura në atmosferën romantike të Shën Petersburgut. Vepra pasqyron ndjenjat e brendshme të personazheve dhe dëshirën e tyre për lumturi dhe dashuri.
-</p>
-
-<p>
-“Netë të Bardha” është një nga tregimet më emocionale të Dostojevskit dhe shquhet për atmosferën poetike dhe analizën e ndjenjave njerëzore.
-</p>
-
-</div>
-
-</div>
-
-<div class="book">
-
-<img src="./IMG-20260525-WA0012.jpg">
-
-<div class="book-content">
-
-<h3>Vëllezërit Karamazov</h3>
-
-<p>
-Një kryevepër filozofike dhe morale që trajton fenë, drejtësinë, konfliktet familjare dhe natyrën njerëzore. Romani konsiderohet një nga veprat më të mëdha të letërsisë botërore për thellësinë psikologjike dhe filozofike.
-</p>
-
-<p>
-Në këtë roman, Dostojevski trajton tema si besimi, liria, morali dhe përgjegjësia njerëzore përmes marrëdhënieve komplekse mes personazheve të familjes Karamazov.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="galeria">
-
-<div class="section-title">
-
-<h2>Galeria Historike</h2>
-
-<p>Rusia dhe bota e Dostojevskit në shekullin XIX</p>
-
-</div>
-
-<div class="gallery">
-
-<img src="./IMG-20260525-WA0011.jpg">
-
-<img src="./IMG-20260525-WA0008.jpg">
-
-<img src="./IMG-20260525-WA0009.jpg">
-
-<img src="./IMG-20260525-WA0012.jpg">
-
-<img src="./IMG-20260525-WA0007.jpg">
-
-<img src="./IMG-20260525-WA0006.jpg">
-
-<img src="./IMG-20260525-WA0005.jpg">
-
-<img src="./IMG-20260525-WA0004.jpg">
-
-</div>
-
-</section>
-<section id="fakte">
-
-<div class="section-title">
-
-<h2>Fakte Interesante</h2>
-
-<p>Disa fakte interesante mbi jetën dhe veprën e Dostojevskit</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Dënimi me Vdekje</h3>
-
-<img src="./IMG-20260525-WA0012.jpg">
-
-<p>
-Dostojevski u dënua fillimisht me vdekje për pjesëmarrje në një grup intelektualësh me ide politike kundër regjimit carist. Vetëm pak minuta para ekzekutimit, dënimi iu kthye në internim në Siberi. Kjo ngjarje ndikoi thellësisht në psikologjinë dhe filozofinë e tij.
-</p>
-
-<p>
-Përvoja e afërsisë me vdekjen ndryshoi mënyrën si ai e shihte jetën, vuajtjen dhe shpirtin njerëzor. Shumë studiues besojnë se kjo periudhë ndikoi drejtpërdrejt në temat filozofike të romaneve të tij.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Varësia nga Bixhozi</h3>
-
-<img src="./IMG-20260525-WA0005.jpg">
-
-<p>
-Shkrimtari rus pati probleme të mëdha financiare për shkak të varësisë nga bixhozi, gjë që ndikoi edhe në jetën e tij personale dhe ekonomike. Ai humbi shumë para në kazino europiane dhe shpesh përballej me borxhe të mëdha.
-</p>
-
-<p>
-Kjo përvojë u reflektua edhe në veprat e tij, sidomos në romanin “Kumarxhiu”, ku përshkruhen emocionet, ankthi dhe pasionet e lidhura me lojërat e fatit.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Ndikimi Botëror</h3>
-
-<img src="./IMG-20260525-WA0011.jpg">
-
-<p>
-Veprat e Dostojevskit ndikuan filozofë, psikologë dhe shkrimtarë të mëdhenj si Nietzsche, Freud, Kafka dhe Camus. Mendimet dhe analizat e tij mbi natyrën njerëzore vazhdojnë të studiohen edhe sot.
-</p>
-
-<p>
-Ai konsiderohet si një nga autorët që ndikoi më shumë në zhvillimin e filozofisë ekzistencialiste dhe të letërsisë moderne psikologjike.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="quiz">
-
-<div class="section-title">
-
-<h2>Quiz Interaktiv</h2>
-
-<p>Testo njohuritë për Dostojevskin dhe Rusinë e shekullit XIX</p>
-
-</div>
-
-<div class="quiz">
-
-<div class="question-box">
-
-<h3>Pyetja 1</h3>
-
-<p>
-Në cilin shekull Rusia ishte një nga perandoritë më të mëdha në botë?
-</p>
-
-<button onclick="showAnswer('a1','Gabim','red')">
-Shekulli XVII
-</button>
-
-<button onclick="showAnswer('a1','Gabim','red')">
-Shekulli XVIII
-</button>
-
-<button onclick="showAnswer('a1','Saktë!','lightgreen')">
-Shekulli XIX
-</button>
-
-<button onclick="showAnswer('a1','Gabim','red')">
-Shekulli XX
-</button>
-
-<div class="answer" id="a1"></div>
-
-</div>
-
-<div class="question-box">
-
-<h3>Pyetja 2</h3>
-
-<p>
-Kush ishte cari që ndërmori reforma modernizuese në Rusi?
-</p>
-
-<button onclick="showAnswer('a2','Gabim','red')">
-Ivani IV
-</button>
-
-<button onclick="showAnswer('a2','Saktë!','lightgreen')">
-Aleksandri II
-</button>
-
-<button onclick="showAnswer('a2','Gabim','red')">
-Pjetri I
-</button>
-
-<button onclick="showAnswer('a2','Gabim','red')">
-Nikolla II
-</button>
-
-<div class="answer" id="a2"></div>
-
-</div>
-<div class="question-box">
-
-<h3>Pyetja 3</h3>
-
-<p>
-Kush ishte Fjodor Dostojevski?
-</p>
-
-<button onclick="showAnswer('a3','Gabim','red')">
-Piktor rus
-</button>
-
-<button onclick="showAnswer('a3','Gabim','red')">
-Politikan rus
-</button>
-
-<button onclick="showAnswer('a3','Saktë!','lightgreen')">
-Shkrimtar dhe filozof rus
-</button>
-
-<button onclick="showAnswer('a3','Gabim','red')">
-Kompozitor rus
-</button>
-
-<div class="answer" id="a3"></div>
-
-</div>
-
-<div class="question-box">
-
-<h3>Pyetja 4</h3>
-
-<p>
-Cila temë trajtohet shpesh në veprat e Dostojevskit?
-</p>
-
-<button onclick="showAnswer('a4','Gabim','red')">
-Sporti
-</button>
-
-<button onclick="showAnswer('a4','Gabim','red')">
-Teknologjia
-</button>
-
-<button onclick="showAnswer('a4','Saktë!','lightgreen')">
-Morali dhe konflikti i brendshëm
-</button>
-
-<button onclick="showAnswer('a4','Gabim','red')">
-Astronomia
-</button>
-
-<div class="answer" id="a4"></div>
-
-</div>
-
-</div>
-
-</section>
-
-<button class="music-btn" onclick="toggleMusic()">
-
-🎵 Muzika
-
-</button>
-
-<audio id="bgMusic" loop>
-
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=sad-soul-chasing-a-feeling-11522.mp3" type="audio/mpeg">
-
-</audio>
 
 <footer>
-
-<h3>Rusia në Kohën e Dostojevskit</h3>
-
-<p>Projekt Historik dhe Letrar</p>
-
-<p>Lënda: Letërsi / Histori</p>
-
-<p>Viti Shkollor 2025-2026</p>
-
+© 2026 LingoLux Connection - All Rights Reserved
 </footer>
 
 <script>
 
-function goHistory(){
+let english=true;
 
-document.getElementById('historia').scrollIntoView({
+function changeLanguage(){
 
-behavior:'smooth'
+if(english){
 
-});
+document.getElementById("title").innerText="Udhëtimi Juaj Fillon Këtu";
+document.getElementById("subtitle").innerText="Avion • Hotele • Tragete • Ture";
+document.getElementById("btnText").innerText="Na Kontaktoni";
+document.getElementById("servicesTitle").innerText="Shërbimet Tona";
 
-}
-
-function showAnswer(id,text,color){
-
-document.getElementById(id).innerHTML=text;
-
-document.getElementById(id).style.color=color;
-
-}
-
-/* SNOW EFFECT */
-
-const snowContainer=document.getElementById('snow');
-
-for(let i=0;i<80;i++){
-
-let snowflake=document.createElement('span');
-
-snowflake.innerHTML='❄';
-
-snowflake.style.left=Math.random()*100+'vw';
-
-snowflake.style.animationDuration=
-(Math.random()*5+5)+'s';
-
-snowflake.style.fontSize=
-(Math.random()*10+10)+'px';
-
-snowflake.style.opacity=Math.random();
-
-snowContainer.appendChild(snowflake);
-
-}
-
-/* MUSIC */
-
-const music=document.getElementById('bgMusic');
-
-let playing=false;
-
-function toggleMusic(){
-
-if(!playing){
-
-music.play();
-
-playing=true;
+english=false;
 
 }else{
 
-music.pause();
+document.getElementById("title").innerText="Connecting You To The World";
+document.getElementById("subtitle").innerText="Flights • Hotels • Ferries • Tours";
+document.getElementById("btnText").innerText="Contact Us";
+document.getElementById("servicesTitle").innerText="Our Services";
 
-playing=false;
-
+english=true;
 }
 
 }
-
 </script>
 
 </body>
-
 </html>
